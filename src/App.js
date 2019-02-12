@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import DalalBull from "./pages/DalalBull";
-import Kryptos from "./pages/Kryptos";
-import Login from "./pages/Login";
+import Home from "./components/Home";
+import DalalBull from "./components/Dalalbull/DalalBull";
+import Kryptos from "./components/Kryptos/Kryptos";
+import Login from "./components/Accounts/Login";
 import "./App.css";
 
 const App = () => (
