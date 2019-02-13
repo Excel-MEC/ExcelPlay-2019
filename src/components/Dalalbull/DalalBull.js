@@ -1,10 +1,8 @@
-import React, { Component } from "react";
-import "../../App.css";
+import React from 'react';
+import '../../App.css';
 
-class DalalBull extends Component {
-  render() {
-    return <div>DALALBULL!!</div>;
-  }
-}
+const DalalBull = () => {
+  return <div>Dalalbull</div>;
+};
 
 export default DalalBull;
