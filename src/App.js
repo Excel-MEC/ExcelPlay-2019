@@ -8,7 +8,7 @@ import './App.css';
 
 const App = () => (
   <Router>
-    <div>
+    <div className="main-background">
       <Route exact path="/" component={Home} />
       <Route path="/login" component={Login} />
       <Route path="/dalalbull" component={DalalBull} />
