@@ -1,0 +1,52 @@
+.dalalbull-container {
+  min-height: 100vh;
+  background: #ccc;
+  display: flex;
+  flex-direction: row;
+}
+
+.dalalbull-container div {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex: 1;
+}
+
+button {
+  border: none;
+  width: 100px;
+  height: 35px;
+  border-radius: 30px;
+  font: 18px;
+  font-weight: bold;
+  margin: 10px;
+  color: white;
+}
+
+.buy-button {
+  background-color: #049328;
+}
+.short-button {
+  background-color: #f4511e;
+}
+
+.search-box {
+  border: none;
+  width: 300px;
+  height: 15px;
+  border-radius: 30px;
+  background-color: #474543;
+  color: white;
+  font: 20px;
+  padding-left: 100px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.search-box::placeholder {
+  color: #bab4ae;
+  font: 20px;
+}
+
+.search-box:focus {
+  background-color: #302f2e;
+}
