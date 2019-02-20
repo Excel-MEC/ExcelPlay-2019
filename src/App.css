@@ -4,38 +4,3 @@
   background-color: #313131;
   color: white;
 }
-
-.big-header-bg {
-  height: 20vh;
-  background-color: black;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.logo-container-bg {
-  display: flex;
-  justify-content: center;
-  width: 60vw;
-  height: 20vh;
-  background-color: #f4511e;
-  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
-}
-
-.logo-container {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ff6e40;
-  width: 50vw;
-  height: 25vh;
-  clip-path: polygon(0 0, 100% 0, 85% 120%, 15% 120%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 85% 120%, 15% 120%);
-}
-
-.logo {
-  max-width: 60%;
-  max-height: 80%;
-}
