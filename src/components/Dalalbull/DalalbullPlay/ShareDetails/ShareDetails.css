@@ -12,8 +12,14 @@ button {
 .buy-button {
   background-color: #049328;
 }
+.buy-button:hover {
+  background-color: #005816;
+}
 .short-button {
   background-color: #f4511e;
+}
+.short-button:hover {
+  background-color: #b62f06;
 }
 
 #quantity-input {
