@@ -1,4 +1,4 @@
-ul {
+ul.nav-main {
   position: absolute;
   top: 0;
   right: 0;
@@ -10,17 +10,17 @@ ul {
   padding-bottom: 25%;
 }
 
-li{
+ul.nav-main li{
   display: block;
   margin: auto;
   width: 100%;
 }
 
-a {
+ul.nav-main a {
   color: white;
   font-size: 2em;
 }
 
-a.active {
+ul.nav-main a.active {
   color: #f4511e;
 }

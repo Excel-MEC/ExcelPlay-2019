@@ -1,0 +1,142 @@
+.ticker {
+	width: 100%;
+	background-color: #3e3e3e;
+	color: white;
+	border-top: 3px solid #0c7974;
+}
+.ticker .marquee {
+	width: 100%;
+	margin: 0 auto;
+	white-space: nowrap;
+	overflow: hidden;
+	box-sizing: border-box;
+	padding: 0.3em 0;
+}
+.ticker .marquee span.all-companies {
+	display: inline-block;
+	padding-left: 100%;
+	/* show the marquee just outside the paragraph */
+	animation: marquee 120s linear infinite;
+	font-size: 13px;
+	font-family: Raleway;
+	font-weight: bold;
+}
+.ticker .marquee span.all-companies .tickerCompany {
+	display: inline-block;
+	border-right: 1px solid #646464;
+}
+.ticker .marquee span.all-companies .tickerCompany, .ticker .marquee span.all-companies .tickerCompany .company-name, .ticker .marquee span.all-companies .tickerCompany .current-price, .ticker .marquee span.all-companies .tickerCompany .percentage-change {
+	margin-right: 6px;
+}
+.ticker .marquee span.all-companies .tickerCompany .current-price, .ticker .marquee span.all-companies .tickerCompany .percentage-change {
+	padding: 2px 7px;
+	display: inline-block;
+	border-radius: 5px;
+}
+.ticker .marquee span.all-companies .tickerCompany .current-price {
+	font-family: Roboto;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.ticker .marquee span.all-companies .tickerCompany .percentage-change {
+	font-family: "Roboto";
+	color: white;
+}
+.ticker .marquee span.all-companies .tickerCompany .percentage-change.positive-change {
+	background-color: #3f943f;
+}
+.ticker .marquee span.all-companies .tickerCompany .percentage-change.negative-change {
+	background-color: #ae4639;
+}
+.ticker .marquee span:hover {
+	animation-play-state: paused;
+}
+@keyframes marquee {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-100%, 0);
+	}
+}
+.companies-stock-data *:not(i) {
+	font-family: "Raleway";
+}
+.companies-stock-data .search-wrapper input[type=search] {
+	width: 100%;
+	padding: 8px 10px;
+	border: none;
+	border-radius: 4px;
+	background-color: #252525;
+	color: white;
+}
+.companies-stock-data .companies-list {
+	color: white;
+	margin-top: 7px;
+	max-height: 35vw;
+	overflow-y: auto;
+}
+.companies-stock-data .companies-list::-webkit-scrollbar {
+	background-color: transparent;
+}
+.companies-stock-data .companies-list::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+.companies-stock-data .companies-list::-webkit-scrollbar-thumb {
+	background-color: dimgrey;
+	border-radius: 5px;
+}
+.companies-stock-data .companies-list .company {
+	padding: 7px 6px;
+	border-bottom: 1px solid #3a3a3a;
+	cursor: pointer;
+}
+.companies-stock-data .companies-list .company:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.companies-stock-data .companies-list .company .row {
+	margin: 0 !important;
+}
+.companies-stock-data .companies-list .company .row .data {
+	margin-top: 0.67em;
+	font-size: 17px;
+}
+.companies-stock-data .companies-list .company .row .data .current-price, .companies-stock-data .companies-list .company .row .data .percentage-change, .companies-stock-data .companies-list .company .row .data .percentage-change span {
+	font-family: "Roboto";
+}
+.companies-stock-data .companies-list .company .row .data .current-price, .companies-stock-data .companies-list .company .row .data .percentage-change {
+	padding: 7px 15px;
+	display: inline-block;
+	border-radius: 5px;
+	margin-left: 0.4em;
+}
+.companies-stock-data .companies-list .company .row .data .current-price {
+	font-family: Roboto;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.companies-stock-data .companies-list .company .row .data .percentage-change.positive-change {
+	background-color: #3f943f;
+}
+.companies-stock-data .companies-list .company .row .data .percentage-change.negative-change {
+	background-color: #ae4639;
+}
+.companies-stock-data .companies-list .company .row .data .fa-arrow-circle-right {
+	float: right;
+	display: inline-block;
+	margin-top: 1em;
+	margin-right: 4px;
+}
+.graph-userdata {
+	z-index: -1;
+}
+.graph-userdata .user-data .row .col-lg-6 {
+	text-align: center;
+}
+.graph-userdata .user-data .row .col-lg-6 h1 {
+	color: #339d9c;
+	margin-bottom: 0px;
+}
+.graph-userdata .user-data .row .col-lg-6 h3 {
+	color: #339d9c;
+	margin-top: 6px;
+}
+

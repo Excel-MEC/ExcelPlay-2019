@@ -3,7 +3,7 @@ import './Navbar.css';
 
 const Navbar = () => {
   return (
-    <ul className="nav navbar-nav my-auto">
+    <ul className="nav navbar-nav my-auto nav-main">
       <li>
         <a href="/" className="active">
           <i className="fa fa-home" />
