@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import HomeHeader from './common/HomeHeader';
+import React from 'react';
+import HomeHeader from './common/HomeHeader/HomeHeader';
 import '../App.css';
+import Navbar from './common/Navbar/Navbar';
 
-class Home extends Component {
-  render() {
-    return (
-      <div>
-        <HomeHeader />
-      </div>
-    );
-  }
-}
+const Home = () => {
+  return (
+    <div>
+      <Navbar />
+      <HomeHeader />
+    </div>
+  );
+};
 
 export default Home;

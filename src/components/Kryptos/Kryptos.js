@@ -1,10 +1,8 @@
-import React, { Component } from "react";
-import "../../App.css";
+import React from 'react';
+import '../../App.css';
 
-class Kryptos extends Component {
-  render() {
-    return <div>KRYPTOS!!</div>;
-  }
-}
+const Kryptos = () => {
+  return <div>Kryptos</div>;
+};
 
 export default Kryptos;

@@ -1,0 +1,8 @@
+a {
+	display: block;
+	padding: 1em;
+	font-size: 1em;
+	color: white;
+	transform: skewX(-25deg);
+}
+

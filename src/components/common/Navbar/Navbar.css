@@ -1,0 +1,26 @@
+ul.nav-main {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 5%;
+  height: 100%;
+  padding-top: 25%;
+  padding-bottom: 25%;
+}
+
+ul.nav-main li{
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+ul.nav-main a {
+  color: white;
+  font-size: 2em;
+}
+
+ul.nav-main a.active {
+  color: #f4511e;
+}
