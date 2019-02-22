@@ -3,5 +3,5 @@
   width: 100vw;
   background-color: #313131;
   color: white;
-  overflow: hidden;
+  overflow-x: hidden;
 }

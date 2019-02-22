@@ -5,7 +5,6 @@ import DalalBull from './components/Dalalbull/DalalBull';
 import Kryptos from './components/Kryptos/Kryptos';
 import Login from './components/Accounts/Login';
 import './App.css';
-
 const App = () => (
   <Router>
     <div className="main-background">

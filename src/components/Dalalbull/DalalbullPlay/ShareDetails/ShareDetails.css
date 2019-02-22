@@ -22,6 +22,10 @@ button {
   background-color: #b62f06;
 }
 
+.increment-button{
+  width: 3em;
+}
+
 #quantity-input {
   width: 100%;
   padding: 8px 10px;
@@ -29,4 +33,6 @@ button {
   border-radius: 4px;
   background-color: #252525;
   color: white;
+  display: flex;
+  flex-direction: row;
 }
