@@ -1,0 +1,32 @@
+button {
+  border: none;
+  width: 100px;
+  height: 35px;
+  border-radius: 30px;
+  font: 18px;
+  font-weight: bold;
+  margin: 10px;
+  color: white;
+}
+
+.buy-button {
+  background-color: #049328;
+}
+.buy-button:hover {
+  background-color: #005816;
+}
+.short-button {
+  background-color: #f4511e;
+}
+.short-button:hover {
+  background-color: #b62f06;
+}
+
+#quantity-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #252525;
+  color: white;
+}
