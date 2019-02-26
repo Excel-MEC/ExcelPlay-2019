@@ -1,6 +1,6 @@
 import React from 'react';
 import HomeHeader from './common/HomeHeader/HomeHeader';
-import '../App.css';
+import '../App.scss';
 import Navbar from './common/Navbar/Navbar';
 
 const Home = () => {

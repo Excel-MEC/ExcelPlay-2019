@@ -3,6 +3,7 @@ import {Route} from 'react-router-dom';
 import DalalbullHeader from './DalalbullHeader/DalalbullHeader';
 import DalalbullPlay from './DalalbullPlay/DalalbullPlay';
 import DalalbullRules from './DalalbullRules/DalalbullRules';
+import DalalbullRanklist from './DalalbullRanklist/DalalbullRanklist';
 
 class DalalBull extends Component {
   render() {
@@ -12,6 +13,7 @@ class DalalBull extends Component {
         <DalalbullHeader />
         <Route exact path={`${match.url}/`} component={DalalbullPlay}/>
         <Route path={`${match.url}/rules`} component={DalalbullRules}/>
+        <Route path={`${match.url}/ranklist`} component={DalalbullRanklist}/>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import './DalalbullHeader.css';
+import './DalalbullHeader.scss';
 
 const DalalbullHeader = () => {
   return (
@@ -21,7 +21,7 @@ const DalalbullHeader = () => {
 					      <a className="nav-link" href="/Dalalbull">History</a>
 				      </li>
 				      <li className="nav-item">
-					      <a className="nav-link" href="/Dalalbull">Ranklist</a>
+					      <a className="nav-link" href="/Dalalbull/ranklist">Ranklist</a>
 				      </li>
 			      </ul>
 		      </div>
