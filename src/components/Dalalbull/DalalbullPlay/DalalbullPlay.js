@@ -3,7 +3,7 @@ import Ticker from './Ticker/Ticker';
 import ListCompanies from './ListCompanies/ListCompanies';
 import ShareDetails from './ShareDetails/ShareDetails';
 import GraphAndStatus from './GraphAndStatus/GraphAndStatus';
-import './DalalbullPlay.css';
+import './DalalbullPlay.scss';
 
 const DalalbullPlay = () => {
   return (

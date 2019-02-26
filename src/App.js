@@ -4,7 +4,7 @@ import Home from './components/Home';
 import DalalBull from './components/Dalalbull/DalalBull';
 import Kryptos from './components/Kryptos/Kryptos';
 import Login from './components/Accounts/Login';
-import './App.css';
+import './App.scss';
 const App = () => (
   <Router>
     <div className="main-background">

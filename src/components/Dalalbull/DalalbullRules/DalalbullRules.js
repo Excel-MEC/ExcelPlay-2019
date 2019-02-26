@@ -1,5 +1,5 @@
 import React from 'react';
-import './DalalbullRules.css';
+import './DalalbullRules.scss';
 
 const DalalbullRules = () => {
   return (

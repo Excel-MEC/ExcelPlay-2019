@@ -1,31 +1,24 @@
-button {
-  border: none;
-  width: 100px;
-  height: 35px;
-  border-radius: 30px;
-  font: 18px;
-  font-weight: bold;
-  margin: 10px;
-  color: white;
-}
-
 .buy-button {
   background-color: #049328;
-}
-.buy-button:hover {
-  background-color: #005816;
+  &:hover {
+    background-color: #005816;
+  }
 }
 .short-button {
   background-color: #f4511e;
+  &:hover {
+    background-color: #b62f06;
+  }
 }
-.short-button:hover {
-  background-color: #b62f06;
-}
-
-.increment-button{
+.increment-button {
   width: 3em;
+  border: .2em white solid;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  color: white;
+  height: 100%;
 }
-
 #quantity-input {
   width: 100%;
   padding: 8px 10px;

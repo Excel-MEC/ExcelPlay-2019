@@ -1,0 +1,162 @@
+@keyframes marquee {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-100%, 0);
+	}
+}
+.ticker {
+	width: 100%;
+	background-color: #3e3e3e;
+	color: white;
+	border-top: 3px solid #0c7974;
+	.marquee {
+		width: 100%;
+		margin: 0 auto;
+		white-space: nowrap;
+		overflow: hidden;
+		box-sizing: border-box;
+		padding: 0.3em 0;
+		span.all-companies {
+			display: inline-block;
+			padding-left: 100%;
+			animation: marquee 120s linear infinite;
+			font-size: 13px;
+			font-family: Raleway;
+			font-weight: bold;
+			.tickerCompany {
+				display: inline-block;
+				border-right: 1px solid #646464;
+				margin-right: 6px;
+				.company-name {
+					margin-right: 6px;
+				}
+				.current-price {
+					margin-right: 6px;
+					padding: 2px 7px;
+					display: inline-block;
+					border-radius: 5px;
+					font-family: Roboto;
+					background-color: rgba(0, 0, 0, 0.3);
+				}
+				.percentage-change {
+					margin-right: 6px;
+					padding: 2px 7px;
+					display: inline-block;
+					border-radius: 5px;
+					font-family: "Roboto";
+					color: white;
+				}
+				.percentage-change.positive-change {
+					background-color: #3f943f;
+				}
+				.percentage-change.negative-change {
+					background-color: #ae4639;
+				}
+			}
+		}
+		span {
+			&:hover {
+				animation-play-state: paused;
+			}
+		}
+	}
+}
+.companies-stock-data {
+	* {
+		&:not(i) {
+			font-family: "Raleway";
+		}
+	}
+	.search-wrapper {
+		input[type=search] {
+			width: 100%;
+			padding: 8px 10px;
+			border: none;
+			border-radius: 4px;
+			background-color: #252525;
+			color: white;
+		}
+	}
+	.companies-list {
+		color: white;
+		margin-top: 7px;
+		max-height: 35vw;
+		overflow-y: auto;
+		&::-webkit-scrollbar {
+			background-color: transparent;
+		}
+		&::-webkit-scrollbar-track {
+			background-color: transparent;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: dimgrey;
+			border-radius: 5px;
+		}
+		.company {
+			padding: 7px 6px;
+			border-bottom: 1px solid #3a3a3a;
+			cursor: pointer;
+			&:hover {
+				background-color: rgba(0, 0, 0, 0.1);
+			}
+			.row {
+				margin: 0 !important;
+				.data {
+					margin-top: 0.67em;
+					font-size: 17px;
+					.current-price {
+						font-family: "Roboto";
+						padding: 7px 15px;
+						display: inline-block;
+						border-radius: 5px;
+						margin-left: 0.4em;
+						font-family: Roboto;
+						background-color: rgba(0, 0, 0, 0.3);
+					}
+					.percentage-change {
+						font-family: "Roboto";
+						padding: 7px 15px;
+						display: inline-block;
+						border-radius: 5px;
+						margin-left: 0.4em;
+						span {
+							font-family: "Roboto";
+						}
+					}
+					.percentage-change.positive-change {
+						background-color: #3f943f;
+					}
+					.percentage-change.negative-change {
+						background-color: #ae4639;
+					}
+					.fa-arrow-circle-right {
+						float: right;
+						display: inline-block;
+						margin-top: 1em;
+						margin-right: 4px;
+					}
+				}
+			}
+		}
+	}
+}
+.graph-userdata {
+	z-index: -1;
+	.user-data {
+		.row {
+			.col-lg-6 {
+				text-align: center;
+				h1 {
+					color: #339d9c;
+					margin-bottom: 0px;
+				}
+				h3 {
+					color: #339d9c;
+					margin-top: 6px;
+				}
+			}
+		}
+	}
+}
