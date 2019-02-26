@@ -1,0 +1,79 @@
+.companies-stock-data {
+  * {
+    &:not(i) {
+      font-family: "Raleway";
+    }
+  }
+  .search-wrapper {
+    input[type=search] {
+      width: 100%;
+      padding: 8px 10px;
+      border: none;
+      border-radius: 4px;
+      background-color: #252525;
+      color: white;
+    }
+  }
+  .companies-list {
+    color: white;
+    margin-top: 7px;
+    max-height: 35vw;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: dimgrey;
+      border-radius: 5px;
+    }
+    .company {
+      padding: 7px 6px;
+      border-bottom: 1px solid #3a3a3a;
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      .row {
+        margin: 0 !important;
+        .data {
+          margin-top: 0.67em;
+          font-size: 17px;
+          .current-price {
+            font-family: "Roboto";
+            padding: 7px 15px;
+            display: inline-block;
+            border-radius: 5px;
+            margin-left: 0.4em;
+            font-family: Roboto;
+            background-color: rgba(0, 0, 0, 0.3);
+          }
+          .percentage-change {
+            font-family: "Roboto";
+            padding: 7px 15px;
+            display: inline-block;
+            border-radius: 5px;
+            margin-left: 0.4em;
+            span {
+              font-family: "Roboto";
+            }
+          }
+          .percentage-change.positive-change {
+            background-color: #3f943f;
+          }
+          .percentage-change.negative-change {
+            background-color: #ae4639;
+          }
+          .fa-arrow-circle-right {
+            float: right;
+            display: inline-block;
+            margin-top: 1em;
+            margin-right: 4px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './GraphAndStatus.scss';
 
 const GraphAndStatus = () => {
   return (

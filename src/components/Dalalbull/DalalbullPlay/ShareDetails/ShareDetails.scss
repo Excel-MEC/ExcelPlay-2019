@@ -1,31 +1,42 @@
-.buy-button {
-  background-color: #049328;
-  &:hover {
-    background-color: #005816;
+.share-details{
+  ul{
+    a.nav-link{
+      background: none;
+      color: #ffffff;
+    }
   }
-}
-.short-button {
-  background-color: #f4511e;
-  &:hover {
-    background-color: #b62f06;
+  .buy-button {
+    background-color: #049328;
+    &:hover {
+      background-color: #005816;
+    }
   }
-}
-.increment-button {
-  width: 3em;
-  border: .2em white solid;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  color: white;
-  height: 100%;
-}
-#quantity-input {
-  width: 100%;
-  padding: 8px 10px;
-  border: none;
-  border-radius: 4px;
-  background-color: #252525;
-  color: white;
-  display: flex;
-  flex-direction: row;
+  .short-button {
+    background-color: #f4511e;
+    &:hover {
+      background-color: #b62f06;
+    }
+  }
+  .increment-button {
+    width: 3em;
+    border: .2em white solid;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    color: white;
+    height: 100%;
+  }
+  #quantity-input {
+    width: 100%;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #252525;
+    color: white;
+    display: flex;
+    flex-direction: row;
+  }
+  .quantity-wrapper{
+    font-size: 2em;
+  }
 }

@@ -4,7 +4,25 @@ import './ShareDetails.scss';
 const ShareDetails = () => {
   const [quantity, setQuantity] = useState(0);
   return (
-    <div>
+    <div className="share-details">
+      <ul className="nav nav-tabs">
+        <li className="nav-item">
+          <a className="nav-link active" href="/dalalbull/">
+            Buy
+          </a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/dalalbull/">
+            Sell
+          </a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/dalalbull/">
+            History
+          </a>
+        </li>
+      </ul>
+      <br />
       <div className="quantity-wrapper">
         <div className="row">
           <div className="col-md-6">
@@ -43,12 +61,18 @@ const ShareDetails = () => {
           </div>
         </div>
       </div>
-      <button type="button" className="btn btn-success">
-        BUY
-      </button>
-      <button type="button" className="btn btn-danger">
-        SHORT
-      </button>
+      <div className="row">
+        <div className="col-md-6">
+          <button type="button" className="btn btn-success btn-block my-2">
+            BUY
+          </button>
+        </div>
+        <div className="col-md-6">
+          <button type="button" className="btn btn-danger btn-block my-2">
+            SHORT
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

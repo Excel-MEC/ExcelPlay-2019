@@ -3,7 +3,7 @@ import './DalalbullRules.scss';
 
 const DalalbullRules = () => {
   return (
-    <div className="content">
+    <div className="rules">
       <h2>Rules and Event Format</h2>
       <ol>
         <li>

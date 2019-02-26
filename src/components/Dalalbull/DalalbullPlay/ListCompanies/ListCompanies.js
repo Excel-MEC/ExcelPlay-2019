@@ -1,4 +1,5 @@
 import React from 'react';
+import './ListCompanies.scss';
 
 const Company = () => {
   return (
