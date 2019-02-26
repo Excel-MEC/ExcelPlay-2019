@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ListCompanies.scss';
 
 const Company = () => {
@@ -29,7 +29,7 @@ const Company = () => {
 
 const allCompany = () => {
   const allc = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 10; i += 1) {
     allc.push(<Company />);
   }
 
@@ -37,12 +37,18 @@ const allCompany = () => {
 };
 
 const ListCompanies = () => {
+  const [searchTerm, setSearchTerm] = useState('');
   return (
     <div className="companies-stock-data">
       <div className="search-wrapper">
         <input
           type="search"
           name="search"
+          value={searchTerm}
+          onChange={e => {
+            e.preventDefault();
+            setSearchTerm(e.target.value);
+          }}
           id="search"
           className="search-input"
           placeholder="Search"
