@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ListCompanies.scss';
 
 const Company = () => {
@@ -27,7 +27,9 @@ const Company = () => {
   );
 };
 
-const allCompany = () => {
+const allCompany = companies => {
+  // TODO: Remove the log and use the data to set the props of <Company />
+  console.log(companies);
   const allc = [];
   for (let i = 0; i < 10; i += 1) {
     allc.push(<Company />);
@@ -38,6 +40,16 @@ const allCompany = () => {
 
 const ListCompanies = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [companies, setCompanies] = useState([]);
+  useEffect(() => {
+    // TODO: remove the follwing line
+    setCompanies([]);
+    // TODO: fetch initial list of companies here and set using setCompanies
+  });
+  const search = () => {
+    // TODO: Remove the log and search; set the data in companies using setCompanies
+    console.log('searching');
+  };
   return (
     <div className="companies-stock-data">
       <div className="search-wrapper">
@@ -46,15 +58,17 @@ const ListCompanies = () => {
           name="search"
           value={searchTerm}
           onChange={e => {
-            e.preventDefault();
             setSearchTerm(e.target.value);
+          }}
+          onKeyPress={e => {
+            if (e.key === 'Enter') search();
           }}
           id="search"
           className="search-input"
           placeholder="Search"
         />
       </div>
-      <div className="companies-list">{allCompany()}</div>
+      <div className="companies-list">{allCompany(companies)}</div>
     </div>
   );
 };
