@@ -1,4 +1,5 @@
 import React from 'react';
+import './Ticker.scss';
 
 const TickerItem = () => {
   return (

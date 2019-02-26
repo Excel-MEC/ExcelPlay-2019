@@ -1,10 +1,18 @@
-.dalalbullHeader a {
-	display: block;
-	padding-left: 2em;
-	padding-right: 2em;
-	background: red;
-	font-size: 1.5em;
-	color: white;
-	clip-path: polygon(0 0, 80% 0, 100% 100%, 20% 100%);
+.dalalbullHeader {
+  a {
+    display: block;
+    padding-left: 2em;
+    padding-right: 2em;
+    background: red;
+    font-size: 1.5em;
+    color: white;
+    clip-path: polygon(0 0, 80% 0, 100% 100%, 20% 100%);
+  }
+  img {
+    width: 5em;
+	  margin: 10px 0 0 10px;
+  }
+	h1{
+		padding: 15px;
+	}
 }
-
