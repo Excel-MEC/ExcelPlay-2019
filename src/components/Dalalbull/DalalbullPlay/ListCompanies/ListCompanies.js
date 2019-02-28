@@ -5,7 +5,7 @@ const Company = () => {
   return (
     <div className="company">
       <div className="row">
-        <div width="100%">
+        <div className="c-details">
           <div className="float-left">
             <h1>Nifty50</h1>
             <p>Shares of Nifty50</p>
