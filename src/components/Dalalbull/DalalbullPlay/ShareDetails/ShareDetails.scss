@@ -1,20 +1,10 @@
+@import "../../../../global";
+
 .share-details{
   ul{
     a.nav-link{
       background: none;
       color: #ffffff;
-    }
-  }
-  .buy-button {
-    background-color: #049328;
-    &:hover {
-      background-color: #005816;
-    }
-  }
-  .short-button {
-    background-color: #f4511e;
-    &:hover {
-      background-color: #b62f06;
     }
   }
   .increment-button {

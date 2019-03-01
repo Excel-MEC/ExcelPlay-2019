@@ -1,3 +1,5 @@
+@import "../../../../global";
+
 .companies-stock-data {
   * {
     &:not(i) {
@@ -28,6 +30,9 @@
     &::-webkit-scrollbar-thumb {
       background-color: dimgrey;
       border-radius: 5px;
+    }
+    .c-details {
+      width: 100%;
     }
     .company {
       padding: 7px 6px;
@@ -61,10 +66,10 @@
             }
           }
           .percentage-change.positive-change {
-            background-color: #3f943f;
+            background-color: $secondary;
           }
           .percentage-change.negative-change {
-            background-color: #ae4639;
+            background-color: $primary;
           }
           .fa-arrow-circle-right {
             float: right;

@@ -1,3 +1,5 @@
+@import "../../../../global";
+
 @keyframes marquee {
   0% {
     transform: translate(0, 0);
@@ -10,7 +12,7 @@
   width: 100%;
   background-color: #3e3e3e;
   color: white;
-  border-top: 3px solid #0c7974;
+  border-top: 3px solid $secondary-alt;
   .marquee {
     width: 100%;
     margin: 0 auto;
@@ -49,10 +51,10 @@
           color: white;
         }
         .percentage-change.positive-change {
-          background-color: #3f943f;
+          background-color: $secondary;
         }
         .percentage-change.negative-change {
-          background-color: #ae4639;
+          background-color: $primary;
         }
       }
     }
