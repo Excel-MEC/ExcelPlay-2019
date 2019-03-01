@@ -1,9 +1,11 @@
+@import "../../../global";
+
 .dalalbullHeader {
   a {
     display: block;
     padding-left: 2em;
     padding-right: 2em;
-    background: red;
+    background: $primary;
     font-size: 1.5em;
     color: white;
     clip-path: polygon(0 0, 80% 0, 100% 100%, 20% 100%);

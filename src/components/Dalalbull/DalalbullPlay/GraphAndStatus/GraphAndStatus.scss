@@ -1,3 +1,5 @@
+@import "../../../../global";
+
 .graph-userdata {
   z-index: -1;
   .user-data {
@@ -5,11 +7,11 @@
       .col-lg-6 {
         text-align: center;
         h1 {
-          color: #339d9c;
+          color: $secondary-alt;
           margin-bottom: 0px;
         }
         h3 {
-          color: #339d9c;
+          color: $secondary-alt;
           margin-top: 6px;
         }
       }

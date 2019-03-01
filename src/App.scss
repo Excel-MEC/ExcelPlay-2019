@@ -1,7 +1,13 @@
+@import "./global";
+
 .main-background {
   height: 100vh;
   width: 100vw;
-  background-color: #313131;
+  background-color: $bg;
   color: white;
   overflow-x: hidden;
+}
+
+.spinner-border{
+  position: absolute;
 }
