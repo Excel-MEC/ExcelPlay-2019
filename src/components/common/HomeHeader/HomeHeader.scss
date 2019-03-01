@@ -1,3 +1,5 @@
+@import "../../../global";
+
 .big-header-bg {
 	height: 20vh;
 	background-color: black;
@@ -10,7 +12,7 @@
 	justify-content: center;
 	width: 60vw;
 	height: 20vh;
-	background-color: #f4511e;
+	background-color: $primary;
 	clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
 	-webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
 }
@@ -19,7 +21,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #ff6e40;
+	background-color: $primary-alt;
 	width: 50vw;
 	height: 25vh;
 	clip-path: polygon(0 0, 100% 0, 85% 120%, 15% 120%);

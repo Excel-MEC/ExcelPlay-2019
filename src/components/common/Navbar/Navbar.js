@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.scss';
 
 const Navbar = () => {
@@ -10,9 +11,9 @@ const Navbar = () => {
         </a>
       </li>
       <li>
-        <a href="/">
+        <Link to="/Dalalbull">
           <i className="fa fa-suitcase" />
-        </a>
+        </Link>
       </li>
       <li>
         <a href="/">
