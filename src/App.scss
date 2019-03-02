@@ -1,4 +1,4 @@
-@import "./global";
+@import './global';
 
 .main-background {
   height: 100vh;
@@ -8,6 +8,8 @@
   overflow-x: hidden;
 }
 
-.spinner-border{
-  position: absolute;
+.spinner-border {
+  position: fixed;
+  top: 50%;
+  left: 50%;
 }
