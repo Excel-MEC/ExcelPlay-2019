@@ -33,7 +33,11 @@ const ShareDetails = () => {
               <div>
                 <button
                   className="btn increment-button"
-                  onClick={e => setQuantity(quantity - 1)}
+                  onClick={e => {
+                    if (quantity !== 0) {
+                      return setQuantity(quantity - 1);
+                    }
+                  }}
                 >
                   <icon className="fa fa-minus" />
                 </button>
@@ -46,7 +50,7 @@ const ShareDetails = () => {
                   className="quantity-input text-center"
                   placeholder="Quantity"
                   value={quantity}
-                  onChange={e => setQuantity(e.target.value)}
+                  onChange={e => setQuantity(parseInt(e.target.value|0))}
                 />
               </div>
               <div>

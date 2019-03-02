@@ -29,4 +29,10 @@
   .quantity-wrapper{
     font-size: 2em;
   }
+  .btn-success{
+    background: $secondary;
+  }
+  .btn-danger{
+    background: $primary;
+  }
 }

@@ -7,8 +7,8 @@ const data = {
   datasets: [
     {
       data: [96, 300, 196, 760, 990, 450, 780, 1200, 600, 450],
-      label: 'Africa',
-      borderColor: '#ff0000',
+      label: 'Net Worth',
+      borderColor: '#ff6e40',
       fill: false,
       lineTension: 0
     }
