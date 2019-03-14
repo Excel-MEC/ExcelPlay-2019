@@ -1,5 +1,8 @@
 @import "../../../../global";
 
+.company{
+  background: $bg;
+}
 .companies-stock-data {
   * {
     &:not(i) {
@@ -19,7 +22,7 @@
   .companies-list {
     color: white;
     margin-top: 7px;
-    max-height: 35vw;
+    max-height: 38vw;
     overflow-y: auto;
     &::-webkit-scrollbar {
       background-color: transparent;
