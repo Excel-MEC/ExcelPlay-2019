@@ -3,7 +3,7 @@ import './Ticker.scss';
 
 const TickerItem = () => {
   return (
-    <span className="tickerCompany">
+    <span className={" tickerCompany"}>
       <span className="company-name">Nifty50</span>
       <span className="current-price">4200</span>
       <span className="percentage-change positive-change">
@@ -17,7 +17,7 @@ const TickerItem = () => {
 const allTickers = () => {
 	const tickers = [];
 	for(let i=0; i<10; i++){
-		tickers.push(<TickerItem/>);
+		tickers.push(<TickerItem key={i}/>);
 	}
 	return tickers.map(e => (e));
 };

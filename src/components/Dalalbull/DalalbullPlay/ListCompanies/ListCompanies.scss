@@ -42,7 +42,7 @@
       border-bottom: 1px solid #3a3a3a;
       cursor: pointer;
       &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: $bg-alt;
       }
       .row {
         margin: 0 !important;
