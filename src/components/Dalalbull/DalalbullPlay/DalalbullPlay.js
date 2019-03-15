@@ -13,10 +13,10 @@ const DalalbullPlay = () => {
       <br />
       <div className="content">
         <div className="row">
-          <div className="col-md-4">
+          <div className="col-md-3">
             <ListCompanies />
           </div>
-          <div className="col-md-4">
+          <div className="col-md-5">
             <ShareDetails />
           </div>
           <div className="col-md-4">
