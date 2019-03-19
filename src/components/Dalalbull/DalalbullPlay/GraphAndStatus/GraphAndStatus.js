@@ -15,11 +15,59 @@ const data = {
   ],
 };
 
+const options = {
+  tooltips: {
+    displayColors: false,
+    backgroundColor: "black",
+    enabled: true,
+    mode: "single",
+    bodyFontSize: 15,
+    bodyFontFamily: "Gamja Flower",
+    bodyFontColor: "white",
+    yPadding: 5,
+    xPadding: 15,
+    cornerRadius: 4,
+    bodyFontStyle: "bold",
+  },
+  scales: {
+    yAxes: [
+      {
+        gridLines: {
+          drawBorder: true,
+          color: "grey",
+          zeroLineColor: "white"
+        },
+        ticks: {
+          fontColor: "white",
+          fontFamily: "Gamja Flower",
+          fontSize: 15,
+          fontStyle: "bold"
+        }
+      }
+    ],
+    xAxes: [
+      {
+        gridLines: {
+          drawBorder: true,
+          color: "grey",
+          zeroLineColor: "white"
+        },
+        ticks: {
+          fontColor: "white",
+          fontFamily: "Gamja Flower",
+          fontSize: 12,
+          fontStyle: "bold"
+        }
+      }
+    ]
+  }
+};
+
 const GraphAndStatus = () => {
   return (
     <div className="graph-userdata">
       <div className="graph">
-        <Line data={data} width={100} height={50} />
+        <Line data={data} width={100} height={50} options={options}/>
       </div>
       <br />
       <div className=" user-data">
