@@ -19,7 +19,7 @@ const Buy = props => {
             <div>Buy Nifty 50</div>
             <br />
             <div className="d-flex">
-              <div className="button">
+              <div className="button">]
                 <button
                   className="btn increment-button"
                   onClick={() => {
