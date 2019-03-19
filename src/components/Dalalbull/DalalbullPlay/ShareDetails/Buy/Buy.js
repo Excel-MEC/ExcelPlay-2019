@@ -19,7 +19,7 @@ const Buy = props => {
             <div>Buy Nifty 50</div>
             <br />
             <div className="d-flex">
-              <div>
+              <div className="button">
                 <button
                   className="btn increment-button"
                   onClick={() => {
@@ -31,7 +31,7 @@ const Buy = props => {
                   <i className="fa fa-minus" />
                 </button>
               </div>
-              <div>
+              <div className="align-middle">
                 <input
                   type="number"
                   name="quantity"
@@ -61,14 +61,16 @@ const Buy = props => {
                 id="pending"
                 onChange={e => toggleDisable(e, setDisable)}
               />
-              <label htmlFor="pending">Pending</label>
+              <label htmlFor="pending" className="small">Pending</label>
               <br />
               <div className={pendingDisable.toString()}>
-                <span className="pending">
-                  BUY THE STOCK ONLY WHEN IT REACHES
-                </span>
+                <div className="small">
+                  <span className="pending small">
+                    BUY THE STOCK ONLY WHEN IT REACHES
+                  </span>
+                </div>
                 <div className="d-flex" id="pending_block">
-                  <div>
+                  <div className="button">
                     <button
                       className="btn increment-button"
                       disabled={pendingDisable}

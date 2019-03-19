@@ -20,7 +20,7 @@ const GameHeader = (props) => {
           <div className="col-md-4">
             <div className="d-flex">
 	            <div className="excel-play-logo">
-		            <img src={excelPlayLogo} className="img img-fluid" alt="" />
+		            <img src={excelPlayLogo} className="img img-fluid play-logo" alt="" />
 	            </div>
               <div>
                 <img src={props.icon} className="img img-fluid" alt="" />

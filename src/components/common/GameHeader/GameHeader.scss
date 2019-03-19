@@ -1,9 +1,10 @@
 @import "../../../global";
 
 .gameHeader {
-  border-bottom: .4em solid $primary;
+  border-bottom: .4em solid $primary-alt;
   .excel-play-logo{
-    background: $primary;
+    background: $primary-alt;
+    padding: 0 .7em 0 .7em;
   }
   a {
     display: block;
@@ -16,10 +17,15 @@
   }
   img {
     width: 6em;
-    margin: 10px 0 0 10px;
+    margin-top: 1em;
+    padding: .5em;
+  }
+  img.play-logo{
+    padding: 0;
+    margin-top: 1.5em;
   }
   h1{
     color: $primary;
-    padding: 15px;
+    padding: .7em .2em .5em .2em;
   }
 }
