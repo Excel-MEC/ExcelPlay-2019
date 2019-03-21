@@ -1,32 +1,20 @@
 @import "../../../../global";
 
 .share-details{
+  .h2{
+    color: $primary;
+  }
+  .h1, h2{
+    padding-bottom: .3em;
+  }
   ul{
-    a.nav-link{
+    span.nav-link{
       background: none;
       color: #ffffff;
+      cursor: pointer;
     }
-  }
-  .increment-button {
-    width: 3em;
-    border: .2em white solid;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    color: white;
-    height: 100%;
-  }
-  #quantity-input {
-    width: 100%;
-    padding: 8px 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #252525;
-    color: white;
-    display: flex;
-    flex-direction: row;
-  }
-  .quantity-wrapper{
-    font-size: 2em;
+    span.nav-link.active:hover{
+      color: black;
+    }
   }
 }

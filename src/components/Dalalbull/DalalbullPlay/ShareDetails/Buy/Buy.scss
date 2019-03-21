@@ -1,0 +1,64 @@
+@import "../../../../../global";
+
+.buy{
+  margin: 1em;
+  button:hover{
+    opacity: .9;
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .button{
+    z-index: 2;
+  }
+  .increment-button {
+    border: .2em white solid;
+    border-radius: 50%;
+    color: black;
+    background: white;
+    margin-left: -1.75em;
+    margin-right: -1.75em;
+    width: 4em;
+    height: 4em;
+  }
+  #quantity-input {
+    width: 100%;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #252525;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+  }
+  .quantity-wrapper{
+    font-size: 2em;
+  }
+  .btn-success{
+    background: $secondary;
+    border-radius: 3em;
+  }
+  .btn-danger{
+    background: $primary;
+  }
+
+  .pending{
+    .small{
+      font-size: .6em;
+    }
+    .true{
+      opacity:.3;
+    }
+  }
+
+  .details table{
+    font-size:.7em;
+    th{
+      color: $secondary;
+    }
+  }
+}
