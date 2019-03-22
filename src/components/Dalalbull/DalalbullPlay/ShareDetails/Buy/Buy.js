@@ -19,8 +19,9 @@ const Buy = props => {
             <div>Buy Nifty 50</div>
             <br />
             <div className="d-flex">
-              <div className="button">]
+              <div className="button">
                 <button
+                  type="button"
                   className="btn increment-button"
                   onClick={() => {
                     if (props.quantity !== 0) {
@@ -46,6 +47,7 @@ const Buy = props => {
               </div>
               <div>
                 <button
+                  type="button"
                   className="btn increment-button"
                   onClick={e => props.setQuantity(props.quantity + 1)}
                 >
@@ -61,7 +63,9 @@ const Buy = props => {
                 id="pending"
                 onChange={e => toggleDisable(e, setDisable)}
               />
-              <label htmlFor="pending" className="small">Pending</label>
+              <label htmlFor="pending" className="small">
+                Pending
+              </label>
               <br />
               <div className={pendingDisable.toString()}>
                 <div className="small">
@@ -72,6 +76,7 @@ const Buy = props => {
                 <div className="d-flex" id="pending_block">
                   <div className="button">
                     <button
+                      type="button"
                       className="btn increment-button"
                       disabled={pendingDisable}
                       onClick={e => {
@@ -93,15 +98,16 @@ const Buy = props => {
                       disabled={pendingDisable}
                       value={props.quantity}
                       onChange={e =>
-                        props.setQuantity(parseInt(e.target.value | 0))
+                        props.setQuantity(parseInt(e.target.value | 0, 10))
                       }
                     />
                   </div>
                   <div>
                     <button
                       className="btn increment-button"
+                      type="button"
                       disabled={pendingDisable}
-                      onClick={e => props.setQuantity(props.quantity + 1)}
+                      onClick={() => props.setQuantity(props.quantity + 1)}
                     >
                       <i className="fa fa-plus" />
                     </button>
