@@ -2,6 +2,9 @@
 
 .graph-userdata {
   z-index: -1;
+  padding-top: 2em;
+  background: $bg-alt;
+  height: 100%;
   .user-data {
     .row {
       .col-lg-6 {

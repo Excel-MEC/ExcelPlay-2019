@@ -21,7 +21,7 @@ const SharesInHand = () => {
           <td>80</td>
           <td>1820.00</td>
           <td>3.62</td>
-          <td><button className="btn btn-info">Sell</button></td>
+          <td><button className="btn">Sell</button></td>
         </tr>
         </tbody>
       </table>

@@ -1,6 +1,12 @@
+@import "../../../../../global";
+
 .sharesInHand {
   font-size: 1.5em;
   thead, tbody{
     font-size: .6em;
+    .btn{
+      color: white;
+      background: $primary-alt;
+    }
   }
 }

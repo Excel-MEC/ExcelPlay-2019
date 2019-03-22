@@ -1,0 +1,25 @@
+@import "../../../../../global";
+
+.buy{
+  margin: 1em;
+  button:hover{
+    opacity: .9;
+  }
+  .quantity-wrapper{
+    font-size: 2em;
+  }
+  .btn-success{
+    background: $secondary;
+    border-radius: 3em;
+  }
+  .btn-danger{
+    background: $primary;
+  }
+
+  .details table{
+    font-size:.7em;
+    th{
+      color: $secondary;
+    }
+  }
+}

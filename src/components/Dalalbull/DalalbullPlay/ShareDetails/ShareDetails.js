@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './ShareDetails.scss';
 import Stock from './Stock/Stock';
-import Trade from './Trade/Trade';
+import Buy from './Buy/Buy'
+import Sell from './Sell/Sell';
 import SharesInHand from './SharesInHand/SharesInHand';
 
 const tablist = {
@@ -16,9 +17,9 @@ const TabContent = ({ activeTab }) => {
     case tablist.stock:
       return <Stock />;
     case tablist.buy:
-      return <Trade type="buy" />;
+      return <Buy />;
     case tablist.sell:
-      return <Trade type="sell" />;
+      return <Sell />;
     case tablist.sharesInHand:
       return <SharesInHand />;
     default:

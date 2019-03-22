@@ -1,9 +1,10 @@
 @import "../../../../global";
 
 .company{
-  background: $bg;
+  background: $bg-alt;
 }
 .companies-stock-data {
+  padding-top: 2em;
   * {
     &:not(i) {
       font-family: "Raleway";
@@ -42,7 +43,7 @@
       border-bottom: 1px solid #3a3a3a;
       cursor: pointer;
       &:hover {
-        background-color: $bg-alt;
+        background-color: $bg;
       }
       .row {
         margin: 0 !important;
