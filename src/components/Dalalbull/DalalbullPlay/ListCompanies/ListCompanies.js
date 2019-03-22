@@ -27,6 +27,7 @@ const Company = () => {
   );
 };
 
+// eslint-disable-next-line
 const allCompany = companies => {
   // TODO: Remove the log and use the data to set the props of <Company />
   const allc = [];

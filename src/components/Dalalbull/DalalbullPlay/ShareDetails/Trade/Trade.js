@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Buy.scss';
+import './Trade.scss';
 
 const toggleDisable = (e, setDisable) => {
   if (e.target.checked) {
@@ -9,22 +9,25 @@ const toggleDisable = (e, setDisable) => {
   }
 };
 
-const Buy = props => {
-  const [pendingDisable, setDisable] = useState(true);
+const Trade = ({ type }) => {
+  const [pendingDisabled, setPendingDisabled] = useState(true);
+  const [quantity, setQuantity] = useState(0);
+  const [price, setPrice] = useState(0);
   return (
     <div className="buy">
       <div className="quantity-wrapper">
         <div className="row">
           <div className="col-md-6">
-            <div>Buy Nifty 50</div>
+            <div>{type === 'buy' ? 'Buy' : 'Sell'} Nifty 50</div>
             <br />
             <div className="d-flex">
-              <div className="button">]
+              <div className="button">
                 <button
+                  type="button"
                   className="btn increment-button"
                   onClick={() => {
-                    if (props.quantity !== 0) {
-                      return props.setQuantity(props.quantity - 1);
+                    if (quantity > 0) {
+                      setQuantity(quantity - 1);
                     }
                   }}
                 >
@@ -38,16 +41,15 @@ const Buy = props => {
                   id="quantity-input"
                   className="quantity-input text-center"
                   placeholder="Quantity"
-                  value={props.quantity}
-                  onChange={e =>
-                    props.setQuantity(parseInt(e.target.value | 0))
-                  }
+                  value={quantity}
+                  onChange={e => setQuantity(parseInt(e.target.value, 10))}
                 />
               </div>
               <div>
                 <button
+                  type="button"
                   className="btn increment-button"
-                  onClick={e => props.setQuantity(props.quantity + 1)}
+                  onClick={() => setQuantity(quantity + 1)}
                 >
                   <i className="fa fa-plus" />
                 </button>
@@ -59,30 +61,19 @@ const Buy = props => {
               <input
                 type="checkbox"
                 id="pending"
-                onChange={e => toggleDisable(e, setDisable)}
+                onChange={() => setPendingDisabled(!pendingDisabled)}
               />
-              <label htmlFor="pending" className="small">Pending</label>
+              <label htmlFor="pending" className="small">
+                Pending
+              </label>
               <br />
-              <div className={pendingDisable.toString()}>
+              <div className={pendingDisabled.toString()}>
                 <div className="small">
                   <span className="pending small">
                     BUY THE STOCK ONLY WHEN IT REACHES
                   </span>
                 </div>
                 <div className="d-flex" id="pending_block">
-                  <div className="button">
-                    <button
-                      className="btn increment-button"
-                      disabled={pendingDisable}
-                      onClick={e => {
-                        if (props.quantity !== 0) {
-                          return props.setQuantity(props.quantity - 1);
-                        }
-                      }}
-                    >
-                      <i className="fa fa-minus" />
-                    </button>
-                  </div>
                   <div>
                     <input
                       type="number"
@@ -90,33 +81,39 @@ const Buy = props => {
                       id="quantity-input"
                       className="quantity-input text-center"
                       placeholder="Quantity"
-                      disabled={pendingDisable}
-                      value={props.quantity}
-                      onChange={e =>
-                        props.setQuantity(parseInt(e.target.value | 0))
-                      }
+                      disabled={pendingDisabled}
+                      value={price}
+                      onChange={e => setPrice(parseInt(e.target.value, 10))}
                     />
-                  </div>
-                  <div>
-                    <button
-                      className="btn increment-button"
-                      disabled={pendingDisable}
-                      onClick={e => props.setQuantity(props.quantity + 1)}
-                    >
-                      <i className="fa fa-plus" />
-                    </button>
                   </div>
                 </div>
               </div>
             </span>
-            <div className="col-md-6">
-              <button
-                type="button"
-                className="btn btn-success btn-lg btn-block my-2"
-              >
-                BUY
-              </button>
-            </div>
+            {type === 'buy' ? (
+              <div className="col-md-6">
+                <button
+                  type="button"
+                  className="btn btn-success btn-lg btn-block my-2"
+                >
+                  BUY
+                </button>
+              </div>
+            ) : (
+              <div className="col-md-6">
+                <button
+                  type="button"
+                  className="btn btn-success btn-lg btn-block my-2"
+                >
+                  Sell
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-success btn-lg btn-block my-2"
+                >
+                  Short Sell
+                </button>
+              </div>
+            )}
           </div>
           <div className="col-md-6 details">
             <table className="table table-borderless">
@@ -146,4 +143,4 @@ const Buy = props => {
   );
 };
 
-export default Buy;
+export default Trade;
