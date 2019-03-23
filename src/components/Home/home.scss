@@ -1,13 +1,37 @@
 @import '../../global';
 
 .events {
-  margin: 20%;
+  margin: 10% 0 0 0;
+  // background-color: crimson;
 }
 
 .cell {
   cursor: pointer;
   padding: 30px;
   color: white;
-  font-weight: 700;
-  font-size: 1.5em;
+  font-weight: 800;
+  font-size: 1.7em;
+  // background-color: yellow;
+  color: crimson;
+}
+
+// Event logo
+.dalalPic {
+  width: 4em;
+  margin: 3%;
+}
+
+.krypPic {
+  width: 2em;
+  margin: 3%;
+}
+
+.hashPic {
+  width: 3em;
+  margin: 3%;
+}
+
+.echoPic {
+  width: 4em;
+  margin: 2%;
 }
