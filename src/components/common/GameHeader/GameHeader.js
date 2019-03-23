@@ -23,7 +23,7 @@ const GameHeader = (props) => {
 		            <img src={excelPlayLogo} className="img img-fluid play-logo" alt="" />
 	            </div>
               <div>
-                <img src={props.icon} className="img img-fluid" alt="" />
+                <img src={props.icon} className="img img-fluid game-logo" alt="" />
               </div>
               <div>
                 <h1>{props.gName}</h1>

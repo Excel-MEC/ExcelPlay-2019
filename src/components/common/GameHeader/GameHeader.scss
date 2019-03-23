@@ -3,10 +3,6 @@
 .gameHeader {
   border-bottom: .4em solid $primary-alt;
   background: black;
-  .excel-play-logo{
-    background: $primary-alt;
-    padding: 0 .7em 0 .7em;
-  }
   a {
     display: block;
     padding-left: 2em;
@@ -24,6 +20,13 @@
   img.play-logo{
     padding: 0;
     margin-top: 1.5em;
+  }
+  .excel-play-logo{
+    background: $primary-alt;
+    padding: 0 .7em 0 .7em;
+  }
+  .game-logo{
+    margin: 1em .5em 1em 1.5em;
   }
   h1{
     color: $primary;

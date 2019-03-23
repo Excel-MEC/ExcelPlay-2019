@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
-import Trade from '../Trade/Trade';
+import React from 'react';
+import Trade, { tradeProps } from '../Trade/Trade';
 import './Sell.scss';
 
 const Sell = () => {
-  const [pendingDisabled, setPendingDisabled] = useState(true);
-  const [quantity, setQuantity] = useState(0);
-  const [price, setPrice] = useState(0);
+  const props = tradeProps('SELL');
   return (
     <div className="buy">
       <div className="quantity-wrapper">
@@ -13,15 +11,7 @@ const Sell = () => {
           <div className="col-md-6">
             <div>Sell Nifty 50</div>
             <br />
-            <Trade
-              type="SELL"
-              quantity={quantity}
-              setQuantity={setQuantity}
-              pendingDisabled={pendingDisabled}
-              setPendingDisabled={setPendingDisabled}
-              price={price}
-              setPrice={setPrice}
-            />
+            <Trade {...props} />
             <div className="row">
               <div className="col-md-6">
                 <button

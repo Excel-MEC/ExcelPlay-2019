@@ -1,5 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Trade.scss';
+
+export function tradeProps(type){
+  const [pendingDisabled, setPendingDisabled] = useState(true);
+  const [quantity, setQuantity] = useState(0);
+  const [price, setPrice] = useState(0);
+  return {
+    type:type,
+    quantity:quantity,
+    setQuantity:setQuantity,
+    pendingDisabled:pendingDisabled,
+    setPendingDisabled:setPendingDisabled,
+    price:price,
+    setPrice:setPrice
+  }
+}
 
 const Trade = (props) => {
   return (
