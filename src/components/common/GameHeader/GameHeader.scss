@@ -1,7 +1,7 @@
-@import "../../../global";
+@import '../../../global';
 
 .gameHeader {
-  border-bottom: .4em solid $primary-alt;
+  border-bottom: 0.4em solid $primary-alt;
   background: black;
   a {
     display: block;
@@ -13,11 +13,12 @@
     clip-path: polygon(0 0, 80% 0, 100% 100%, 20% 100%);
   }
   img {
-    width: 6em;
+    max-width: 6em;
+    max-height: 6em;
     margin-top: 1em;
-    padding: .5em;
+    padding: 0.5em;
   }
-  img.play-logo{
+  img.play-logo {
     padding: 0;
     margin-top: 1.5em;
   }
@@ -28,8 +29,8 @@
   .game-logo{
     margin: 1em .5em 1em 1.5em;
   }
-  h1{
+  h1 {
     color: $primary;
-    padding: .7em .2em .5em .2em;
+    padding: 0.7em 0.2em 0.5em 0.2em;
   }
 }
