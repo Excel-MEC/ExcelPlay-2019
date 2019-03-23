@@ -1,29 +1,44 @@
-import React, { useEffect, useState } from 'react';
+import React, { Component } from 'react';
 import { GameHeader, MItem } from '../common/GameHeader/GameHeader';
 import kryptosLogo from '../../assets/kry-grey.png';
 import '../../App.scss';
 import KryptosInfoBar from './KryptosInfoBar/KryptosInfoBar';
+import KryptosQuestion from './KryptosQuestion/KryptosQuestion';
 
-const Kryptos = () => {
-  const [level, setLevel] = useState(1);
-  const [rank, setRank] = useState(0);
+class Kryptos extends Component {
+  constructor() {
+    super();
+    this.state = {
+      level: 1,
+      rank: 0,
+      imgUrl: 'https://i.postimg.cc/J003sfrb/DEXATI20180913132106.png',
+    };
+  }
 
-  useEffect(() => {
+  componentDidMount() {
     // TODO: Make a request to API to fetch level and rank
-    setLevel(1);
-    setRank(0);
-  });
+    // Once level is fetched, fetch the corresponding question imgUrl
+  }
 
-  return (
-    <div>
-      <GameHeader gName="KRYPTOS" icon={kryptosLogo}>
-        <MItem text="Rules" link="/Kryptos/rules" />
-        <MItem text="Play" link="/Kryptos" />
-        <MItem text="Ranklist" link="/Kryptos/ranklist" />
-      </GameHeader>
-      <KryptosInfoBar level={level} rank={rank} />
-    </div>
-  );
-};
+  onSubmit = ans => {
+    // Check if answer is correct
+    console.log(ans);
+  };
+
+  render() {
+    const { level, rank, imgUrl } = this.state;
+    return (
+      <div>
+        <GameHeader gName="KRYPTOS" icon={kryptosLogo}>
+          <MItem text="Rules" link="/Kryptos/rules" />
+          <MItem text="Play" link="/Kryptos" />
+          <MItem text="Ranklist" link="/Kryptos/ranklist" />
+        </GameHeader>
+        <KryptosInfoBar level={level} rank={rank} />
+        <KryptosQuestion imgUrl={imgUrl} onSubmit={ans => this.onSubmit(ans)} />
+      </div>
+    );
+  }
+}
 
 export default Kryptos;
