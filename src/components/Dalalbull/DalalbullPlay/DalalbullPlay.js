@@ -9,8 +9,6 @@ const DalalbullPlay = () => {
   return (
     <div>
       <Ticker />
-      <br />
-      <br />
       <div className="content">
         <div className="row">
           <div className="col-md-3">
