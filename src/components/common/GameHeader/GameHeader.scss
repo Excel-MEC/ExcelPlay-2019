@@ -3,7 +3,7 @@
 .gameHeader {
   border-bottom: 0.4em solid $primary-alt;
   background: black;
-  a {
+  ul.nav a {
     display: block;
     padding-left: 2em;
     padding-right: 2em;
@@ -14,7 +14,7 @@
   }
   img {
     max-width: 6em;
-    max-height: 6em;
+    max-height: 5em;
     margin-top: 1em;
     padding: 0.5em;
   }

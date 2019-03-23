@@ -12,18 +12,28 @@ const MItem = props => {
   );
 };
 
-const GameHeader = (props) => {
+const GameHeader = props => {
   return (
     <div className="gameHeader">
       <div className="top-banner">
         <div className="row">
           <div className="col-md-4">
             <div className="d-flex">
-	            <div className="excel-play-logo">
-		            <img src={excelPlayLogo} className="img img-fluid play-logo" alt="" />
-	            </div>
+              <div className="excel-play-logo">
+                <a href="/">
+                  <img
+                    src={excelPlayLogo}
+                    className="img img-fluid play-logo"
+                    alt=""
+                  />
+                </a>
+              </div>
               <div>
-                <img src={props.icon} className="img img-fluid game-logo" alt="" />
+                <img
+                  src={props.icon}
+                  className="img img-fluid game-logo"
+                  alt=""
+                />
               </div>
               <div>
                 <h1>{props.gName}</h1>
@@ -31,9 +41,7 @@ const GameHeader = (props) => {
             </div>
           </div>
           <div className="col-md-8">
-            <ul className="nav justify-content-end">
-	            {props.children}
-            </ul>
+            <ul className="nav justify-content-end">{props.children}</ul>
           </div>
         </div>
       </div>
