@@ -15,21 +15,63 @@ const Home = () => {
       <div className="events">
         <div className="row">
           <div className="col-md-6 center-block text-center cell">
-            <img src={dalal} alt="dalabull" className="dalalPic" />
-            DALAL BULL
+            <div className="dalalCell">
+              <div>
+                <img src={dalal} alt="dalabull" className="dalalPic" />
+              </div>
+
+              <div className="Rankdetail">
+                <div>DALAL BULL</div>
+                <div className="rankDiv">
+                  <div className="rank">
+                    <p>RANK</p>
+                  </div>
+                  <div className="RankValue">12</div>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="col-md-6 center-block text-center cell">
-            <img src={kryp} alt="kryptos" className="krypPic" />
-            KRYTPOS
+            <div className="dalalCell">
+              <div>
+                <img src={kryp} alt="dalabull" className="krypPic" />
+              </div>
+
+              <div className="Rankdetail">
+                <div>KRYPTOS</div>
+                <div className="rankDiv">
+                  <div className="rank">
+                    <p>RANK</p>
+                  </div>
+                  <div className="RankValue">12</div>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="w-100" />
           <div className="col-md-6 center-block text-center cell">
-            <img src={hash} alt="#include" className="hashPic" />
-            #INCLUDE
+            <div className="dalalCell">
+              <div>
+                <img src={hash} alt="#include" className="hashPic" />
+              </div>
+
+              <div className="Rankdetail">
+                <div>#INCLUDE</div>
+                <div className="PlayNow">PLAY NOW</div>
+              </div>
+            </div>
           </div>
           <div className="col-md-6 center-block text-center cell">
-            <img src={echo} alt="echo" className="echoPic" />
-            ECHO
+            <div className="dalalCell">
+              <div>
+                <img src={echo} alt="echo" className="echoPic" />
+              </div>
+
+              <div className="Rankdetail">
+                <div>ECHO</div>
+                <div className="PlayNow">COMING SOON</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
