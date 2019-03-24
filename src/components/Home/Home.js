@@ -12,42 +12,44 @@ const Home = () => {
   return (
     <div>
       <HomeHeader />
-      <div className="events">
-        <div className="row">
-          <div className="col-md-6 center-block text-center cell">
-            <Games
-              name="DALAL BULL"
-              rank="12"
-              logo={dalal}
-              imageSize="dalalPic"
-              type="ranked"
-            />
-          </div>
-          <div className="col-md-6 center-block text-center cell">
-            <Games
-              name="KRYPTOS"
-              rank="21"
-              logo={kryp}
-              imageSize="krypPic"
-              type="ranked"
-            />
-          </div>
-          <div className="w-100" />
-          <div className="col-md-6 center-block text-center cell">
-            <Games
-              name="#INCLUDE"
-              logo={hash}
-              imageSize="hashPic"
-              type="notRanked"
-            />
-          </div>
-          <div className="col-md-6 center-block text-center cell">
-            <Games
-              name="ECHO"
-              logo={echo}
-              imageSize="echoPic"
-              type="notRanked"
-            />
+      <div className="container">
+        <div className="events">
+          <div className="row">
+            <div className="col-md-6 center-block text-center cell">
+              <Games
+                name="DALAL BULL"
+                rank="12"
+                logo={dalal}
+                imageSize="dalalPic"
+                type="ranked"
+              />
+            </div>
+            <div className="col-md-6 center-block text-center cell">
+              <Games
+                name="KRYPTOS"
+                rank="21"
+                logo={kryp}
+                imageSize="krypPic"
+                type="ranked"
+              />
+            </div>
+            <div className="w-100" />
+            <div className="col-md-6 center-block text-center cell">
+              <Games
+                name="#INCLUDE"
+                logo={hash}
+                imageSize="hashPic"
+                type="notRanked"
+              />
+            </div>
+            <div className="col-md-6 center-block text-center cell">
+              <Games
+                name="ECHO"
+                logo={echo}
+                imageSize="echoPic"
+                type="notRanked"
+              />
+            </div>
           </div>
         </div>
       </div>
