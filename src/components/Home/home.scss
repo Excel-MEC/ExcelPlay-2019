@@ -1,13 +1,17 @@
 @import '../../global';
 
 .events {
-  margin: 20%;
+  margin: 10% 0 0 0;
 }
 
 .cell {
   cursor: pointer;
-  padding: 30px;
+  // padding: 30px;
+  margin-bottom: 50px;
   color: white;
-  font-weight: 700;
-  font-size: 1.5em;
+  font-weight: 800;
+  font-size: 1.7em;
+  // background-color: yellow;
+  color: $primary-alt;
+  font-family: $font-homePage;
 }
