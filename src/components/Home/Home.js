@@ -1,7 +1,7 @@
 import React from 'react';
 import HomeHeader from '../common/HomeHeader/HomeHeader';
 import Games from './Games/Games';
-import './home.scss';
+import './Home.scss';
 // import Navbar from '../common/Navbar/Navbar';
 import dalal from '../../assets/bull5-grey.png';
 import kryp from '../../assets/kry-grey.png';

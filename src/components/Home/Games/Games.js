@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './games.scss';
+import React from 'react';
+import './Games.scss';
 
 const Games = props => {
   const rank = () => {
@@ -12,9 +12,8 @@ const Games = props => {
           <div className="RankValue">{props.rank}</div>
         </div>
       );
-    } else {
-      return <div className="PlayNow">PLAY NOW</div>;
     }
+    return <div className="PlayNow">PLAY NOW</div>;
   };
   return (
     <div className="dalalCell">
