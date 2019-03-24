@@ -1,33 +1,34 @@
-@import "../../../global";
+@import '../../../global';
 
 .big-header-bg {
-	height: 20vh;
-	background-color: black;
-	width: 100%;
-	display: flex;
-	justify-content: center;
+  height: 20vh;
+  background-color: black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15%;
 }
 .logo-container-bg {
-	display: flex;
-	justify-content: center;
-	width: 60vw;
-	height: 20vh;
-	background-color: $primary;
-	clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
-	-webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  display: flex;
+  justify-content: center;
+  width: 60vw;
+  height: 20vh;
+  background-color: $primary;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
 }
 .logo-container {
-	position: absolute;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: $primary-alt;
-	width: 50vw;
-	height: 25vh;
-	clip-path: polygon(0 0, 100% 0, 85% 120%, 15% 120%);
-	-webkit-clip-path: polygon(0 0, 100% 0, 85% 120%, 15% 120%);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary-alt;
+  width: 50vw;
+  height: 25vh;
+  clip-path: polygon(0 0, 100% 0, 85% 120%, 15% 120%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 85% 120%, 15% 120%);
 }
 .logo {
-	max-width: 60%;
-	max-height: 80%;
+  max-width: 60%;
+  max-height: 80%;
 }
