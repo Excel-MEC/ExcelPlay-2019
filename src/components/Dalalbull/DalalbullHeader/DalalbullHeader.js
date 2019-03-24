@@ -5,7 +5,7 @@ import { GameHeader, MItem } from '../../common/GameHeader/GameHeader';
 
 const DalalbullHeader = () => {
   return (
-    <GameHeader gName="Dalalbull" icon={Dalalbull}>
+    <GameHeader gName="DALALBULL" icon={Dalalbull}>
       <MItem text="Rules" link="/Dalalbull/rules" />
       <MItem text="Play" link="/Dalalbull" />
       <MItem text="History" link="/Dalalbull" />

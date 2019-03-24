@@ -3,11 +3,7 @@
 .gameHeader {
   border-bottom: 0.4em solid $primary-alt;
   background: black;
-  .excel-play-logo {
-    background: $primary-alt;
-    padding: 0 0.7em 0 0.7em;
-  }
-  a {
+  ul.nav a {
     display: block;
     padding-left: 2em;
     padding-right: 2em;
@@ -18,13 +14,20 @@
   }
   img {
     max-width: 6em;
-    max-height: 6em;
+    max-height: 5em;
     margin-top: 1em;
     padding: 0.5em;
   }
   img.play-logo {
     padding: 0;
     margin-top: 1.5em;
+  }
+  .excel-play-logo{
+    background: $primary-alt;
+    padding: 0 .7em 0 .7em;
+  }
+  .game-logo{
+    margin: 1em .5em 1em 1.5em;
   }
   h1 {
     color: $primary;
