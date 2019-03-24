@@ -1,0 +1,71 @@
+@import '../../../global.scss';
+
+.dalalCell {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+}
+.dalalCell > div {
+  margin: 0 2%;
+  display: flex;
+  align-items: center;
+}
+
+.Rankdetail {
+  display: flex;
+  flex-direction: column;
+}
+
+.rankDiv {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  color: $play-now;
+}
+
+.rank {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.rank p {
+  transform: rotate(-90deg);
+  font-size: 0.9em;
+}
+
+.RankValue {
+  font-size: 2.5em;
+  color: white;
+}
+
+.PlayNow {
+  font-size: 0.8em;
+  color: $play-now;
+}
+
+// Event logo
+.dalalPic {
+  width: 5em;
+  margin: 3%;
+}
+
+.krypPic {
+  width: 2em;
+  margin: 3%;
+}
+
+.hashPic {
+  width: 3em;
+  margin: 3%;
+}
+
+.echoPic {
+  width: 4em;
+  margin: 2%;
+}
