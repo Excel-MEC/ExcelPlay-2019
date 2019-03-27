@@ -19,11 +19,12 @@ const Home = () => {
           <div className="row">
             <div className="col-md-6 center-block text-center cell">
               <Games
-                name="DALAL BULL"
+                name="DALALBULL"
                 rank="12"
                 logo={dalal}
                 imageSize="dalalPic"
                 type="ranked"
+                href="/Dalalbull"
               />
             </div>
             <div className="col-md-6 center-block text-center cell">
@@ -33,6 +34,7 @@ const Home = () => {
                 logo={kryp}
                 imageSize="krypPic"
                 type="ranked"
+                href="Kryptos"
               />
             </div>
             <div className="w-100" />

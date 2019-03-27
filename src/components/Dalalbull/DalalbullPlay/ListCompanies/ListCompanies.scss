@@ -7,7 +7,7 @@
   padding-top: 2em;
   * {
     &:not(i) {
-      font-family: "Raleway";
+      font-family: $font-secondary;
     }
   }
   .search-wrapper {
@@ -51,23 +51,19 @@
           margin-top: 0.67em;
           font-size: 17px;
           .current-price {
-            font-family: "Roboto";
+            font-family: $font-secondary;
             padding: 7px 15px;
             display: inline-block;
             border-radius: 5px;
             margin-left: 0.4em;
-            font-family: Roboto;
             background-color: rgba(0, 0, 0, 0.3);
           }
           .percentage-change {
-            font-family: "Roboto";
+            font-family: $font-secondary;
             padding: 7px 15px;
             display: inline-block;
             border-radius: 5px;
             margin-left: 0.4em;
-            span {
-              font-family: "Roboto";
-            }
           }
           .percentage-change.positive-change {
             background-color: $secondary;
@@ -83,6 +79,13 @@
           }
         }
       }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .companies-list {
+      max-height: 70vw;
     }
   }
 }
