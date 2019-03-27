@@ -1,7 +1,7 @@
 import React from 'react';
 import HomeHeader from '../common/HomeHeader/HomeHeader';
 import Games from './Games/Games';
-import './home.scss';
+import './Home.scss';
 // import Navbar from '../common/Navbar/Navbar';
 import dalal from '../../assets/bull5-grey.png';
 import kryp from '../../assets/kry-grey.png';
@@ -17,11 +17,12 @@ const Home = () => {
           <div className="row">
             <div className="col-md-6 center-block text-center cell">
               <Games
-                name="DALAL BULL"
+                name="DALALBULL"
                 rank="12"
                 logo={dalal}
                 imageSize="dalalPic"
                 type="ranked"
+                href="/Dalalbull"
               />
             </div>
             <div className="col-md-6 center-block text-center cell">
@@ -31,6 +32,7 @@ const Home = () => {
                 logo={kryp}
                 imageSize="krypPic"
                 type="ranked"
+                href="Kryptos"
               />
             </div>
             <div className="w-100" />

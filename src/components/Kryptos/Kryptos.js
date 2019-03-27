@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { GameHeader, MItem } from '../common/GameHeader/GameHeader';
-import kryptosLogo from '../../assets/kry-grey.png';
+import kryptosLogo from '../../assets/kry.png';
 import '../../App.scss';
 import KryptosInfoBar from './KryptosInfoBar/KryptosInfoBar';
 import KryptosQuestion from './KryptosQuestion/KryptosQuestion';
