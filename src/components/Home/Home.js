@@ -1,7 +1,7 @@
 import React from 'react';
 import HomeHeader from '../common/HomeHeader/HomeHeader';
 import Games from './Games/Games';
-import './home.scss';
+import './Home.scss';
 // import Navbar from '../common/Navbar/Navbar';
 import dalal from '../../assets/bull5-grey.png';
 import kryp from '../../assets/kry-grey.png';
@@ -10,9 +10,11 @@ import echo from '../../assets/ech2-grey.png';
 
 const Home = () => {
   return (
-    <div>
-      <HomeHeader />
-      <div className="container">
+    <div className="row">
+      <div className="col-md-12">
+        <HomeHeader />
+      </div>
+      <div className="container col-md-12">
         <div className="events">
           <div className="row">
             <div className="col-md-6 center-block text-center cell">
