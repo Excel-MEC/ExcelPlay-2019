@@ -12,9 +12,8 @@ const Games = props => {
           <div className="RankValue">{props.rank}</div>
         </div>
       );
-    } else {
-      return <div className="PlayNow">PLAY NOW</div>;
     }
+    return <div className="PlayNow">PLAY NOW</div>;
   };
   return (
     <div className="gameCell">

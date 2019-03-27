@@ -29,7 +29,7 @@ const Kryptos = () => {
         <MItem text="Ranklist" link="/Kryptos/ranklist" />
       </GameHeader>
       <KryptosInfoBar level={level} rank={rank} />
-      <KryptosQuestion imgUrl={imgUrl} onSubmit={ans => this.onSubmit(ans)} />
+      <KryptosQuestion imgUrl={imgUrl} onSubmit={ans => onSubmit(ans)} />
     </div>
   );
 };

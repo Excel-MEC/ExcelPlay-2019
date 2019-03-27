@@ -10,9 +10,11 @@ import echo from '../../assets/ech2-grey.png';
 
 const Home = () => {
   return (
-    <div>
-      <HomeHeader />
-      <div className="container">
+    <div className="row">
+      <div className="col-md-12">
+        <HomeHeader />
+      </div>
+      <div className="container col-md-12">
         <div className="events">
           <div className="row">
             <div className="col-md-6 center-block text-center cell">
