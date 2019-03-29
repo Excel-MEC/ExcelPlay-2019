@@ -16,15 +16,17 @@ const Games = props => {
     return <div className="PlayNow">PLAY NOW</div>;
   };
   return (
-    <div className="gameCell">
+    <div className="games">
       <a href={props.href}>
-        <div>
-          <img src={props.logo} alt="dalabull" className={props.imageSize} />
-        </div>
+        <div className="gameCell">
+          <div>
+            <img src={props.logo} alt="dalabull" className={props.imageSize} />
+          </div>
 
-        <div className="Rankdetail">
-          <div>{props.name}</div>
-          {rank()}
+          <div className="Rankdetail">
+            <div>{props.name}</div>
+            {rank()}
+          </div>
         </div>
       </a>
     </div>

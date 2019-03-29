@@ -1,3 +1,5 @@
+@import "../../../../global";
+
 .sideNav{
   position: absolute;
   width: 100%;
@@ -8,7 +10,27 @@
     width: 60%;
     height: 100%;
     background: black;
+    margin-left: -100%;
     z-index: +5;
+    transition: margin-left .5s ease-out;
+    padding: 4em 0 4em 0;
+    .nav-item{
+      margin: 0;
+      padding: 0 0 1em 0;
+    }
+    .nav-item:hover {
+      background: $bg;
+    }
+    a{
+      display: block;
+      padding: 0 0 0 2em;
+      font-size: 1.7em;
+      color: white;
+    }
+  }
+  .menu.true{
+    margin-left: 0;
+    transition: margin-left .5s ease-out;
   }
   .backDrop{
     position: absolute;
