@@ -18,7 +18,7 @@ const DalalbullPlay = () => {
               setShareDetails={setShareDetails}
             />
           </div>
-          <div className="col-md-5 d-none d-md-block">
+          <div className="col-md-5 d-md-block">
             <ShareDetails />
           </div>
           <div className="col-md-4">
