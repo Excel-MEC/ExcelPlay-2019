@@ -11,13 +11,13 @@ const DalalbullPlay = () => {
       <Ticker />
       <div className="content">
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-6">
             <ListCompanies />
           </div>
-          <div className="col-md-5 d-md-block">
+          <div>
             <ShareDetails />
           </div>
-          <div className="col-md-4">
+          <div className="col-md-6">
             <GraphAndStatus />
           </div>
         </div>
