@@ -48,7 +48,7 @@ const GameHeader = props => {
           <div className="menu-icon">
             <i className="fa fa-navicon" onClick={toggleMenu} />
           </div>
-          <div className={sideMenuVisibility.toString() + ' sideMenu'}>
+          <div className={`${sideMenuVisibility.toString()  } sideMenu`}>
             <SideNav toggleMenu={toggleMenu} sideMenuVisibility={sideMenuVisibility}>{props.children}</SideNav>
           </div>
           <div className="col-md-8 d-none d-md-block">
