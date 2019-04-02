@@ -3,7 +3,7 @@ import './ListCompanies.scss';
 
 const Company = () => {
   return (
-    <div className="company">
+    <div className="company" onClick={()=>{alert(window.innerWidth)}}>
       <div className="row">
         <div className="c-details">
           <div className="float-left">

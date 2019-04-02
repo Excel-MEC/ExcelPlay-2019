@@ -4,8 +4,15 @@ import './SideNav.scss';
 const SideNav = props => {
   return (
     <div className="sideNav">
-      <div className="menu">{props.children}</div>
-	    <div className="backDrop" onClick={props.toggleMenu}>.</div>
+      <div className={props.sideMenuVisibility + ' menu'}>
+        <li className="nav-item">
+          <a className="nav-link" href="/">
+            <i className="fa fa-home" /> HOME{' '}
+          </a>
+        </li>
+        {props.children}
+      </div>
+      <div className="backDrop" onClick={props.toggleMenu} />
     </div>
   );
 };
