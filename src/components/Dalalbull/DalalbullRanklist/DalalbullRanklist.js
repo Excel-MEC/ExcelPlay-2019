@@ -15,7 +15,7 @@ const DalalbullRanklist = () => {
           <tr>
             <td>1</td>
             <td>
-              {/*<img src="{{ record.pic }}" alt="" class="propic">*/}
+              {/* <img src="{{ record.pic }}" alt="" class="propic"> */}
               Name
             </td>
             <td>55</td>

@@ -1,22 +1,22 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './Trade.scss';
 
-export function tradeProps(type){
+export function tradeProps(type) {
   const [pendingDisabled, setPendingDisabled] = useState(true);
   const [quantity, setQuantity] = useState(0);
   const [price, setPrice] = useState(0);
   return {
-    type:type,
-    quantity:quantity,
-    setQuantity:setQuantity,
-    pendingDisabled:pendingDisabled,
-    setPendingDisabled:setPendingDisabled,
-    price:price,
-    setPrice:setPrice
-  }
+    type,
+    quantity,
+    setQuantity,
+    pendingDisabled,
+    setPendingDisabled,
+    price,
+    setPrice,
+  };
 }
 
-const Trade = (props) => {
+const Trade = props => {
   return (
     <div className="Trade">
       <div className="d-flex">
@@ -26,7 +26,7 @@ const Trade = (props) => {
             className="btn increment-button"
             onClick={() => {
               if (props.quantity > 0) {
-	              props.setQuantity(props.quantity - 1);
+                props.setQuantity(props.quantity - 1);
               }
             }}
           >
