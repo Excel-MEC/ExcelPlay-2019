@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import DalalbullHeader from './DalalbullHeader/DalalbullHeader';
 import DalalbullPlay from './DalalbullPlay/DalalbullPlay';
 import DalalbullRules from './DalalbullRules/DalalbullRules';
@@ -11,9 +11,9 @@ class DalalBull extends Component {
     return (
       <div>
         <DalalbullHeader />
-        <Route exact path={`${match.url}/`} component={DalalbullPlay}/>
-        <Route path={`${match.url}/rules`} component={DalalbullRules}/>
-        <Route path={`${match.url}/ranklist`} component={DalalbullRanklist}/>
+        <Route exact path={`${match.url}/`} component={DalalbullPlay} />
+        <Route path={`${match.url}/rules`} component={DalalbullRules} />
+        <Route path={`${match.url}/ranklist`} component={DalalbullRanklist} />
       </div>
     );
   }
