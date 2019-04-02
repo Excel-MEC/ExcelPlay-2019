@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ShareDetails.scss';
 import Stock from './Stock/Stock';
-import Buy from './Buy/Buy'
+import Buy from './Buy/Buy';
 import Sell from './Sell/Sell';
 import SharesInHand from './SharesInHand/SharesInHand';
 
