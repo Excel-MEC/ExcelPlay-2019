@@ -3,14 +3,7 @@ import './ListCompanies.scss';
 
 const Company = () => {
   return (
-    <div
-      className="company"
-      data-toggle="modal"
-      data-target="#share-modal"
-      onClick={() => {
-        alert(window.innerWidth);
-      }}
-    >
+    <div className="company" data-toggle="modal" data-target="#share-modal">
       <div className="row">
         <div className="c-details">
           <div className="float-left">
