@@ -3,7 +3,7 @@ import './KryptosQuestion.scss';
 
 const KryptosQuestion = props => {
   const [text, setText] = useState('');
-  const { imgUrl, onSubmit } = props;
+  const { imgUrl, onSubmit, onViewHint } = props;
 
   return (
     <div className="questionWrapper">
@@ -22,6 +22,13 @@ const KryptosQuestion = props => {
           SUBMIT
         </button>
       </div>
+      <button
+        type="button"
+        className="btn btn-hint btn-primary"
+        onClick={() => onViewHint()}
+      >
+        VIEW HINTS
+      </button>
     </div>
   );
 };
