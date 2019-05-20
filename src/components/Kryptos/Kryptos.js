@@ -11,6 +11,7 @@ const Kryptos = () => {
   const [imgUrl, setImgUrl] = useState(
     'https://i.postimg.cc/J003sfrb/DEXATI20180913132106.png',
   );
+  const [hintText, setHintText] = useState('');
 
   useEffect(() => {
     // TODO: Make a request to API to fetch level and rank
@@ -21,6 +22,11 @@ const Kryptos = () => {
     // Check if answer is correct
     console.log(ans);
   };
+
+  const onViewHint = () => {
+    // TODO: Fetch hints and store them in hintText using setHintText
+  };
+
   return (
     <div>
       <GameHeader gName="KRYPTOS" icon={kryptosLogo}>
@@ -29,7 +35,11 @@ const Kryptos = () => {
         <MItem text="Ranklist" link="/Kryptos/ranklist" />
       </GameHeader>
       <KryptosInfoBar level={level} rank={rank} />
-      <KryptosQuestion imgUrl={imgUrl} onSubmit={ans => onSubmit(ans)} />
+      <KryptosQuestion
+        imgUrl={imgUrl}
+        onSubmit={ans => onSubmit(ans)}
+        onViewHint={() => onViewHint()}
+      />
     </div>
   );
 };
