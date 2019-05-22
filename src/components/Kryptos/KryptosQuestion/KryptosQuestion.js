@@ -26,6 +26,8 @@ const KryptosQuestion = props => {
         type="button"
         className="btn btn-hint btn-primary"
         onClick={() => onViewHint()}
+        data-toggle="modal"
+        data-target="#hint-modal"
       >
         VIEW HINTS
       </button>
