@@ -18,8 +18,15 @@ const DalalbullPlay = () => {
               setShareDetails={setShareDetails}
             />
           </div>
-          <div className="col-md-5 d-none d-md-block">
+          <div className="col-md-5 d-none d-sm-block">
             <ShareDetails />
+          </div>
+          <div id="share-modal" className="modal fade" role="dialog">
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <ShareDetails />
+              </div>
+            </div>
           </div>
           <div className="col-md-4">
             <GraphAndStatus />

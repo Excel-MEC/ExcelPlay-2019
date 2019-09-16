@@ -1,20 +1,22 @@
-@import "../../../../global";
+@import '../../../../global.scss';
 
-.share-details{
-  padding-top: 2em;
-  .h2{
+.share-details {
+  background-color: $bg;
+  padding: 3em;
+  .h2 {
     color: $primary;
   }
-  .h1, h2{
-    padding-bottom: .3em;
+  .h1,
+  h2 {
+    padding-bottom: 0.3em;
   }
-  ul{
-    span.nav-link{
+  ul {
+    span.nav-link {
       background: none;
       color: #ffffff;
       cursor: pointer;
     }
-    span.nav-link.active:hover{
+    span.nav-link.active:hover {
       color: black;
     }
   }

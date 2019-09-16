@@ -4,6 +4,7 @@ import kryptosLogo from '../../assets/kry.png';
 import '../../App.scss';
 import KryptosInfoBar from './KryptosInfoBar/KryptosInfoBar';
 import KryptosQuestion from './KryptosQuestion/KryptosQuestion';
+import KryptosHintModal from './KryptosHintModal/KryptosHintModal';
 
 const Kryptos = () => {
   const [level, setLevel] = useState(1);
@@ -11,6 +12,7 @@ const Kryptos = () => {
   const [imgUrl, setImgUrl] = useState(
     'https://i.postimg.cc/J003sfrb/DEXATI20180913132106.png',
   );
+  const [hintText, setHintText] = useState([]);
 
   useEffect(() => {
     // TODO: Make a request to API to fetch level and rank
@@ -21,6 +23,12 @@ const Kryptos = () => {
     // Check if answer is correct
     console.log(ans);
   };
+
+  const onViewHint = () => {
+    // TODO: Fetch hints and store them in hintText using setHintText
+    // hintText is an Array of strings, each string corresponding to a hint
+  };
+
   return (
     <div>
       <GameHeader gName="KRYPTOS" icon={kryptosLogo}>
@@ -29,7 +37,12 @@ const Kryptos = () => {
         <MItem text="Ranklist" link="/Kryptos/ranklist" />
       </GameHeader>
       <KryptosInfoBar level={level} rank={rank} />
-      <KryptosQuestion imgUrl={imgUrl} onSubmit={ans => onSubmit(ans)} />
+      <KryptosQuestion
+        imgUrl={imgUrl}
+        onSubmit={ans => onSubmit(ans)}
+        onViewHint={() => onViewHint()}
+      />
+      <KryptosHintModal hintText={hintText} />
     </div>
   );
 };
