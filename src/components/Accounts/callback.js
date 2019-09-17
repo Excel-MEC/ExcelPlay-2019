@@ -1,4 +1,3 @@
-import React from 'react';
 import { handleAuthentication } from '../../config/auth0';
 
 const Callback = props => {

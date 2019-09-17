@@ -3,8 +3,8 @@ export const post = (url, data) => {
     method: 'POST',
     body: data
   })
-    .then(res => {console.log(res.json())})
-    .catch(err => {console.log(err)});
+    .then(res => res.json())
+    .catch(err => err);
 };
 
 export const get = url =>
