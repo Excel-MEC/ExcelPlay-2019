@@ -1,0 +1,5 @@
+{
+  "clientID": "SIPlp6RHA9CbeJ5SUTa0RUvQRKiK8XBp",
+  "domain": "ajeshkumar.eu.auth0.com",
+  "redirectUri": "http://localhost:3000/login/callback"
+}
