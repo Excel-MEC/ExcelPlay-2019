@@ -1,10 +1,12 @@
 import * as auth0 from 'auth0-js';
-import cookieService from 'universal-cookie';
+// import Cookie from 'universal-cookie';
 
 import config from './auth_config';
 import * as http from './http';
 
 import { ApiRoot } from './api';
+
+// const cookieService = new Cookie();
 
 const webAuth = new auth0.WebAuth({
   clientID: config.clientID,
@@ -25,13 +27,13 @@ export const handleAuthentication = (hash, history) => {
       return console.log(err);
     }
 
-    setSession(authResult, () => {
-      history.push('/');
+    setSession(authResult, loc => {
+      history.push(loc);
     });
   });
 };
 
-const setSession = (authResult, redirect) => {
+const setSession = async (authResult, redirect) => {
   // Set the time that the access token will expire at
   const expiresAt = JSON.stringify(
     authResult.expiresIn * 1000 + new Date().getTime(),
@@ -41,11 +43,16 @@ const setSession = (authResult, redirect) => {
   localStorage.setItem('expires_at', expiresAt);
   const body = new FormData();
   // const csrftoken = cookieService.get('csrftoken');
-  // if (csrftoken) {
-  body.append('access_token', authResult.accessToken);
-  // body.append('csrfmiddlewaretoken', csrftoken);
-  // const loader = new ProgressiveLoader();
-  // loader.placeLoader('Auth_ss');
-  http.post(ApiRoot + '/auth/v1/signin', body);
+  // console.log(csrftoken);
+  // if (!csrftoken) {
+  //   const res = await http.get(ApiRoot() + '/auth/v1/token');
+  //   console.log(res);
   // }
+  body.append('access_token', authResult.accessToken);
+  const res = await http.post(ApiRoot + 'auth/v1/signin', body);
+  if (res.Error) {
+    alert('Login failed');
+    redirect('/login');
+  }
+  redirect('/');
 };
