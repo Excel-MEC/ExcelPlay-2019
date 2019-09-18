@@ -7,7 +7,7 @@ import './App.scss';
 
 const DalalBull = lazy(() => import('./components/Dalalbull/DalalBull'));
 const Kryptos = lazy(() => import('./components/Kryptos/Kryptos'));
-const Login = lazy(() => import('./components/Accounts/Login'));
+const Login = lazy(() => import('./components/Accounts/Login/Login'));
 
 const App = () => (
   <Router>

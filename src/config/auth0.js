@@ -42,14 +42,11 @@ const setSession = async (authResult, redirect) => {
   localStorage.setItem('id_token', authResult.idToken);
   localStorage.setItem('expires_at', expiresAt);
   const body = new FormData();
-  // const csrftoken = cookieService.get('csrftoken');
-  // console.log(csrftoken);
-  // if (!csrftoken) {
-  //   const res = await http.get(ApiRoot() + '/auth/v1/token');
-  //   console.log(res);
-  // }
   body.append('access_token', authResult.accessToken);
+  console.log(authResult.accessToken);
   const res = await http.post(ApiRoot + 'auth/v1/signin', body);
+  const user = await http.get(ApiRoot + 'auth/v1/get_user_detail');
+  console.log(user);
   if (res.Error) {
     alert('Login failed');
     redirect('/login');
