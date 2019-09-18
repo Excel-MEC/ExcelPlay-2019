@@ -1,4 +1,3 @@
-
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
@@ -39,9 +38,9 @@ const ShareDetails = () => {
       <h2 className="h2">STOCK INFO</h2>
       <h1 className="h1">NIFTY 50</h1>
       <ul className="nav nav-tabs">
-        {Object.keys(tablist).map(tab => {
+        {Object.keys(tablist).map((tab, index) => {
           return (
-            <li className="nav-item">
+            <li className="nav-item" key={index}>
               <span
                 className={`nav-link ${isActive(tab)}`}
                 onClick={() => setActiveTab(tablist[tab])}
