@@ -3,7 +3,7 @@ import './KryptosQuestion.scss';
 
 const KryptosQuestion = props => {
   const [text, setText] = useState('');
-  const { imgUrl, onSubmit, onViewHint } = props;
+  const { imgUrl, onSubmit } = props;
 
   return (
     <div className="questionWrapper">
@@ -25,7 +25,6 @@ const KryptosQuestion = props => {
       <button
         type="button"
         className="btn btn-hint btn-primary"
-        onClick={() => onViewHint()}
         data-toggle="modal"
         data-target="#hint-modal"
       >

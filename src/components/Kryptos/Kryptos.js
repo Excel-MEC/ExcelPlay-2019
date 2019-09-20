@@ -15,18 +15,24 @@ const Kryptos = () => {
   const [hintText, setHintText] = useState([]);
 
   useEffect(() => {
-    // TODO: Make a request to API to fetch level and rank
-    // Once level is fetched, fetch the corresponding question imgUrl
+    // TODO: Fix CORS error
+    fetch('http://127.0.0.1:8000/api/ask', {
+      mode: 'cors',
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        console.log(JSON.stringify(data));
+        setImgUrl(data.level_file);
+        setLevel(data.level);
+        setHintText([data.hint1, data.hint2, data.hint3]);
+      });
   });
 
   const onSubmit = ans => {
     // Check if answer is correct
     console.log(ans);
-  };
-
-  const onViewHint = () => {
-    // TODO: Fetch hints and store them in hintText using setHintText
-    // hintText is an Array of strings, each string corresponding to a hint
   };
 
   return (
@@ -37,11 +43,7 @@ const Kryptos = () => {
         <MItem text="Ranklist" link="/Kryptos/ranklist" />
       </GameHeader>
       <KryptosInfoBar level={level} rank={rank} />
-      <KryptosQuestion
-        imgUrl={imgUrl}
-        onSubmit={ans => onSubmit(ans)}
-        onViewHint={() => onViewHint()}
-      />
+      <KryptosQuestion imgUrl={imgUrl} onSubmit={ans => onSubmit(ans)} />
       <KryptosHintModal hintText={hintText} />
     </div>
   );
