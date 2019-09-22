@@ -45,7 +45,8 @@ const setSession = async (authResult, redirect) => {
   body.append('access_token', authResult.accessToken);
   console.log(authResult.accessToken);
   const res = await http.post(ApiRoot + 'auth/v1/signin', body);
-  const user = await http.get(ApiRoot + 'auth/v1/get_user_detail');
+  console.log(res);
+  const user = await http.get(ApiRoot + 'auth/v1/user/detail');
   console.log(user);
   if (res.Error) {
     alert('Login failed');

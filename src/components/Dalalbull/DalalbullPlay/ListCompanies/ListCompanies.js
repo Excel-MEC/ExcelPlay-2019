@@ -44,7 +44,7 @@ const ListCompanies = () => {
     // TODO: remove the follwing line
     setCompanies([]);
     // TODO: fetch initial list of companies here and set using setCompanies
-  });
+  }, []);
 
   function sortProperties(obj) {
     // convert object into array
