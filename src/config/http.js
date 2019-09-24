@@ -1,7 +1,7 @@
 export const post = (url, data) => {
   return fetch(url, {
     method: 'POST',
-    body: data
+    body: data,
   })
     .then(res => res.json())
     .catch(err => err);
