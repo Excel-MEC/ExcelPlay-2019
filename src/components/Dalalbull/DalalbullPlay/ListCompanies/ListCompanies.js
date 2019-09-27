@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { getCompanies } from '../apicalls/apicalls';
 import './ListCompanies.scss';
 
-const Company = () => {
+const Company = ({name, current_price, change_per}) => {
   return (
     <div className="company" data-toggle="modal" data-target="#share-modal">
       <div className="row">
         <div className="c-details">
           <div className="float-left">
-            <h1>Nifty50</h1>
-            <p>Shares of Nifty50</p>
+            <h1>{name}</h1>
+            <p>Shares of {name}</p>
           </div>
           <div className="float-right">
             <div className="data">
-              <span className="current-price">4200</span>
+              <span className="current-price">{current_price}</span>
               <span className="percentage-change positive-change">
                 <i className="fa fa-arrow-up" />
-                +10%
+                {change_per}%
               </span>
               <br />
               <i className="fa fa-arrow-circle-right" />
@@ -31,9 +32,12 @@ const Company = () => {
 const allCompany = companies => {
   // TODO: Remove the log and use the data to set the props of <Company />
   const allc = [];
-  for (let i = 0; i < 10; i += 1) {
-    allc.push(<Company key={i} />);
-  }
+  companies.map(company => {
+    allc.push(<Company {...company} />);
+  });
+  // for (let i = 0; i < 10; i += 1) {
+  //   allc.push(<Company key={i} />);
+  // }
   return allc.map(e => e);
 };
 
@@ -42,7 +46,9 @@ const ListCompanies = () => {
   const [companies, setCompanies] = useState([]);
   useEffect(() => {
     // TODO: remove the follwing line
-    setCompanies([]);
+    getCompanies().then(res => {
+      setCompanies(res.tickerData);
+    });
     // TODO: fetch initial list of companies here and set using setCompanies
   }, []);
 
