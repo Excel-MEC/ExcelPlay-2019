@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Ticker from './Ticker/Ticker';
-import ListCompanies from './ListCompanies/ListCompanies';
-import ShareDetails from './ShareDetails/ShareDetails';
-import GraphAndStatus from './GraphAndStatus/GraphAndStatus';
+import Ticker from '../DalalbullComponents/Ticker/Ticker';
+import ListCompanies from '../DalalbullComponents/ListCompanies/ListCompanies';
+import ShareDetails from '../DalalbullComponents/ShareDetails/ShareDetails';
+import GraphAndStatus from '../DalalbullComponents/GraphAndStatus/GraphAndStatus';
 import './DalalbullPlay.scss';
 
 const DalalbullPlay = () => {
