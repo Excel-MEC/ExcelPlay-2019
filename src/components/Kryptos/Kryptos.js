@@ -5,6 +5,7 @@ import '../../App.scss';
 import KryptosInfoBar from './KryptosInfoBar/KryptosInfoBar';
 import KryptosQuestion from './KryptosQuestion/KryptosQuestion';
 import KryptosHintModal from './KryptosHintModal/KryptosHintModal';
+import { ApiRoot } from "../../config/api";
 
 const Kryptos = () => {
   const [level, setLevel] = useState(1);
@@ -15,8 +16,7 @@ const Kryptos = () => {
   const [hintText, setHintText] = useState([]);
 
   useEffect(() => {
-    // TODO: Fix CORS error
-    fetch('http://127.0.0.1:8000/api/ask', {
+    fetch(`${ApiRoot}/kryptos/api/ask`, {
       mode: 'cors',
     })
       .then(res => {
@@ -28,7 +28,7 @@ const Kryptos = () => {
         setLevel(data.level);
         setHintText([data.hint1, data.hint2, data.hint3]);
       });
-  });
+  }, []);
 
   const onSubmit = ans => {
     // Check if answer is correct
