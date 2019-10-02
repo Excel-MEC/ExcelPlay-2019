@@ -24,7 +24,8 @@ const Kryptos = () => {
       })
       .then(data => {
         console.log(JSON.stringify(data));
-        setImgUrl(data.level_file);
+        let imgUrlParts = data.level_file.split('/');
+        setImgUrl(`${ApiRoot}/media/${imgUrlParts[imgUrlParts.length - 1]}`);
         setLevel(data.level);
         setHintText([data.hint1, data.hint2, data.hint3]);
       });
