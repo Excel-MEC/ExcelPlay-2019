@@ -18,7 +18,6 @@ const DalalbullPlay = props => {
       });
     });
   }, {});
-  console.log('hai');
   return (
     <div>
       <Ticker />

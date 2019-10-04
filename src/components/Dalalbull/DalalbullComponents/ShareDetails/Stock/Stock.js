@@ -2,7 +2,6 @@ import React from 'react';
 import './Stock.scss';
 
 const Stock = ({ open_price, current_price, high, low, change }) => {
-  console.log('hai');
   return (
     <div className="stock">
       <table className="table table-borderless">
