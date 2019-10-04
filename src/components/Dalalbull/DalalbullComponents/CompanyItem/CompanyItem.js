@@ -3,7 +3,7 @@ import PercentageChange from '../PercentageChange/PercentageChange';
 
 const CompanyItem = ({ name, current_price, change_per }) => {
   return (
-    <div className="company" data-toggle="modal" data-target="#share-modal">
+    <div className="company">
       <div className="row">
         <div className="c-details">
           <div className="float-left">
