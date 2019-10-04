@@ -4,16 +4,11 @@ import Company from '../CompanyItem/CompanyItem';
 import './ListCompanies.scss';
 
 
-// eslint-disable-next-line
 const allCompany = companies => {
-  // TODO: Remove the log and use the data to set the props of <Company />
   const allc = [];
   companies.map(company => {
     allc.push(<Company {...company} />);
   });
-  // for (let i = 0; i < 10; i += 1) {
-  //   allc.push(<Company key={i} />);
-  // }
   return allc.map(e => e);
 };
 
@@ -21,11 +16,9 @@ const ListCompanies = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [companies, setCompanies] = useState([]);
   useEffect(() => {
-    // TODO: remove the follwing line
     getCompanies().then(res => {
       setCompanies(res.tickerData);
     });
-    // TODO: fetch initial list of companies here and set using setCompanies
   }, []);
 
   function sortProperties(obj) {
