@@ -43,14 +43,17 @@ const setSession = async (authResult, redirect) => {
   localStorage.setItem('expires_at', expiresAt);
   const body = new FormData();
   body.append('access_token', authResult.accessToken);
-  console.log(authResult.accessToken);
   const res = await http.post(ApiRoot + 'auth/v1/signin', body);
-  console.log(res);
-  const user = await http.get(ApiRoot + 'auth/v1/user/detail');
-  console.log(user);
   if (res.Error) {
     alert('Login failed');
     redirect('/login');
   }
   redirect('/');
+};
+
+export const handleLogout = history => {
+  localStorage.removeItem('access_token');
+  localStorage.removeItem('id_token');
+  localStorage.removeItem('expires_at');
+  history.push('/');
 };

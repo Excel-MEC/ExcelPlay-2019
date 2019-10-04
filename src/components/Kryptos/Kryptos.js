@@ -5,18 +5,18 @@ import '../../App.scss';
 import KryptosInfoBar from './KryptosInfoBar/KryptosInfoBar';
 import KryptosQuestion from './KryptosQuestion/KryptosQuestion';
 import KryptosHintModal from './KryptosHintModal/KryptosHintModal';
+import { ApiRoot } from "../../config/api";
 
 const Kryptos = () => {
   const [level, setLevel] = useState(1);
   const [rank, setRank] = useState(0);
   const [imgUrl, setImgUrl] = useState(
-    'https://i.postimg.cc/J003sfrb/DEXATI20180913132106.png',
+    '',
   );
   const [hintText, setHintText] = useState([]);
 
   useEffect(() => {
-    // TODO: Fix CORS error
-    fetch('http://127.0.0.1:8000/api/ask', {
+    fetch(`${ApiRoot}/kryptos/api/ask`, {
       mode: 'cors',
     })
       .then(res => {
@@ -24,14 +24,51 @@ const Kryptos = () => {
       })
       .then(data => {
         console.log(JSON.stringify(data));
-        setImgUrl(data.level_file);
+        let imgUrlParts = data.level_file.split('/');
+        setImgUrl(`${ApiRoot}/media/${imgUrlParts[imgUrlParts.length - 1]}`);
         setLevel(data.level);
         setHintText([data.hint1, data.hint2, data.hint3]);
       });
-  });
+
+    fetch(`${ApiRoot}/auth/leaderboard/rank`, {
+      mode: 'cors',
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        if (data.kryptos != null)
+          setRank(data.kryptos);
+        else
+          setRank(1);
+      });
+  }, []);
 
   const onSubmit = ans => {
-    // Check if answer is correct
+    fetch(`${ApiRoot}/kryptos/api/answer`, {
+      mode: 'cors',
+      method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        'answer': ans
+      })
+    }).then(res => {
+      console.log(res);
+      return res.json();
+    }).then(data => {
+      console.log(data);
+      if (data.answer == 'Correct') {
+        document.alert("Correct answer");
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      } else {
+        document.alert("Wrong answer");
+      }
+    })
     console.log(ans);
   };
 

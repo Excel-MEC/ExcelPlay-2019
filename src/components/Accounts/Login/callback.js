@@ -1,4 +1,4 @@
-import { handleAuthentication } from '../../config/auth0';
+import { handleAuthentication } from '../../../config/auth0';
 
 const Callback = props => {
   handleAuthentication(props.location.hash, props.history);
