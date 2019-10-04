@@ -11,7 +11,7 @@ const Kryptos = () => {
   const [level, setLevel] = useState(1);
   const [rank, setRank] = useState(0);
   const [imgUrl, setImgUrl] = useState(
-    'https://i.postimg.cc/J003sfrb/DEXATI20180913132106.png',
+    '',
   );
   const [hintText, setHintText] = useState([]);
 
@@ -45,7 +45,30 @@ const Kryptos = () => {
   }, []);
 
   const onSubmit = ans => {
-    // Check if answer is correct
+    fetch(`${ApiRoot}/kryptos/api/answer`, {
+      mode: 'cors',
+      method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        'answer': ans
+      })
+    }).then(res => {
+      console.log(res);
+      return res.json();
+    }).then(data => {
+      console.log(data);
+      if (data.answer == 'Correct') {
+        document.alert("Correct answer");
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      } else {
+        document.alert("Wrong answer");
+      }
+    })
     console.log(ans);
   };
 
