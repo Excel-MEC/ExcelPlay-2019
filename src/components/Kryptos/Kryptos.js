@@ -29,6 +29,19 @@ const Kryptos = () => {
         setLevel(data.level);
         setHintText([data.hint1, data.hint2, data.hint3]);
       });
+
+    fetch(`${ApiRoot}/auth/leaderboard/rank`, {
+      mode: 'cors',
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        if (data.kryptos != null)
+          setRank(data.kryptos);
+        else
+          setRank(1);
+      });
   }, []);
 
   const onSubmit = ans => {
