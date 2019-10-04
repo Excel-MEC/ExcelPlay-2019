@@ -1,25 +1,29 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PercentageChange from '../PercentageChange/PercentageChange';
+import './CompanyItem.scss';
 
 const CompanyItem = ({ name, current_price, change_per }) => {
   return (
     <div className="company">
-      <div className="row">
-        <div className="c-details">
-          <div className="float-left">
-            <h1>{name}</h1>
-            <p>Shares of {name}</p>
-          </div>
-          <div className="float-right">
-            <div className="data">
-              <span className="current-price">{current_price}</span>
-              <PercentageChange change_per={change_per}/>
-              <br />
-              <i className="fa fa-arrow-circle-right" />
+      <Link to={`/Dalalbull/${name}`}>
+        <div className="row">
+          <div className="c-details">
+            <div className="float-left">
+              <h1>{name}</h1>
+              <p>Shares of {name}</p>
+            </div>
+            <div className="float-right">
+              <div className="data">
+                <span className="current-price">{current_price}</span>
+                <PercentageChange change_per={change_per} />
+                <br />
+                <i className="fa fa-arrow-circle-right" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };

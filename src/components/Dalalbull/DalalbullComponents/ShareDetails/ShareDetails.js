@@ -14,10 +14,10 @@ const tablist = {
   sharesInHand: 'Shares in hand',
 };
 
-const TabContent = ({ activeTab }) => {
+const TabContent = ({ activeTab, props }) => {
   switch (activeTab) {
     case tablist.stock:
-      return <Stock />;
+      return <Stock {...props}/>;
     case tablist.buy:
       return <Buy />;
     case tablist.sell:
@@ -29,14 +29,14 @@ const TabContent = ({ activeTab }) => {
   }
 };
 
-const ShareDetails = () => {
+const ShareDetails = ({symbol, ...props}) => {
   const [activeTab, setActiveTab] = useState(tablist.stock);
   const isActive = tab => (activeTab === tablist[tab] ? 'active' : '');
 
   return (
     <div className="share-details">
       <h2 className="h2">STOCK INFO</h2>
-      <h1 className="h1">NIFTY 50</h1>
+      <h1 className="h1">{symbol}</h1>
       <ul className="nav nav-tabs">
         {Object.keys(tablist).map((tab, index) => {
           return (
@@ -52,7 +52,7 @@ const ShareDetails = () => {
         })}
       </ul>
       <br />
-      <TabContent activeTab={activeTab} />
+      <TabContent activeTab={activeTab} props={props}/>
     </div>
   );
 };

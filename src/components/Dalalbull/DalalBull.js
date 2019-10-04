@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import DalalbullHeader from './DalalbullComponents/DalalbullHeader/DalalbullHeader';
 import DalalbullPortfolio from './DalalbullPortfolio/DalalbullPortfolio';
 import DalalbullPlay from './DalalbullPlay/DalalbullPlay';
@@ -15,10 +15,16 @@ const Dalalbull = props => {
   return (
     <div>
       <DalalbullHeader />
-      <Route exact path={`${match.url}/`} component={DalalbullPortfolio} />
-      <Route path={`${match.url}/:cid`} component={DalalbullPlay} />
-      <Route path={`${match.url}/rules`} component={DalalbullRules} />
-      <Route path={`${match.url}/ranklist`} component={DalalbullRanklist} />
+      <Switch>
+        <Route exact path={`${match.url}/`} component={DalalbullPortfolio} />
+        <Route exact path={`${match.url}/rules`} component={DalalbullRules} />
+        <Route
+          exact
+          path={`${match.url}/ranklist`}
+          component={DalalbullRanklist}
+        />
+        <Route exact path={`${match.url}/:cid`} component={DalalbullPlay} />
+      </Switch>
     </div>
   );
 };

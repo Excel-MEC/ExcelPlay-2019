@@ -1,1 +1,9 @@
 @import '../../../../global';
+
+.company{
+  background: $bg-alt;
+  a{
+    text-decoration: none;
+    color:#fff;
+  }
+}
