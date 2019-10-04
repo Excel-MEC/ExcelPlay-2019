@@ -1,32 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getCompanies } from '../apicalls/apicalls';
+import Company from '../CompanyItem/CompanyItem';
 import './ListCompanies.scss';
 
-const Company = ({name, current_price, change_per}) => {
-  return (
-    <div className="company" data-toggle="modal" data-target="#share-modal">
-      <div className="row">
-        <div className="c-details">
-          <div className="float-left">
-            <h1>{name}</h1>
-            <p>Shares of {name}</p>
-          </div>
-          <div className="float-right">
-            <div className="data">
-              <span className="current-price">{current_price}</span>
-              <span className="percentage-change positive-change">
-                <i className="fa fa-arrow-up" />
-                {change_per}%
-              </span>
-              <br />
-              <i className="fa fa-arrow-circle-right" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 // eslint-disable-next-line
 const allCompany = companies => {
