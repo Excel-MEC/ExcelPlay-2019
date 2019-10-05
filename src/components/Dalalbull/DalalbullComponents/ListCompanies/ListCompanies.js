@@ -20,28 +20,22 @@ const ListCompanies = () => {
     });
   }, []);
 
-  function sortProperties(obj) {
-    // convert object into array
-    const sortable = [];
-    Object.keys(obj).forEach(key => sortable.push([key, obj[key]])); // each item is an array in format [key, value]
-
-    // sort items by value
-    sortable.sort((x, y) => {
-      const a = x > y ? 1 : 0;
-      return x < y ? -1 : a;
+  function sortCompaniesByMatch(comps) {
+    comps.sort((x, y) => {
+      return y.match - x.match;
     });
-    return sortable; // array in format [ [ key1, val1 ], [ key2, val2 ], ... ]
+    return comps;
   }
+
   const fuzzyMatch = (list, query) => {
     const lowercaseQuery = query.replace(/ /g, '').toLowerCase();
-    const matchValues = {};
-
-    list.forEach(stock => {
+    const newlist = list
+    for (let i = 0; i < list.length; i += 1) {
       let searchPosition = 0;
       let match = 0;
-      const { name } = stock;
-      for (let i = 0; i < name.length; i += 1) {
-        const textChar = name[i];
+      const { name } = list[i];
+      for (let j = 0; j < name.length; j += 1) {
+        const textChar = name[j];
         if (
           searchPosition < lowercaseQuery.length &&
           textChar.toLowerCase() === lowercaseQuery[searchPosition]
@@ -50,29 +44,17 @@ const ListCompanies = () => {
           searchPosition += 1;
         }
       }
-      matchValues[stock.name] = match;
-    });
+      newlist[i].match = match;
+    }
+    return sortCompaniesByMatch(newlist);
+  };
 
-    return sortProperties(matchValues);
-  };
   const search = () => {
-    // TODO: Remove the log and search; set the data in companies using setCompanies
-    console.log('searching');
-    const list = [
-      {
-        name: 'Infosys Pvt Ltd',
-        id: 101,
-      },
-      {
-        name: 'Tata Consultancy',
-        id: 202,
-      },
-    ];
     // Basic custom made fuzzy search
-    // TODO: Replace with Fuse.js if necessary
-    const results = fuzzyMatch(list, searchTerm);
-    console.log(results);
+    const results = fuzzyMatch(companies, searchTerm);
+    setCompanies(results);
   };
+
   return (
     <div className="companies-stock-data">
       <div className="search-wrapper">
