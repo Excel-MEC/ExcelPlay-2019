@@ -1,8 +1,9 @@
 import React from 'react';
 import Trade, { tradeProps } from '../Trade/Trade';
 import './Sell.scss';
+import { submitSellOrShortCover } from '../../apicalls/apicalls';
 
-const Sell = () => {
+const Sell = ({ company }) => {
   const props = tradeProps('SELL');
   return (
     <div className="buy">
@@ -17,6 +18,10 @@ const Sell = () => {
                 <button
                   type="button"
                   className="btn btn-success btn-lg btn-block my-2"
+                  onClick={e => {
+                    e.preventDefault();
+                    submitSellOrShortCover(props.quantity, company, props.pendingDisabled, 'sell');
+                  }}
                 >
                   Sell
                 </button>
