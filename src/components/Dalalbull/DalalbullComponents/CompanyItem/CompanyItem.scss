@@ -1,9 +1,39 @@
 @import '../../../../global';
 
-.company{
+.company-item {
+  padding: 7px 6px;
+  border-bottom: 1px solid #3a3a3a;
+  cursor: pointer;
   background: $bg-alt;
-  a{
+  a {
     text-decoration: none;
-    color:#fff;
+    color: #fff;
+  }
+  &:hover {
+    background-color: $bg;
+  }
+  .row {
+    margin: 0 !important;
+    .company-name{
+      max-width: 10vw;
+    }
+    .data {
+      margin-top: 0.67em;
+      font-size: 17px;
+      .current-price {
+        font-family: $font-secondary;
+        padding: 7px 15px;
+        display: inline-block;
+        border-radius: 5px;
+        margin-left: 0.4em;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+      .fa-arrow-circle-right {
+        float: right;
+        display: inline-block;
+        margin-top: 1em;
+        margin-right: 4px;
+      }
+    }
   }
 }
