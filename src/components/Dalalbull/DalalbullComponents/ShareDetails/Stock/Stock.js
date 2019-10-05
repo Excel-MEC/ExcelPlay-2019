@@ -1,30 +1,30 @@
 import React from 'react';
 import './Stock.scss';
 
-const Stock = () => {
+const Stock = ({ open_price, current_price, high, low, change }) => {
   return (
     <div className="stock">
       <table className="table table-borderless">
         <tbody>
           <tr>
             <th>Open</th>
-            <td>1790</td>
+            <td>{open_price}</td>
           </tr>
           <tr>
             <th>Current Price</th>
-            <td>1820</td>
+            <td>{current_price}</td>
           </tr>
           <tr>
             <th>High</th>
-            <td>1836.9</td>
+            <td>{high}</td>
           </tr>
           <tr>
             <th>Low</th>
-            <td>1765.5</td>
+            <td>{low}</td>
           </tr>
           <tr>
             <th>Change</th>
-            <td>58</td>
+            <td>{change}</td>
           </tr>
         </tbody>
       </table>
