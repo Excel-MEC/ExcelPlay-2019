@@ -23,11 +23,11 @@ const Kryptos = () => {
         return res.json();
       })
       .then(data => {
-        console.log(JSON.stringify(data));
         let imgUrlParts = data.level_file.split('/');
         setImgUrl(`${ApiRoot}/media/${imgUrlParts[imgUrlParts.length - 1]}`);
         setLevel(data.level);
-        setHintText([data.hint1, data.hint2, data.hint3]);
+        let hints = data.hints.map(e => { return e.hint; });
+        setHintText(hints);
       });
 
     fetch(`${ApiRoot}/auth/leaderboard/rank`, {
@@ -38,38 +38,27 @@ const Kryptos = () => {
       })
       .then(data => {
         if (data.kryptos != null)
-          setRank(data.kryptos);
+          setRank(data.kryptos.rank);
         else
           setRank(1);
       });
   }, []);
 
   const onSubmit = ans => {
-    fetch(`${ApiRoot}/kryptos/api/answer`, {
+    fetch(`${ApiRoot}/kryptos/api/answer?answer=${ans}`, {
       mode: 'cors',
-      method: 'post',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        'answer': ans
-      })
     }).then(res => {
-      console.log(res);
       return res.json();
     }).then(data => {
-      console.log(data);
-      if (data.answer == 'Correct') {
-        document.alert("Correct answer");
+      if (data.answer === 'Correct') {
+        window.alert("Correct answer");
         setTimeout(() => {
           window.location.reload();
         }, 1000);
       } else {
-        document.alert("Wrong answer");
+        window.alert("Wrong answer");
       }
     })
-    console.log(ans);
   };
 
   return (
