@@ -29,14 +29,14 @@ const TabContent = ({ activeTab, props }) => {
   }
 };
 
-const ShareDetails = ({symbol, ...props}) => {
+const ShareDetails = (props) => {
   const [activeTab, setActiveTab] = useState(tablist.stock);
   const isActive = tab => (activeTab === tablist[tab] ? 'active' : '');
 
   return (
     <div className="share-details">
       <h2 className="h2">STOCK INFO</h2>
-      <h1 className="h1">{symbol}</h1>
+      <h1 className="h1">{props.symbol}</h1>
       <ul className="nav nav-tabs">
         {Object.keys(tablist).map((tab, index) => {
           return (

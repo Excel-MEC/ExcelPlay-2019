@@ -3,7 +3,6 @@ import { getCompanies } from '../apicalls/apicalls';
 import Company from '../CompanyItem/CompanyItem';
 import './ListCompanies.scss';
 
-
 const allCompany = companies => {
   const allc = [];
   companies.map(company => {

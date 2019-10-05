@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import PercentageChange from '../PercentageChange/PercentageChange';
 import './CompanyItem.scss';
 
-const CompanyItem = ({ name, current_price, change_per }) => {
+const CompanyItem = ({ name, current_price, change_per, symbol }) => {
   return (
     <div className="company">
-      <Link to={`/Dalalbull/${name}`}>
+      <Link to={`/Dalalbull/${symbol}`}>
         <div className="row">
           <div className="c-details">
             <div className="float-left">
-              <h1>{name}</h1>
+              <h1>{symbol}</h1>
               <p>Shares of {name}</p>
             </div>
             <div className="float-right">
