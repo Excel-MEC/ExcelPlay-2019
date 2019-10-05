@@ -9,15 +9,10 @@ import { getCompanyDetails } from '../DalalbullComponents/apicalls/apicalls';
 const DalalbullPlay = props => {
   const [shareDetails, setShareDetails] = useState(null);
   useEffect(() => {
-    getCompanyDetails(props.match.params['cid']).then(res => {
+    getCompanyDetails(props.match.params.cid).then(res => {
       setShareDetails(res);
     });
-    props.history.listen((location, action) => {
-      getCompanyDetails(location.pathname.split('/')[2]).then(res => {
-        setShareDetails(res);
-      });
-    });
-  }, {});
+  }, [props.match.params]);
   return (
     <div>
       <Ticker />

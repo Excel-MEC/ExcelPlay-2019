@@ -17,11 +17,11 @@ const tablist = {
 const TabContent = ({ activeTab, props }) => {
   switch (activeTab) {
     case tablist.stock:
-      return <Stock {...props}/>;
+      return <Stock {...props} />;
     case tablist.buy:
-      return <Buy />;
+      return <Buy company={props.symbol} />;
     case tablist.sell:
-      return <Sell />;
+      return <Sell company={props.symbol} />;
     case tablist.sharesInHand:
       return <SharesInHand />;
     default:
@@ -30,6 +30,7 @@ const TabContent = ({ activeTab, props }) => {
 };
 
 const ShareDetails = (props) => {
+  console.log(props);
   const [activeTab, setActiveTab] = useState(tablist.stock);
   const isActive = tab => (activeTab === tablist[tab] ? 'active' : '');
 
@@ -52,7 +53,7 @@ const ShareDetails = (props) => {
         })}
       </ul>
       <br />
-      <TabContent activeTab={activeTab} props={props}/>
+      <TabContent activeTab={activeTab} props={props} />
     </div>
   );
 };
