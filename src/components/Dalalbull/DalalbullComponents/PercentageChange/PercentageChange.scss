@@ -1,1 +1,15 @@
 @import '../../../../global';
+
+.percentage-change {
+  font-family: $font-secondary;
+  padding: 7px 15px;
+  display: inline-block;
+  border-radius: 5px;
+  margin-left: 0.4em;
+}
+.percentage-change.positive-change {
+  background-color: $secondary;
+}
+.percentage-change.negative-change {
+  background-color: $primary;
+}

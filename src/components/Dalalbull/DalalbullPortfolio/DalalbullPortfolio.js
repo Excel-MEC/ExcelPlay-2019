@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Ticker from '../DalalbullComponents/Ticker/Ticker';
 import ListCompanies from '../DalalbullComponents/ListCompanies/ListCompanies';
-import SharesInHand from '../DalalbullComponents/ShareDetails/SharesInHand/SharesInHand';
+import Portfolio from '../DalalbullComponents/Portfolio/Portfolio';
 import ShareDetails from '../DalalbullComponents/ShareDetails/ShareDetails';
 import GraphAndStatus from '../DalalbullComponents/GraphAndStatus/GraphAndStatus';
 import './DalalbullPortfolio.scss';
@@ -19,9 +19,8 @@ const DalalbullPortfolio = () => {
             </Link>
           </div>
           <div className="col-md-5 d-none d-sm-block history">
-            <h2 className="h2">STOCK INFO</h2>
-            <h1 className="h1">NIFTY 50</h1>
-            <SharesInHand/>
+            <h2 className="h2">Portfolio</h2>
+            <Portfolio/>
           </div>
           <div id="share-modal" className="modal fade" role="dialog">
             <div className="modal-dialog">

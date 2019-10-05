@@ -35,48 +35,6 @@
     .c-details {
       width: 100%;
     }
-    .company {
-      padding: 7px 6px;
-      border-bottom: 1px solid #3a3a3a;
-      cursor: pointer;
-      &:hover {
-        background-color: $bg;
-      }
-      .row {
-        margin: 0 !important;
-        .data {
-          margin-top: 0.67em;
-          font-size: 17px;
-          .current-price {
-            font-family: $font-secondary;
-            padding: 7px 15px;
-            display: inline-block;
-            border-radius: 5px;
-            margin-left: 0.4em;
-            background-color: rgba(0, 0, 0, 0.3);
-          }
-          .percentage-change {
-            font-family: $font-secondary;
-            padding: 7px 15px;
-            display: inline-block;
-            border-radius: 5px;
-            margin-left: 0.4em;
-          }
-          .percentage-change.positive-change {
-            background-color: $secondary;
-          }
-          .percentage-change.negative-change {
-            background-color: $primary;
-          }
-          .fa-arrow-circle-right {
-            float: right;
-            display: inline-block;
-            margin-top: 1em;
-            margin-right: 4px;
-          }
-        }
-      }
-    }
   }
 
   @media screen and (max-width: 768px) {
