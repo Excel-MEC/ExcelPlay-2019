@@ -13,7 +13,7 @@ export const getCompanyDetails = company => {
 
 export const submitBuyOrShortSell = (qty, company, pending, tradeType) => {
   const body = new FormData();
-  body.append('qty', qty);
+  body.append('quantity', qty);
   body.append('company', company);
   body.append('pending', pending);
   body.append('b_ss', tradeType)
@@ -22,7 +22,7 @@ export const submitBuyOrShortSell = (qty, company, pending, tradeType) => {
 
 export const submitSellOrShortCover = (qty, company, pending, tradeType) => {
   const body = new FormData();
-  body.append('qty', qty);
+  body.append('quantity', qty);
   body.append('company', company);
   body.append('pending', pending);
   body.append('s_sc', tradeType)
