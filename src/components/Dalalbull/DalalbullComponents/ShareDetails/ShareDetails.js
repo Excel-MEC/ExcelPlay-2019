@@ -19,9 +19,9 @@ const TabContent = ({ activeTab, props }) => {
     case tablist.stock:
       return <Stock {...props} />;
     case tablist.buy:
-      return <Buy company={props.symbol} />;
+      return <Buy {...props} />;
     case tablist.sell:
-      return <Sell company={props.symbol} />;
+      return <Sell {...props} />;
     case tablist.sharesInHand:
       return <SharesInHand />;
     default:

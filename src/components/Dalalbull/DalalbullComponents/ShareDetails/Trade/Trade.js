@@ -17,6 +17,18 @@ export function tradeProps(type) {
 }
 
 const Trade = props => {
+  const updateValues = (quantity) => {
+    const bv = props.current_price * quantity;
+    props.setBase(bv.toFixed(2));
+    let brokerage_perc = 0.5;
+    if (props.total_transactions > 100 && props.total_transactions < 1000)
+      brokerage_perc = 0.5;
+    else if (props.total_transactions >= 1000)
+      brokerage_perc = 1.5;
+    const brk = (brokerage_perc / 100) * (props.current_price * quantity);
+    props.setBrokerage(brk.toFixed(2));
+    props.setTotal((bv + brk).toFixed(2));
+  }
   return (
     <div className="Trade">
       <div className="d-flex p-4">
@@ -27,6 +39,7 @@ const Trade = props => {
             onClick={() => {
               if (props.quantity > 0) {
                 props.setQuantity(props.quantity - 1);
+                updateValues(props.quantity - 1);
               }
             }}
           >
@@ -41,14 +54,21 @@ const Trade = props => {
             className="quantity-input text-center"
             placeholder="Quantity"
             value={props.quantity}
-            onChange={e => props.setQuantity(parseInt(e.target.value, 10))}
+            onChange={e => {
+              const qty = parseInt(e.target.value, 10);
+              props.setQuantity(qty)
+              isNaN(qty) ? updateValues(0) : updateValues(qty);
+            }}
           />
         </div>
         <div>
           <button
             type="button"
             className="btn increment-button"
-            onClick={() => props.setQuantity(props.quantity + 1)}
+            onClick={() => {
+              props.setQuantity(props.quantity + 1)
+              updateValues(props.quantity + 1);
+            }}
           >
             <i className="fa fa-plus" />
           </button>
