@@ -7,29 +7,22 @@ import ShareDetails from '../DalalbullComponents/ShareDetails/ShareDetails';
 import GraphAndStatus from '../DalalbullComponents/GraphAndStatus/GraphAndStatus';
 import './DalalbullPortfolio.scss';
 
-const HomeView = () => {
+const HomeView = props => {
   return (
     <div className="dalalbullPortfolio">
       <Ticker />
       <div className="content">
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-lg-3">
             <Link to="/Dalalbull">
               <ListCompanies />
             </Link>
           </div>
-          <div className="col-md-5 d-none d-sm-block history">
+          <div className="col-lg-5 d-none d-sm-block history">
             <h2 className="h2">Portfolio</h2>
             <Portfolio />
           </div>
-          <div id="share-modal" className="modal fade" role="dialog">
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <ShareDetails />
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4">
+          <div className="col-lg-4">
             <GraphAndStatus />
           </div>
         </div>
@@ -44,11 +37,11 @@ const ExclusiveView = () => {
       <Ticker />
       <div className="content" style={{ padding: '1em' }}>
         <div className="row">
-          <div className="col-md-6 d-sm-block history">
+          <div className="col-lg-6 d-sm-block history">
             <h2 className="h2">Portfolio</h2>
             <Portfolio />
           </div>
-          <div className="col-md-6">
+          <div className="col-lg-6">
             <GraphAndStatus />
           </div>
         </div>

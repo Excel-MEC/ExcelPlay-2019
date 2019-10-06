@@ -9,11 +9,11 @@ const Buy = ({ company }) => {
     <div className="buy">
       <div className="quantity-wrapper">
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-lg-6">
             <div>Buy Nifty 50</div>
             <br />
             <Trade {...props} />
-            <div className="col-md-6">
+            <div className="col-lg-6">
               <button
                 type="button"
                 className="btn btn-success btn-lg btn-block my-2"
@@ -30,7 +30,7 @@ const Buy = ({ company }) => {
               </button>
             </div>
           </div>
-          <div className="col-md-6 details">
+          <div className="col-lg-6 details">
             <table className="table table-borderless">
               <tbody>
                 <tr>
