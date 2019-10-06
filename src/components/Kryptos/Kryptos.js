@@ -4,6 +4,7 @@ import { GameHeader, MItem } from '../common/GameHeader/GameHeader';
 import kryptosLogo from '../../assets/kry.png';
 import KryptosPlay from './KryptosPlay/KryptosPlay';
 import KryptosRules from './KryptosRules/KryptosRules';
+import KryptosRanklist from './KryptosRanklist/KryptosRanklist';
 
 const Kryptos = (props) => {
     const { match } = props;
@@ -17,6 +18,7 @@ const Kryptos = (props) => {
             <Switch>
                 <Route exact path={`${match.url}/`} component={KryptosPlay} />
                 <Route exact path={`${match.url}/rules`} component={KryptosRules} />
+                <Route exact path={`${match.url}/ranklist`} component={KryptosRanklist} />
             </Switch>
         </div>
     )
