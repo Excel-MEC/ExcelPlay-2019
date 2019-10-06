@@ -4,11 +4,8 @@ import Company from '../CompanyItem/CompanyItem';
 import './ListCompanies.scss';
 
 const allCompany = companies => {
-  const allc = [];
-  companies.map(company => {
-    allc.push(<Company {...company} />);
-  });
-  return allc.map(e => e);
+  return companies.map(company =>
+    <Company {...company} key={company['symbol']}/>);
 };
 
 const ListCompanies = () => {
@@ -16,7 +13,7 @@ const ListCompanies = () => {
   const [companies, setCompanies] = useState([]);
   useEffect(() => {
     getCompanies().then(res => {
-      setCompanies(res.tickerData);
+      setCompanies(res['tickerData']);
     });
   }, []);
 

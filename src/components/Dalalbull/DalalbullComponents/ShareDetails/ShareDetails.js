@@ -30,7 +30,6 @@ const TabContent = ({ activeTab, props }) => {
 };
 
 const ShareDetails = (props) => {
-  console.log(props);
   const [activeTab, setActiveTab] = useState(tablist.stock);
   const isActive = tab => (activeTab === tablist[tab] ? 'active' : '');
 

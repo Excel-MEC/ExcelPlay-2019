@@ -7,11 +7,9 @@ import DalalbullRules from './DalalbullRules/DalalbullRules';
 import DalalbullRanklist from './DalalbullRanklist/DalalbullRanklist';
 import withLogin from '../HOC/withLogin';
 
-let history = null;
 
 const Dalalbull = props => {
   const { match } = props;
-  history = props.history;
   return (
     <div>
       <DalalbullHeader />
