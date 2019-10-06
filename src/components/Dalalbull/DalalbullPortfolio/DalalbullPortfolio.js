@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Ticker from '../DalalbullComponents/Ticker/Ticker';
 import ListCompanies from '../DalalbullComponents/ListCompanies/ListCompanies';
 import Portfolio from '../DalalbullComponents/Portfolio/Portfolio';
-import ShareDetails from '../DalalbullComponents/ShareDetails/ShareDetails';
 import GraphAndStatus from '../DalalbullComponents/GraphAndStatus/GraphAndStatus';
 import './DalalbullPortfolio.scss';
 
