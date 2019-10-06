@@ -7,14 +7,14 @@ import Buy from './Buy/Buy';
 import Sell from './Sell/Sell';
 import SharesInHand from './SharesInHand/SharesInHand';
 
-const tablist = {
+export const tablist = {
   stock: 'Stock',
   buy: 'Buy',
   sell: 'Sell/Short Sell',
   sharesInHand: 'Shares in hand',
 };
 
-const TabContent = ({ activeTab, props }) => {
+const TabContent = ({ activeTab, props, setActiveTab }) => {
   switch (activeTab) {
     case tablist.stock:
       return <Stock {...props} />;
@@ -23,7 +23,7 @@ const TabContent = ({ activeTab, props }) => {
     case tablist.sell:
       return <Sell {...props} />;
     case tablist.sharesInHand:
-      return <SharesInHand />;
+      return <SharesInHand {...props} setActiveTab={setActiveTab} />;
     default:
       return <Stock />;
   }
@@ -52,7 +52,7 @@ const ShareDetails = (props) => {
         })}
       </ul>
       <br />
-      <TabContent activeTab={activeTab} props={props} />
+      <TabContent activeTab={activeTab} props={props} setActiveTab={setActiveTab} />
     </div>
   );
 };

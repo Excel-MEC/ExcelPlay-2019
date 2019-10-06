@@ -5,12 +5,13 @@ import ShareDetails from '../DalalbullComponents/ShareDetails/ShareDetails';
 import GraphAndStatus from '../DalalbullComponents/GraphAndStatus/GraphAndStatus';
 import Modal from '../DalalbullComponents/Modal/Modal';
 import './DalalbullPlay.scss';
-import { getCompanyDetails, getPortfolio } from '../DalalbullComponents/apicalls/apicalls';
+import { getCompanyDetails, getPortfolio, getDashboard } from '../DalalbullComponents/apicalls/apicalls';
 
 const DalalbullPlay = props => {
   const [shareDetails, setShareDetails] = useState(null);
   const [modalVisibility, setModalVisibility] = useState('visible');
   const [portfolioDetails, setPortfolioDetails] = useState(null);
+  const [dashboard, setDashboardDetails] = useState(null);
   useEffect(() => {
     getCompanyDetails(props.match.params.cid).then(res => {
       setShareDetails(res);
@@ -22,6 +23,11 @@ const DalalbullPlay = props => {
       setPortfolioDetails(res);
     });
   }, []);
+  useEffect(() => {
+    getDashboard().then(res => {
+      setDashboardDetails(res);
+    });
+  }, []);
   return (
     <div className="dalalbull-play">
       <Ticker />
@@ -31,7 +37,7 @@ const DalalbullPlay = props => {
             <ListCompanies />
           </div>
           <div className="col-lg-5 d-none d-lg-block">
-            <ShareDetails {...shareDetails} {...portfolioDetails} />
+            <ShareDetails {...shareDetails} {...portfolioDetails} {...dashboard} />
           </div>
           <div className="mobile-share-details">
             <Modal
