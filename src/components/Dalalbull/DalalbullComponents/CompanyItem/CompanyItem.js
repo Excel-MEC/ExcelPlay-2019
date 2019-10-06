@@ -5,13 +5,13 @@ import './CompanyItem.scss';
 
 const CompanyItem = ({ name, current_price, change_per, symbol }) => {
   return (
-    <div className="company">
+    <div className="company-item">
       <Link to={`/Dalalbull/${symbol}`}>
         <div className="row">
           <div className="c-details">
             <div className="float-left">
               <h1>{symbol}</h1>
-              <p>Shares of {name}</p>
+              <p className='company-name'>{name}</p>
             </div>
             <div className="float-right">
               <div className="data">
