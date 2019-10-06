@@ -11,6 +11,7 @@ const DalalbullPlay = props => {
   useEffect(() => {
     getCompanyDetails(props.match.params.cid).then(res => {
       setShareDetails(res);
+      $('#share-modal').show();
     });
   }, [props.match.params]);
   return (

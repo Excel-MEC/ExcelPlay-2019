@@ -22,7 +22,7 @@ const GameHeader = props => {
     <div className="gameHeader">
       <div className="top-banner">
         <div className="row">
-          <div className="col-md-4">
+          <div className="col-lg-4">
             <div className="d-flex">
               <div className="excel-play-logo">
                 <a href="/">
@@ -56,7 +56,7 @@ const GameHeader = props => {
               {props.children}
             </SideNav>
           </div>
-          <div className="col-md-8 d-none d-md-block">
+          <div className="col-lg-8 d-none d-lg-block">
             <ul className="nav justify-content-end nav-main">
               {props.children}
             </ul>
