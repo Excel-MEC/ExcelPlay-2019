@@ -20,9 +20,9 @@ const Buy = ({ company }) => {
                 onClick={e => {
                   e.preventDefault();
                   if (props.pendingDisabled) {
-                    submitBuyOrShortSell(props.quantity, company, null, 'buy');
+                    submitBuyOrShortSell(props.quantity, company, null, true);
                   } else {
-                    submitBuyOrShortSell(props.quantity, company, props.price, 'buy');
+                    submitBuyOrShortSell(props.quantity, company, props.price, true);
                   }
                 }}
               >

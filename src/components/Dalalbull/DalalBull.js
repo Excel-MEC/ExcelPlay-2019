@@ -6,9 +6,13 @@ import DalalbullPlay from './DalalbullPlay/DalalbullPlay';
 import DalalbullRules from './DalalbullRules/DalalbullRules';
 import DalalbullRanklist from './DalalbullRanklist/DalalbullRanklist';
 import withLogin from '../HOC/withLogin';
+import { handshake } from './DalalbullComponents/apicalls/apicalls';
 
 
 const Dalalbull = props => {
+  React.useEffect(() => {
+    handshake();
+  }, [])
   const { match } = props;
   return (
     <div>
