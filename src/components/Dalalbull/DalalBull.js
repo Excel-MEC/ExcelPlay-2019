@@ -16,6 +16,7 @@ const Dalalbull = props => {
       <Switch>
         <Route exact path={`${match.url}/`} component={DalalbullPortfolio} />
         <Route exact path={`${match.url}/rules`} component={DalalbullRules} />
+        <Route exact path={`${match.url}/Portfolio`} component={DalalbullPortfolio} />
         <Route
           exact
           path={`${match.url}/ranklist`}
