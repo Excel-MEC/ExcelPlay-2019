@@ -17,11 +17,11 @@ const allTickers = () => {
   const [companies, setCompanies] = useState([]);
   useEffect(() => {
     getCompanies().then(res => {
-      setCompanies(res.tickerData);
+      setCompanies(res['tickerData']);
     });
   }, []);
 
-  return companies.map(company=>(<TickerItem {...company}/>));
+  return companies.map(company=>(<TickerItem {...company} key={company['symbol']}/>));
 };
 
 const Ticker = () => {

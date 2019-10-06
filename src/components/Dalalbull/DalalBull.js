@@ -8,14 +8,12 @@ import DalalbullRanklist from './DalalbullRanklist/DalalbullRanklist';
 import withLogin from '../HOC/withLogin';
 import { handshake } from './DalalbullComponents/apicalls/apicalls';
 
-let history = null;
 
 const Dalalbull = props => {
   React.useEffect(() => {
     handshake();
   }, [])
   const { match } = props;
-  history = props.history;
   return (
     <div>
       <DalalbullHeader />

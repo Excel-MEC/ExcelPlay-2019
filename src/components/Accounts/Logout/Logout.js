@@ -1,4 +1,3 @@
-import React from 'react';
 import { handleLogout } from '../../../config/auth0';
 
 const Logout = props => {
