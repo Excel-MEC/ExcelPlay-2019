@@ -1,7 +1,8 @@
 import React from 'react';
 import './SharesInHand.scss';
+import { tablist } from '../ShareDetails';
 
-const SharesInHand = () => {
+const SharesInHand = ({ stockholdings, symbol, setActiveTab }) => {
   return (
     <div className="sharesInHand">
       <div className="head">Shares In Hand</div>
@@ -16,17 +17,26 @@ const SharesInHand = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>BUY</td>
-            <td>80</td>
-            <td>1820.00</td>
-            <td>3.62</td>
-            <td>
-              <button type="button" className="btn">
-                Sell
-              </button>
-            </td>
-          </tr>
+          {stockholdings.map(holding => {
+            if (holding.company === symbol)
+              return (
+                <tr>
+                  <td>{holding.type}</td>
+                  <td>{holding.number}</td>
+                  <td>{(holding.current * holding.number).toFixed(2)}</td>
+                  <td>{((((holding.current * holding.number) - (holding.purchase * holding.number)) * 100) / (holding.purchase * holding.number)).toFixed(2)}</td>
+                  <td>
+                    <button type="button" className="btn" onClick={(e) => {
+                      e.preventDefault();
+                      setActiveTab(tablist.sell);
+                    }}>
+                      Sell
+                    </button>
+                  </td>
+                </tr>
+              )
+            return '';
+          })}
         </tbody>
       </table>
     </div>
