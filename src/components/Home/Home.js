@@ -4,10 +4,10 @@ import Games from './Games/Games';
 import './Home.scss';
 import { ApiRoot } from '../../config/api';
 // import Navbar from '../common/Navbar/Navbar';
-import dalal from '../../assets/bull5-grey.png';
-import kryp from '../../assets/kry-grey.png';
-import hash from '../../assets/hash2-grey.png';
-import echo from '../../assets/ech2-grey.png';
+import dalal from '../../assets/dalalBull_500.png';
+import kryp from '../../assets/kryptos_500.png';
+import hash from '../../assets/hash_500.png';
+import circ from '../../assets/circuimstance_500.png';
 
 const Home = () => {
   const [kryptosRank, setKryptosRank] = useState(0);
@@ -70,8 +70,8 @@ const Home = () => {
             </div>
             <div className="col-lg-6 center-block text-center cell">
               <Games
-                name="ECHO"
-                logo={echo}
+                name="CIRCUMSTANCE"
+                logo={circ}
                 imageSize="echoPic"
                 type="notRanked"
               />

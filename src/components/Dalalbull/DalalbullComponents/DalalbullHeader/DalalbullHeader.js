@@ -1,6 +1,6 @@
 import React from 'react';
 import './DalalbullHeader.scss';
-import Dalalbull from '../../../../assets/bull5.png';
+import Dalalbull from '../../../../assets/dalalBullc_500.png';
 import { GameHeader, MItem } from '../../../common/GameHeader/GameHeader';
 
 const DalalbullHeader = () => {
