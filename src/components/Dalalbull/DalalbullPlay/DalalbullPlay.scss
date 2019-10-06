@@ -1,1 +1,12 @@
 @import "../../../global";
+
+.dalalbull-play{
+  .mobile-share-details{
+    display: none;
+  }
+  @media screen and (max-width: 990px) {
+    .mobile-share-details{
+      display: block;
+    }
+  }
+}
