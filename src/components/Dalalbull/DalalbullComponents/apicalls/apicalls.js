@@ -9,6 +9,14 @@ export const getCompanies = () => {
   return http.get(`${ApiRoot}dalalbull/api/ticker/`).then(res => res);
 };
 
+export const getPortfolio = () => {
+  return http.get(`${ApiRoot}dalalbull/api/portfolioview/`).then(res => res);
+};
+
+export const getDashboard = () => {
+  return http.get(`${ApiRoot}dalalbull/api/dashboard/`).then(res => res);
+};
+
 export const getCompanyDetails = company => {
   const body = new FormData();
   body.append('company', company);
