@@ -8,7 +8,7 @@ const DalalbullHeader = () => {
     <GameHeader gName="DALALBULL" icon={Dalalbull}>
       <MItem text="Rules" link="/Dalalbull/rules" />
       <MItem text="Play" link="/Dalalbull" />
-      <MItem text="History" link="/Dalalbull" />
+      <MItem text="Portfolio" link="/Dalalbull/Portfolio" />
       <MItem text="Ranklist" link="/Dalalbull/ranklist" />
     </GameHeader>
   );

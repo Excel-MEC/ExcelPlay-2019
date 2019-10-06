@@ -8,20 +8,19 @@ import DalalbullRanklist from './DalalbullRanklist/DalalbullRanklist';
 import withLogin from '../HOC/withLogin';
 import { handshake } from './DalalbullComponents/apicalls/apicalls';
 
-let history = null;
 
 const Dalalbull = props => {
   React.useEffect(() => {
     handshake();
   }, [])
   const { match } = props;
-  history = props.history;
   return (
     <div>
       <DalalbullHeader />
       <Switch>
         <Route exact path={`${match.url}/`} component={DalalbullPortfolio} />
         <Route exact path={`${match.url}/rules`} component={DalalbullRules} />
+        <Route exact path={`${match.url}/Portfolio`} component={DalalbullPortfolio} />
         <Route
           exact
           path={`${match.url}/ranklist`}

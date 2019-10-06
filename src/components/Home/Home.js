@@ -33,13 +33,13 @@ const Home = () => {
 
   return (
     <div className="row">
-      <div className="col-md-12">
+      <div className="col-lg-12">
         <HomeHeader />
       </div>
-      <div className="container col-md-12">
+      <div className="container col-lg-12">
         <div className="events">
           <div className="row">
-            <div className="col-md-6 center-block text-center cell">
+            <div className="col-lg-6 center-block text-center cell">
               <Games
                 name="DALALBULL"
                 rank={dalalbullRank}
@@ -49,7 +49,7 @@ const Home = () => {
                 href="/Dalalbull"
               />
             </div>
-            <div className="col-md-6 center-block text-center cell">
+            <div className="col-lg-6 center-block text-center cell">
               <Games
                 name="KRYPTOS"
                 rank={kryptosRank}
@@ -60,7 +60,7 @@ const Home = () => {
               />
             </div>
             <div className="w-100" />
-            <div className="col-md-6 center-block text-center cell">
+            <div className="col-lg-6 center-block text-center cell">
               <Games
                 name="#INCLUDE"
                 logo={hash}
@@ -68,7 +68,7 @@ const Home = () => {
                 type="notRanked"
               />
             </div>
-            <div className="col-md-6 center-block text-center cell">
+            <div className="col-lg-6 center-block text-center cell">
               <Games
                 name="ECHO"
                 logo={echo}

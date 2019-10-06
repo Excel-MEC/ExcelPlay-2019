@@ -19,7 +19,7 @@ export function tradeProps(type) {
 const Trade = props => {
   return (
     <div className="Trade">
-      <div className="d-flex">
+      <div className="d-flex p-4">
         <div className="button">
           <button
             type="button"
