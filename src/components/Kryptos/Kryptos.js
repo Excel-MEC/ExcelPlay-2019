@@ -23,11 +23,16 @@ const Kryptos = () => {
         return res.json();
       })
       .then(data => {
-        let imgUrlParts = data.level_file.split('/');
-        setImgUrl(`${ApiRoot}/media/${imgUrlParts[imgUrlParts.length - 1]}`);
-        setLevel(data.level);
-        let hints = data.hints.map(e => { return e.hint; });
-        setHintText(hints);
+        if (data.completed == undefined) {
+          let imgUrlParts = data.level_file.split('/');
+          setImgUrl(`${ApiRoot}/media/${imgUrlParts[imgUrlParts.length - 1]}`);
+          setLevel(data.level);
+          let hints = data.hints.map(e => { return e.hint; });
+          setHintText(hints);
+        }
+        else if (data.completed == true) {
+          window.alert("You have completed all levels");
+        }
       });
 
     fetch(`${ApiRoot}/auth/leaderboard/rank`, {
