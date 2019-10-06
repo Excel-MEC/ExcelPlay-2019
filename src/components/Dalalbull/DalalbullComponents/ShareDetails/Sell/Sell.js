@@ -20,7 +20,11 @@ const Sell = ({ company }) => {
                   className="btn btn-success btn-lg btn-block my-2"
                   onClick={e => {
                     e.preventDefault();
-                    submitSellOrShortCover(props.quantity, company, props.pendingDisabled, 'sell');
+                    if (props.pendingDisabled) {
+                      submitSellOrShortCover(props.quantity, company, null, true);
+                    } else {
+                      submitSellOrShortCover(props.quantity, company, props.price, true);
+                    }
                   }}
                 >
                   Sell
