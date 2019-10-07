@@ -42,8 +42,8 @@ const Portfolio = () => {
           </tr>
         </thead>
         <tbody>
-          {history.map(item => (
-            <HistoryItem {...item} key={item.company}/>
+          {history.map((item, i) => (
+            <HistoryItem {...item} key={i} />
           ))}
         </tbody>
       </table>

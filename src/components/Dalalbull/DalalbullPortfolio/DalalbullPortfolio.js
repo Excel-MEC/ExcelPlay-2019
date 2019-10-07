@@ -39,7 +39,7 @@ const ExclusiveView = ({ portfolioDetails }) => {
             <Portfolio />
           </div>
           <div className="col-lg-6">
-            <Status />
+            <Status {...portfolioDetails}/>
           </div>
         </div>
       </div>

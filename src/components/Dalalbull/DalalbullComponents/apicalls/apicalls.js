@@ -2,19 +2,24 @@ import * as http from '../../../../config/http';
 import { ApiRoot } from '../../../../config/api';
 
 export const handshake = () => {
-  return http.get(`${ApiRoot}dalalbull/api/handshake/`).then(res => res);
+  return http.get(`${ApiRoot}dalalbull/api/handshake/`);
 };
 
 export const getCompanies = () => {
-  return http.get(`${ApiRoot}dalalbull/api/ticker/`).then(res => res);
+  return http.get(`${ApiRoot}dalalbull/api/ticker/`);
 };
 
 export const getPortfolio = () => {
-  return http.get(`${ApiRoot}dalalbull/api/portfolioview/`).then(res => res);
+  return http.get(`${ApiRoot}dalalbull/api/portfolioview/`).then(res => {
+    return http.get(`${ApiRoot}/auth/leaderboard/rank`).then(data => {
+      res.rank = data.dalalbull.rank;
+      return res;
+    });
+  });
 };
 
 export const getDashboard = () => {
-  return http.get(`${ApiRoot}dalalbull/api/dashboard/`).then(res => res);
+  return http.get(`${ApiRoot}dalalbull/api/dashboard/`);
 };
 
 export const getCompanyDetails = company => {
@@ -55,4 +60,12 @@ export const getGraphData = company => {
   const body = new FormData();
   body.append('company', company);
   return http.post(`${ApiRoot}dalalbull/api/graph/`, body);
+};
+
+export const getRanklist = () => {
+  return http.get(`${ApiRoot}/auth/leaderboard/dbranklist`);
+};
+
+export const getUserDetail = () => {
+  return http.get(`${ApiRoot}/auth/leaderboard/rank`);
 };

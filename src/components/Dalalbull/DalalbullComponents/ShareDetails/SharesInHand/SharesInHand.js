@@ -47,9 +47,14 @@ const SharesInHand = ({ stockholdings, symbol, setActiveTab }) => {
                     </td>
                   </tr>
                 );
+              return '';
             })
           ) : (
-            <tr><td colSpan='5'><h1>No shares</h1></td></tr>
+            <tr>
+              <td colSpan="5">
+                <h1>No shares</h1>
+              </td>
+            </tr>
           )}
         </tbody>
       </table>
