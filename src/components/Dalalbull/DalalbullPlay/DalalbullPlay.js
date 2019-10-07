@@ -63,11 +63,18 @@ const DalalbullPlay = props => {
               visibility={modalVisibility}
               setVisibility={setModalVisibility}
             >
-              <ShareDetails {...shareDetails} />
+              <ShareDetails
+                {...shareDetails}
+                {...portfolioDetails}
+                {...dashboard}
+              />
             </Modal>
           </div>
           <div className="col-lg-4">
-            <GraphAndStatus {...portfolioDetails} graphData={graphData} />
+            <GraphAndStatus
+              {...portfolioDetails}
+              graphData={graphData}
+            />
           </div>
         </div>
       </div>
