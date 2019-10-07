@@ -61,6 +61,7 @@ const Sell = ({ symbol, current_price, total_transactions, cash_bal }) => {
                   <button
                     type="button"
                     className="btn btn-success btn-lg btn-block my-2"
+<<<<<<< HEAD
                     onClick={e => {
                       e.preventDefault();
                       if (props.pendingDisabled) {
@@ -77,6 +78,8 @@ const Sell = ({ symbol, current_price, total_transactions, cash_bal }) => {
                         }).catch(err => window.alert(err));
                       }
                     }}
+=======
+>>>>>>> 8689f87ef95242c33d5472740cb7e7e6d2826afd
                   >
                     Short Sell
                 </button>
