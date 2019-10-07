@@ -1,7 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { GameHeader, MItem } from '../common/GameHeader/GameHeader';
-import kryptosLogo from '../../assets/kry.png';
+import '../../App.scss';
+import kryptosLogo from '../../assets/kryptosc_500.png';
 import KryptosPlay from './KryptosPlay/KryptosPlay';
 import KryptosRules from './KryptosRules/KryptosRules';
 import KryptosRanklist from './KryptosRanklist/KryptosRanklist';

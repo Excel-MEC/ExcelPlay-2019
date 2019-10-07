@@ -5,17 +5,23 @@ import { submitBuyOrShortSell } from '../../apicalls/apicalls';
 
 const Buy = ({ symbol, current_price, total_transactions, cash_bal }) => {
   let props = tradeProps('BUY');
-  const [base, setBase] = useState(0.00);
-  const [brokerage, setBrokerage] = useState(0.00);
-  const [total, setTotal] = useState(0.00);
-  props = { ...props, setBase, setBrokerage, setTotal, current_price, total_transactions };
+  const [base, setBase] = useState(0.0);
+  const [brokerage, setBrokerage] = useState(0.0);
+  const [total, setTotal] = useState(0.0);
+  props = {
+    ...props,
+    setBase,
+    setBrokerage,
+    setTotal,
+    current_price,
+    total_transactions,
+  };
   const isGoodTime = () => {
     // return true;
     const x = new Date();
     const time = x.getUTCHours() * 60 + x.getUTCMinutes();
     const day = x.getDay();
-    if ((time >= 225 && time < 1000) && (day >= 1 && day <= 5))
-      return true;
+    if (time >= 225 && time < 1000 && (day >= 1 && day <= 5)) return true;
     return false;
   }
   const updateValues = () => {
@@ -25,13 +31,13 @@ const Buy = ({ symbol, current_price, total_transactions, cash_bal }) => {
   }
   return (
     <div className="buy">
-      {isGoodTime() ?
-        (<div className="quantity-wrapper">
+      {isGoodTime() ? (
+        <div className="quantity-wrapper">
           <div className="row">
             <div className="col-lg-6">
-              <div>Buy Nifty 50</div>
+              <div>Buy {symbol}</div>
               <br />
-              <Trade  {...props} />
+              <Trade {...props} />
               <div className="col-lg-6">
                 <button
                   type="button"
@@ -54,7 +60,7 @@ const Buy = ({ symbol, current_price, total_transactions, cash_bal }) => {
                   }}
                 >
                   BUY
-              </button>
+                </button>
               </div>
             </div>
             <div className="col-lg-6 details">
@@ -80,8 +86,10 @@ const Buy = ({ symbol, current_price, total_transactions, cash_bal }) => {
               </table>
             </div>
           </div>
-        </div>) :
-        (<h1>Market Closed</h1>)}
+        </div>
+      ) : (
+          <h1>Market Closed</h1>
+        )}
     </div>
   );
 };
