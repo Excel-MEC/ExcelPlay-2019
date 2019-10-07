@@ -3,67 +3,77 @@ import { Line } from 'react-chartjs-2';
 import './GraphAndStatus.scss';
 
 const data = {
-  labels: [1500, 1600, 1700, 1750, 1800, 1850, 1900, 1950, 1999, 2050],
+  labels: [],
   datasets: [
     {
-      data: [96, 300, 196, 760, 990, 450, 780, 1200, 600, 450],
-      label: 'Net Worth',
+      data: [],
+      label: 'Price',
       borderColor: '#ff6e40',
       fill: false,
-      lineTension: 0
-    }
+      lineTension: 0,
+    },
   ],
 };
 
 const options = {
   tooltips: {
     displayColors: false,
-    backgroundColor: "black",
+    backgroundColor: 'black',
     enabled: true,
-    mode: "single",
+    mode: 'single',
     bodyFontSize: 15,
-    bodyFontFamily: "Gamja Flower",
-    bodyFontColor: "white",
+    bodyFontFamily: 'Gamja Flower',
+    bodyFontColor: 'white',
     yPadding: 5,
     xPadding: 15,
     cornerRadius: 4,
-    bodyFontStyle: "bold",
+    bodyFontStyle: 'bold',
   },
   scales: {
     yAxes: [
       {
         gridLines: {
           drawBorder: true,
-          color: "grey",
-          zeroLineColor: "white"
+          color: 'grey',
+          zeroLineColor: 'white',
         },
         ticks: {
-          fontColor: "white",
-          fontFamily: "Gamja Flower",
+          fontColor: 'white',
+          fontFamily: 'Gamja Flower',
           fontSize: 15,
-          fontStyle: "bold"
-        }
-      }
+          fontStyle: 'bold',
+        },
+      },
     ],
     xAxes: [
       {
         gridLines: {
           drawBorder: true,
-          color: "grey",
-          zeroLineColor: "white"
+          color: 'grey',
+          zeroLineColor: 'white',
         },
         ticks: {
-          fontColor: "white",
-          fontFamily: "Gamja Flower",
+          fontColor: 'white',
+          fontFamily: 'Gamja Flower',
           fontSize: 12,
-          fontStyle: "bold"
-        }
-      }
-    ]
-  }
+          fontStyle: 'bold',
+        },
+      },
+    ],
+  },
 };
 
-const GraphAndStatus = (props) => {
+const GraphAndStatus = props => {
+  let new_label = [];
+  let new_data = [];
+  if (props.graphData) {
+    props.graphData.map(gdata => {
+      new_label.push(parseInt(gdata[0]/60));
+      new_data.push(gdata[1]);
+    });
+  }
+  data.labels = new_label;
+  data.datasets[0].data = new_data;
   return (
     <div className="graph-userdata">
       <div className="graph">

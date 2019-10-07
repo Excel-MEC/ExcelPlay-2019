@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import Trade, { tradeProps } from '../Trade/Trade';
 import './Sell.scss';
-import { submitSellOrShortCover, submitBuyOrShortSell } from '../../apicalls/apicalls';
+import {
+  submitSellOrShortCover,
+  submitBuyOrShortSell,
+} from '../../apicalls/apicalls';
 
 const Sell = ({ symbol, current_price, total_transactions, cash_bal }) => {
   let props = tradeProps('SELL');
@@ -23,12 +26,12 @@ const Sell = ({ symbol, current_price, total_transactions, cash_bal }) => {
     const day = x.getDay();
     if (time >= 225 && time < 1000 && (day >= 1 && day <= 5)) return true;
     return false;
-  }
+  };
   const updateValues = () => {
-    props.setBase(0.00);
-    props.setBrokerage(0.00);
-    props.setTotal(0.00);
-  }
+    props.setBase(0.0);
+    props.setBrokerage(0.0);
+    props.setTotal(0.0);
+  };
   return (
     <div className="buy">
       {isGoodTime() ? (
@@ -46,17 +49,31 @@ const Sell = ({ symbol, current_price, total_transactions, cash_bal }) => {
                     onClick={e => {
                       e.preventDefault();
                       if (props.pendingDisabled) {
-                        submitSellOrShortCover(props.quantity, symbol, null, true).then(res => {
-                          props.setQuantity(0);
-                          updateValues();
-                          window.alert(res.msg);
-                        }).catch(err => window.alert(err));
+                        submitSellOrShortCover(
+                          props.quantity,
+                          symbol,
+                          null,
+                          true,
+                        )
+                          .then(res => {
+                            props.setQuantity(0);
+                            updateValues();
+                            window.alert(res.msg);
+                          })
+                          .catch(err => window.alert(err));
                       } else {
-                        submitSellOrShortCover(props.quantity, symbol, props.price, true).then(res => {
-                          props.setQuantity(0);
-                          updateValues();
-                          window.alert(res.msg);
-                        }).catch(err => window.alert(err));
+                        submitSellOrShortCover(
+                          props.quantity,
+                          symbol,
+                          props.price,
+                          true,
+                        )
+                          .then(res => {
+                            props.setQuantity(0);
+                            updateValues();
+                            window.alert(res.msg);
+                          })
+                          .catch(err => window.alert(err));
                       }
                     }}
                   >
@@ -70,17 +87,31 @@ const Sell = ({ symbol, current_price, total_transactions, cash_bal }) => {
                     onClick={e => {
                       e.preventDefault();
                       if (props.pendingDisabled) {
-                        submitBuyOrShortSell(props.quantity, symbol, null, false).then(res => {
-                          props.setQuantity(0);
-                          updateValues();
-                          window.alert(res.msg);
-                        }).catch(err => window.alert(err));
+                        submitBuyOrShortSell(
+                          props.quantity,
+                          symbol,
+                          null,
+                          false,
+                        )
+                          .then(res => {
+                            props.setQuantity(0);
+                            updateValues();
+                            window.alert(res.msg);
+                          })
+                          .catch(err => window.alert(err));
                       } else {
-                        submitBuyOrShortSell(props.quantity, symbol, props.price, false).then(res => {
-                          props.setQuantity(0);
-                          updateValues();
-                          window.alert(res.msg);
-                        }).catch(err => window.alert(err));
+                        submitBuyOrShortSell(
+                          props.quantity,
+                          symbol,
+                          props.price,
+                          false,
+                        )
+                          .then(res => {
+                            props.setQuantity(0);
+                            updateValues();
+                            window.alert(res.msg);
+                          })
+                          .catch(err => window.alert(err));
                       }
                     }}
                   >
@@ -114,8 +145,8 @@ const Sell = ({ symbol, current_price, total_transactions, cash_bal }) => {
           </div>
         </div>
       ) : (
-          <h1>Market Closed</h1>
-        )}
+        <h1>Market Closed</h1>
+      )}
     </div>
   );
 };
