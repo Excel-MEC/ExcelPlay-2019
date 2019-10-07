@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { GameHeader, MItem } from '../common/GameHeader/GameHeader';
+import withLogin from '../HOC/withLogin';
 import '../../App.scss';
 import kryptosLogo from '../../assets/kryptosc_500.png';
 import KryptosPlay from './KryptosPlay/KryptosPlay';
@@ -25,4 +26,4 @@ const Kryptos = (props) => {
     )
 }
 
-export default Kryptos;
+export default withLogin(Kryptos);
