@@ -25,6 +25,11 @@ const Buy = ({ symbol, current_price, total_transactions, cash_bal }) => {
     return false;
   };
 
+  const updateValues = () => {
+    props.setBase(0.0);
+    props.setBrokerage(0.0);
+    props.setTotal(0.0);
+  };
   return (
     <div className="buy">
       {isGoodTime() ? (
@@ -41,14 +46,26 @@ const Buy = ({ symbol, current_price, total_transactions, cash_bal }) => {
                   onClick={e => {
                     e.preventDefault();
                     if (props.pendingDisabled) {
-                      submitBuyOrShortSell(props.quantity, symbol, null, true);
+                      submitBuyOrShortSell(props.quantity, symbol, null, true)
+                        .then(res => {
+                          props.setQuantity(0);
+                          updateValues();
+                          window.alert(res.msg);
+                        })
+                        .catch(err => window.alert(err));
                     } else {
                       submitBuyOrShortSell(
                         props.quantity,
                         symbol,
                         props.price,
                         true,
-                      );
+                      )
+                        .then(res => {
+                          props.setQuantity(0);
+                          updateValues();
+                          window.alert(res.msg);
+                        })
+                        .catch(err => window.alert(err));
                     }
                   }}
                 >
