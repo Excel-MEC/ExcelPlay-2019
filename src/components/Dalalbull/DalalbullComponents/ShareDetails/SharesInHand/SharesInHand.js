@@ -17,26 +17,40 @@ const SharesInHand = ({ stockholdings, symbol, setActiveTab }) => {
           </tr>
         </thead>
         <tbody>
-          {stockholdings.map(holding => {
-            if (holding.company === symbol)
-              return (
-                <tr>
-                  <td>{holding.type}</td>
-                  <td>{holding.number}</td>
-                  <td>{(holding.current * holding.number).toFixed(2)}</td>
-                  <td>{((((holding.current * holding.number) - (holding.purchase * holding.number)) * 100) / (holding.purchase * holding.number)).toFixed(2)}</td>
-                  <td>
-                    <button type="button" className="btn" onClick={(e) => {
-                      e.preventDefault();
-                      setActiveTab(tablist.sell);
-                    }}>
-                      Sell
-                    </button>
-                  </td>
-                </tr>
-              )
-            return '';
-          })}
+          {stockholdings ? (
+            stockholdings.map((holding, i) => {
+              if (holding.company === symbol)
+                return (
+                  <tr key={i}>
+                    <td>{holding.type}</td>
+                    <td>{holding.number}</td>
+                    <td>{(holding.current * holding.number).toFixed(2)}</td>
+                    <td>
+                      {(
+                        ((holding.current * holding.number -
+                          holding.purchase * holding.number) *
+                          100) /
+                        (holding.purchase * holding.number)
+                      ).toFixed(2)}
+                    </td>
+                    <td>
+                      <button
+                        type="button"
+                        className="btn"
+                        onClick={e => {
+                          e.preventDefault();
+                          setActiveTab(tablist.sell);
+                        }}
+                      >
+                        Sell
+                      </button>
+                    </td>
+                  </tr>
+                );
+            })
+          ) : (
+            <tr><td colSpan='5'><h1>No shares</h1></td></tr>
+          )}
         </tbody>
       </table>
     </div>
