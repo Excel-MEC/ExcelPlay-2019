@@ -71,10 +71,7 @@ const DalalbullPlay = props => {
             </Modal>
           </div>
           <div className="col-lg-4">
-            <GraphAndStatus
-              {...portfolioDetails}
-              graphData={graphData}
-            />
+            <GraphAndStatus {...portfolioDetails} graphData={graphData} />
           </div>
         </div>
       </div>
