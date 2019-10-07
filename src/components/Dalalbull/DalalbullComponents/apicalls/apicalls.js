@@ -50,3 +50,9 @@ export const submitSellOrShortCover = (qty, company, pending, sell) => {
 export const getPotfolioHistory = () => {
   return http.get(`${ApiRoot}dalalbull/api/dashboard/`);
 };
+
+export const getGraphData = company => {
+  const body = new FormData();
+  body.append('company', company);
+  return http.post(`${ApiRoot}dalalbull/api/graph/`, body);
+};

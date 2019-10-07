@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Ticker from '../DalalbullComponents/Ticker/Ticker';
 import ListCompanies from '../DalalbullComponents/ListCompanies/ListCompanies';
 import Portfolio from '../DalalbullComponents/Portfolio/Portfolio';
-import GraphAndStatus from '../DalalbullComponents/GraphAndStatus/GraphAndStatus';
+import Status from '../DalalbullComponents/Status/Status';
 import './DalalbullPortfolio.scss';
 import { getPortfolio } from '../DalalbullComponents/apicalls/apicalls';
 
@@ -20,7 +20,7 @@ const HomeView = ({ portfolioDetails }) => {
             <Portfolio />
           </div>
           <div className="col-lg-4">
-            <GraphAndStatus {...portfolioDetails} />
+            <Status {...portfolioDetails} />
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@ const ExclusiveView = ({ portfolioDetails }) => {
             <Portfolio />
           </div>
           <div className="col-lg-6">
-            <GraphAndStatus />
+            <Status />
           </div>
         </div>
       </div>
