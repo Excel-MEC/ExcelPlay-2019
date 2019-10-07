@@ -15,7 +15,7 @@ const DalalbullPlay = props => {
   const [shareDetails, setShareDetails] = useState(null);
   const [modalVisibility, setModalVisibility] = useState('visible');
   const [portfolioDetails, setPortfolioDetails] = useState(null);
-  const [dashboard, setDashboardDetails] = useState(null);
+  const [dashboard, setDashboardDetails] = useState([]);
   useEffect(() => {
     getCompanyDetails(props.match.params.cid).then(res => {
       setShareDetails(res);

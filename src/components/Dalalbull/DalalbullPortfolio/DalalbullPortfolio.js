@@ -1,28 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import Ticker from '../DalalbullComponents/Ticker/Ticker';
 import ListCompanies from '../DalalbullComponents/ListCompanies/ListCompanies';
 import Portfolio from '../DalalbullComponents/Portfolio/Portfolio';
 import GraphAndStatus from '../DalalbullComponents/GraphAndStatus/GraphAndStatus';
 import './DalalbullPortfolio.scss';
+import { getPortfolio } from '../DalalbullComponents/apicalls/apicalls';
 
-const HomeView = props => {
+const HomeView = ({ portfolioDetails }) => {
   return (
     <div className="dalalbullPortfolio">
       <Ticker />
       <div className="content">
         <div className="row">
           <div className="col-lg-3">
-            <Link to="/Dalalbull">
-              <ListCompanies />
-            </Link>
+            <ListCompanies />
           </div>
           <div className="col-lg-5 d-none d-sm-block history">
             <h2 className="h2">Portfolio</h2>
             <Portfolio />
           </div>
           <div className="col-lg-4">
-            <GraphAndStatus />
+            <GraphAndStatus {...portfolioDetails} />
           </div>
         </div>
       </div>
@@ -30,7 +28,7 @@ const HomeView = props => {
   );
 };
 
-const ExclusiveView = () => {
+const ExclusiveView = ({ portfolioDetails }) => {
   return (
     <div className="dalalbullPortfolio">
       <Ticker />
@@ -50,8 +48,15 @@ const ExclusiveView = () => {
 };
 
 const DalalbullPortfolio = props => {
-  if (props.match.url.includes('Portfolio')) return <ExclusiveView />;
-  else return <HomeView />;
+  const [portfolioDetails, setPortfolioDetails] = useState(null);
+  useEffect(() => {
+    getPortfolio().then(res => {
+      setPortfolioDetails(res);
+    });
+  }, []);
+  if (props.match.url.includes('Portfolio'))
+    return <ExclusiveView portfolioDetails={portfolioDetails} />;
+  else return <HomeView portfolioDetails={portfolioDetails} />;
 };
 
 export default DalalbullPortfolio;

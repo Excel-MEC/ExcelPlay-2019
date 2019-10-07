@@ -31,7 +31,7 @@ const Buy = ({ symbol, current_price, total_transactions, cash_bal }) => {
         <div className="quantity-wrapper">
           <div className="row">
             <div className="col-lg-6">
-              <div>Buy Nifty 50</div>
+              <div>Buy {symbol}</div>
               <br />
               <Trade {...props} />
               <div className="col-lg-6">

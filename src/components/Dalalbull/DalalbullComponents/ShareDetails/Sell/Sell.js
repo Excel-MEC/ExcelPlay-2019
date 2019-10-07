@@ -30,7 +30,7 @@ const Sell = ({ symbol, current_price, total_transactions, cash_bal }) => {
         <div className="quantity-wrapper">
           <div className="row">
             <div className="col-lg-6">
-              <div>Sell Nifty 50</div>
+              <div>Sell {symbol}</div>
               <br />
               <Trade {...props} />
               <div className="row">
