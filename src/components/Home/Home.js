@@ -23,9 +23,9 @@ const Home = () => {
         return res.json();
       })
       .then(data => {
-        if (data.kryptos != null)
+        if (data.kryptos !== null)
           setKryptosRank(data.kryptos.rank);
-        if (data.dalalbull != null)
+        if (data.dalalbull !== null)
           setDalalbullRank(data.dalalbull.rank);
         setUserName(data.name);
         setUserPic(data.pic);
@@ -38,8 +38,8 @@ const Home = () => {
         <HomeHeader />
         <div className="userDetails">
           {
-            userPic != "" ?
-              <img className="propic" src={userPic} />
+            userPic !== "" ?
+              <img className="propic" alt="profile pic" src={userPic} />
               : null
           }
           {userName}
