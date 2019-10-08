@@ -9,6 +9,8 @@ import {
   getCompanyDetails,
   getPortfolio,
   getDashboard,
+  getPortfolioSock,
+  getTickerSock,
 } from '../DalalbullComponents/apicalls/apicalls';
 
 const DalalbullPlay = props => {
@@ -27,11 +29,33 @@ const DalalbullPlay = props => {
       setPortfolioDetails(res);
     });
   }, []);
+  // useEffect(() => {
+  //   const portSock = getPortfolioSock();
+  //   portSock.addEventListener('message', e => {
+  //     console.log('Message from server ', e.data);
+  //   });
+  //   return () => {
+  //     portSock.close();
+  //   };
+  // }, [])
+  useEffect(() => {
+    const tickSock = getTickerSock();
+    tickSock.addEventListener('message', e => {
+      const data = JSON.parse(e.data);
+      if (data.hasOwnProperty('tickerData')) {
+        setShareDetails(data.tickerData);
+      }
+    });
+    return () => {
+      tickSock.close();
+    };
+  }, [])
   useEffect(() => {
     getDashboard().then(res => {
       setDashboardDetails(res);
     });
   }, []);
+
   return (
     <div className="dalalbull-play">
       <Ticker />
@@ -45,6 +69,8 @@ const DalalbullPlay = props => {
               {...shareDetails}
               {...portfolioDetails}
               {...dashboard}
+              setPortfolioDetails={setPortfolioDetails}
+              setDashboardDetails={setDashboardDetails}
             />
           </div>
           <div className="mobile-share-details">
