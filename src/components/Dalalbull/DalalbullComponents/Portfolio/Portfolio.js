@@ -25,12 +25,12 @@ const Portfolio = () => {
 
   useEffect(() => {
     getPotfolioHistory().then(res => setHistory(res.stockholdings));
-  });
+  },[]);
 
   return (
     <div className="sharesInHand">
       <div className="head">Shares In Hand</div>
-      <table className="table">
+      <table className="table table-responsive-lg">
         <thead>
           <tr>
             <th scope="col">Shares of</th>
@@ -42,8 +42,8 @@ const Portfolio = () => {
           </tr>
         </thead>
         <tbody>
-          {history.map(item => (
-            <HistoryItem {...item} key={item.company}/>
+          {history.map((item, i) => (
+            <HistoryItem {...item} key={i} />
           ))}
         </tbody>
       </table>

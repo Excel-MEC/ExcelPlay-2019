@@ -11,6 +11,7 @@ import {
   getDashboard,
   getPortfolioSock,
   getTickerSock,
+  getGraphData,
 } from '../DalalbullComponents/apicalls/apicalls';
 
 const DalalbullPlay = props => {
@@ -18,10 +19,12 @@ const DalalbullPlay = props => {
   const [modalVisibility, setModalVisibility] = useState('visible');
   const [portfolioDetails, setPortfolioDetails] = useState(null);
   const [dashboard, setDashboardDetails] = useState([]);
+  const [graphData, setGraphData] = useState([]);
   useEffect(() => {
     getCompanyDetails(props.match.params.cid).then(res => {
       setShareDetails(res);
       setModalVisibility('visible');
+      getGraphData(res.symbol).then(res => setGraphData(res.graph_data));
     });
   }, [props.match.params]);
   useEffect(() => {
@@ -86,11 +89,15 @@ const DalalbullPlay = props => {
               visibility={modalVisibility}
               setVisibility={setModalVisibility}
             >
-              <ShareDetails {...shareDetails} />
+              <ShareDetails
+                {...shareDetails}
+                {...portfolioDetails}
+                {...dashboard}
+              />
             </Modal>
           </div>
           <div className="col-lg-4">
-            <GraphAndStatus {...portfolioDetails} />
+            <GraphAndStatus {...portfolioDetails} graphData={graphData} />
           </div>
         </div>
       </div>
