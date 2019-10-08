@@ -40,7 +40,7 @@ const Buy = ({ symbol, current_price, total_transactions, cash_bal, setPortfolio
   }
   return (
     <div className="buy">
-      {isGoodTime() ? (
+      {isGoodTime ? (
         <div className="quantity-wrapper">
           <div className="row">
             <div className="col-lg-6">
