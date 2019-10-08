@@ -26,6 +26,11 @@
   margin-right: 1em;
 }
 
+.btn {
+  margin: 0 1em 0 1em;
+  background-color: $primary;
+}
+
 @media screen and (max-width: 768px) {
   .userDetails {
     margin-top: 3em;
