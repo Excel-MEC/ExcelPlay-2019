@@ -54,15 +54,16 @@ const Sell = ({ symbol, current_price, total_transactions, cash_bal, setPortfoli
                     className="btn btn-success btn-lg btn-block my-2"
                     onClick={e => {
                       e.preventDefault();
-                      if (props.pendingDisabled) {
-                        submitSellOrShortCover(props.quantity, symbol, null, true).then(res => {
-                          updateAfterTrade(res);
-                        }).catch(err => window.alert(err));
-                      } else {
-                        submitSellOrShortCover(props.quantity, symbol, props.price, true).then(res => {
-                          updateAfterTrade(res);
-                        }).catch(err => window.alert(err));
-                      }
+                      if (!(props.quantity === 0))
+                        if (props.pendingDisabled) {
+                          submitSellOrShortCover(props.quantity, symbol, null, true).then(res => {
+                            updateAfterTrade(res);
+                          }).catch(err => window.alert(err));
+                        } else {
+                          submitSellOrShortCover(props.quantity, symbol, props.price, true).then(res => {
+                            updateAfterTrade(res);
+                          }).catch(err => window.alert(err));
+                        }
                     }}
                   >
                     Sell
