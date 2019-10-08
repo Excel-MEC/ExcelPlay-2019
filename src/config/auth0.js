@@ -6,14 +6,7 @@ import * as http from './http';
 
 import { ApiRoot } from './api';
 
-// const cookieService = new Cookie();
-let config = {};
-
-if (process.env.NODE_ENV === 'development') {
-  config = configs.dev;
-} else {
-  config = config.prod;
-}
+const config = configs();
 
 const webAuth = new auth0.WebAuth({
   clientID: config.clientID,
