@@ -35,18 +35,7 @@ const Home = () => {
   return (
     <div className="row">
       <div className="col-lg-12">
-        <HomeHeader />
-        <div className="userDetails">
-          {
-            userPic !== "" ?
-              <div>
-                <img className="propic" alt="profile pic" src={userPic} />
-                {userName}
-                <button type="button" className="btn" onClick={() => { window.location = "/Logout" }}>Logout</button>
-              </div>
-              : null
-          }
-        </div>
+        <HomeHeader userPic={userPic} userName={userName} />
       </div>
       <div className="container col-lg-12">
         <div className="events">

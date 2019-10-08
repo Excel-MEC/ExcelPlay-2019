@@ -10,7 +10,6 @@
 }
 .logo-container-bg {
   display: flex;
-  justify-content: center;
   width: 60vw;
   height: 20vh;
   background-color: $primary;
@@ -31,4 +30,34 @@
 .logo {
   max-width: 60%;
   max-height: 80%;
+}
+
+.userDetails {
+  font-size: 1.3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.propic {
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  margin: 1em;
+}
+
+.btn {
+  background-color: $primary;
+}
+
+@media screen and (max-width: 768px) {
+  .propic {
+    width: 75px;
+    height: 75px;
+  }
+  .userDetails {
+    margin-top: 3em;
+  }
 }
