@@ -25,7 +25,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     getPotfolioHistory().then(res => setHistory(res.stockholdings));
-  });
+  },[]);
 
   return (
     <div className="sharesInHand">

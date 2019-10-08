@@ -1,1 +1,1 @@
-export const ApiRoot = 'http://localhost/';
+export const ApiRoot = window.location.origin + '/';

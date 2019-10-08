@@ -68,7 +68,7 @@ const GraphAndStatus = props => {
   let new_data = [];
   if (props.graphData) {
     props.graphData.map(gdata => {
-      new_label.push(parseInt(gdata[0]));
+      new_label.push(Math.round(gdata[0]/60));
       new_data.push(gdata[1]);
     });
   }
