@@ -1,19 +1,26 @@
 import * as auth0 from 'auth0-js';
 // import Cookie from 'universal-cookie';
 
-import config from './auth_config';
+import configs from './auth_config';
 import * as http from './http';
 
 import { ApiRoot } from './api';
 
 // const cookieService = new Cookie();
+let config = {};
+
+if (process.env.NODE_ENV === 'development') {
+  config = configs.dev;
+} else {
+  config = config.prod;
+}
 
 const webAuth = new auth0.WebAuth({
   clientID: config.clientID,
   domain: config.domain,
   responseType: 'token id_token',
   // audience: 'https://excelplay2k18.auth0.com/userinfo',
-  redirectUri: config.redirectUri,
+  redirectUri: `${window.location.origin}/login/callback`,
   scope: 'openid profile email',
 });
 
