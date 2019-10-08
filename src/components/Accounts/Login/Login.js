@@ -3,11 +3,15 @@ import { Route } from 'react-router-dom';
 import { login } from '../../../config/auth0';
 import Callback from './callback';
 import './Login.scss';
+import HomeHeader from '../../common/HomeHeader/HomeHeader';
 
 const LoginButton = () => (
-  <button type="button" className="btn" onClick={login}>
-    Login
-  </button>
+  <div>
+    <HomeHeader />
+    <button type="button" className="btn" onClick={login}>
+      Login
+    </button>
+  </div>
 );
 
 const Login = props => {
