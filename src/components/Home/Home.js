@@ -12,6 +12,9 @@ import circ from '../../assets/circuimstance_500.png';
 const Home = () => {
   const [kryptosRank, setKryptosRank] = useState(0);
   const [dalalbullRank, setDalalbullRank] = useState(0);
+  const [userName, setUserName] = useState("");
+  const [userPic, setUserPic] = useState("");
+
   useEffect(() => {
     fetch(`${ApiRoot}/auth/leaderboard/rank`, {
       mode: 'cors',
@@ -22,12 +25,10 @@ const Home = () => {
       .then(data => {
         if (data.kryptos != null)
           setKryptosRank(data.kryptos.rank);
-        else
-          setKryptosRank(0);
         if (data.dalalbull != null)
           setDalalbullRank(data.dalalbull.rank);
-        else
-          setDalalbullRank(0);
+        setUserName(data.name);
+        setUserPic(data.pic);
       });
   }, [])
 
@@ -35,6 +36,14 @@ const Home = () => {
     <div className="row">
       <div className="col-lg-12">
         <HomeHeader />
+        <div className="userDetails">
+          {
+            userPic != "" ?
+              <img className="propic" src={userPic} />
+              : null
+          }
+          {userName}
+        </div>
       </div>
       <div className="container col-lg-12">
         <div className="events">
