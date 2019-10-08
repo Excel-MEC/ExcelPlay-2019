@@ -39,10 +39,13 @@ const Home = () => {
         <div className="userDetails">
           {
             userPic !== "" ?
-              <img className="propic" alt="profile pic" src={userPic} />
+              <div>
+                <img className="propic" alt="profile pic" src={userPic} />
+                {userName}
+                <button type="button" className="btn" onClick={() => { window.location = "/Logout" }}>Logout</button>
+              </div>
               : null
           }
-          {userName}
         </div>
       </div>
       <div className="container col-lg-12">
