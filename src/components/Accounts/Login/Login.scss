@@ -1,9 +1,10 @@
-@import "../../../global";
+@import '../../../global';
 
-.login{
-  button{
-    width: 10vw;
-    height: 3em;
+.login {
+  button {
+    width: auto;
+    padding: 0 3vw;
+    height: 2.5em;
     font-size: 2em;
     margin: 40vh 45vw;
     background-color: $primary;
