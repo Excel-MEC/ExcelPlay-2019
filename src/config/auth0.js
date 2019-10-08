@@ -22,7 +22,7 @@ export const login = () => {
 };
 
 export const handleAuthentication = (hash, history) => {
-  webAuth.parseHash({ hash: hash }, function(err, authResult) {
+  webAuth.parseHash({ hash: hash }, function (err, authResult) {
     if (err) {
       return console.log(err);
     }
@@ -52,8 +52,18 @@ const setSession = async (authResult, redirect) => {
 };
 
 export const handleLogout = history => {
-  localStorage.removeItem('access_token');
-  localStorage.removeItem('id_token');
-  localStorage.removeItem('expires_at');
-  history.push('/');
+  fetch(`${ApiRoot}/auth/v1/signout`, {
+    mode: 'cors'
+  }).then(res => {
+    return res.json();
+  }).then(data => {
+    if (data.Success) {
+      localStorage.removeItem('access_token');
+      localStorage.removeItem('id_token');
+      localStorage.removeItem('expires_at');
+      history.push('/');
+    } else {
+      window.alert("Logout failed, check your network and try again");
+    }
+  })
 };
