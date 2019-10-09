@@ -23,8 +23,7 @@ const KryptosPlay = () => {
       })
       .then(data => {
         if (data.completed === undefined) {
-          const imgUrlParts = data.level_file.split('/');
-          setImgUrl(`${ApiRoot}/media/${imgUrlParts[imgUrlParts.length - 1]}`);
+          setImgUrl(`${ApiRoot}${data.level_file}`);
           setLevel(data.level);
           const hints = data.hints.map(e => { return e.hint; });
           setHintText(hints);
