@@ -42,7 +42,7 @@ const SharesInHand = ({ stockholdings, symbol, setActiveTab }) => {
                           setActiveTab(tablist.sell);
                         }}
                       >
-                        Sell
+                        {holding.type === "BUY" ? "Sell" : "Short Cover"}
                       </button>
                     </td>
                   </tr>
