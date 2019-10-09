@@ -56,18 +56,10 @@ const Home = () => {
             </div>
             <div className="w-100" />
             <div className="col-lg-6 center-block text-center cell">
-              <Games
-                name="#INCLUDE"
-                logo={hash}
-                type="notRanked"
-              />
+              <Games name="#INCLUDE" logo={hash} type="notRanked" />
             </div>
             <div className="col-lg-6 center-block text-center cell">
-              <Games
-                name="CIRCUIMSTANCE"
-                logo={circ}
-                type="notRanked"
-              />
+              <Games name="CIRCUIMSTANCE" logo={circ} type="notRanked" />
             </div>
           </div>
         </div>

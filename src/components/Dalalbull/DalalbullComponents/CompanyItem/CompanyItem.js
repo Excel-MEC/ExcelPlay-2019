@@ -11,7 +11,7 @@ const CompanyItem = ({ name, current_price, change_per, symbol }) => {
           <div className="c-details">
             <div className="float-left">
               <h1>{symbol}</h1>
-              <p className='company-name'>{name}</p>
+              <p className="company-name">{name}</p>
             </div>
             <div className="float-right">
               <div className="data">

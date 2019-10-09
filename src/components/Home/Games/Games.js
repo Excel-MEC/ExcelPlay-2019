@@ -20,7 +20,7 @@ const Games = props => {
       <a href={props.href}>
         <div className="gameCell">
           <div>
-            <img src={props.logo} alt="dalabull" className='pic' />
+            <img src={props.logo} alt="dalabull" className="pic" />
           </div>
 
           <div className="Rankdetail">

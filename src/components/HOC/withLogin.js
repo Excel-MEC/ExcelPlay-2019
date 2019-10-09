@@ -1,20 +1,20 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
-const withLogin = (Component) => {
+const withLogin = Component => {
   if (
     localStorage.getItem('access_token') &&
     localStorage.getItem('expires_at')
   ) {
     if (localStorage.getItem('expires_at') < new Date()) {
-      alert("Login Expired");
+      alert('Login Expired');
     } else {
       return Component;
     }
   } else {
-    alert("Not Logged in");
+    alert('Not Logged in');
   }
-  return () => (<Redirect to='/login'/>)
+  return () => <Redirect to="/login" />;
 };
 
 export default withLogin;
