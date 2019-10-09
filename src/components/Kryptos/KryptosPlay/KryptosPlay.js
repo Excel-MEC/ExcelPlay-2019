@@ -4,7 +4,7 @@ import KryptosInfoBar from '../KryptosInfoBar/KryptosInfoBar';
 import KryptosQuestion from '../KryptosQuestion/KryptosQuestion';
 import KryptosHintModal from '../KryptosHintModal/KryptosHintModal';
 import { ApiRoot } from "../../../config/api";
-import { NO_LEVELS_LEFT } from '../../common/Constants.';
+import { NO_LEVELS_LEFT, MESSAGE_WHEN_ALL_LEVELS_COMPLETE, MESSAGE_WHEN_CORRECT_ANSWER, MESSAGE_WHEN_WRONG_ANSWER } from '../../common/Constants';
 
 const KryptosPlay = () => {
   const [level, setLevel] = useState(1);
@@ -31,7 +31,7 @@ const KryptosPlay = () => {
           setHintText(hints);
         }
         else {
-          window.alert("You have completed all levels");
+          window.alert(MESSAGE_WHEN_ALL_LEVELS_COMPLETE);
           setLevel(NO_LEVELS_LEFT);
         }
       });
@@ -57,12 +57,12 @@ const KryptosPlay = () => {
       return res.json();
     }).then(data => {
       if (data.answer === 'Correct') {
-        window.alert("Correct answer");
+        window.alert(MESSAGE_WHEN_CORRECT_ANSWER);
         setTimeout(() => {
           window.location.reload();
         }, 1000);
       } else {
-        window.alert("Wrong answer");
+        window.alert(MESSAGE_WHEN_WRONG_ANSWER);
       }
     })
   };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './KryptosQuestion.scss';
+import { IMAGE_FAILED_TO_LOAD } from '../../common/Constants';
 
 const KryptosQuestion = props => {
   const [text, setText] = useState('');
@@ -9,7 +10,7 @@ const KryptosQuestion = props => {
     <div className="questionWrapper">
       {
         (imgUrl) ?
-          <img src={imgUrl} alt="failed to load" className="img img-fluid" />
+          <img src={imgUrl} alt={IMAGE_FAILED_TO_LOAD} className="img img-fluid" />
           : null
       }
       <div className="sourceHint">
