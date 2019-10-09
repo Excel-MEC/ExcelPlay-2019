@@ -20,6 +20,9 @@
       color: black;
     }
   }
+  button {
+    font-size: .6em;
+  }
   @media screen and (max-width: $media-width) {
     padding-top: 1em;
     font-size: 0.7em;
@@ -32,7 +35,7 @@
     .nav {
       .nav-link {
         font-size: 1.3em;
-        padding: .7em;
+        padding: 0.7em;
       }
     }
   }

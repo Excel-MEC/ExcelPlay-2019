@@ -8,7 +8,7 @@ const Status = props => {
     getUserDetail().then(res => setUserDetail(res));
   }, []);
   return (
-    <div className="graph-userdata">
+    <div className="userdata">
       <div align="center">
         <img src={userDetail.pic} alt="" className='propic' align="center"/>
       </div>
