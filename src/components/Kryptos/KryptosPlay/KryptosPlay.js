@@ -4,14 +4,14 @@ import KryptosInfoBar from '../KryptosInfoBar/KryptosInfoBar';
 import KryptosQuestion from '../KryptosQuestion/KryptosQuestion';
 import KryptosHintModal from '../KryptosHintModal/KryptosHintModal';
 import { ApiRoot } from "../../../config/api";
+import { NO_LEVELS_LEFT, MESSAGE_WHEN_ALL_LEVELS_COMPLETE, MESSAGE_WHEN_CORRECT_ANSWER, MESSAGE_WHEN_WRONG_ANSWER, NO_HINTS } from '../../common/Constants';
 
 const KryptosPlay = () => {
   const [level, setLevel] = useState(1);
   const [rank, setRank] = useState(0);
-  const [imgUrl, setImgUrl] = useState(
-    '',
-  );
-  const [hintText, setHintText] = useState([]);
+  const [imgUrl, setImgUrl] = useState('');
+  const [sourceHint, setSourceHint] = useState('');
+  const [hintText, setHintText] = useState([NO_HINTS]);
 
   useEffect(() => {
     fetch(`${ApiRoot}/kryptos/api/ask`, {
@@ -21,14 +21,20 @@ const KryptosPlay = () => {
         return res.json();
       })
       .then(data => {
-        if (data.completed === undefined) {
-          setImgUrl(`${ApiRoot}${data.level_file}`);
+        if (!data.completed) {
+          if (data.filetype !== "NI") {
+            setImgUrl(`${ApiRoot}${data.level_file}`);
+          }
           setLevel(data.level);
-          const hints = data.hints.map(e => { return e.hint; });
-          setHintText(hints);
+          setSourceHint(data.source_hint);
+          if (data.hints.length) {
+            const hints = data.hints.map(e => { return e.hint; });
+            setHintText(hints);
+          }
         }
-        else if (data.completed === true) {
-          window.alert("You have completed all levels");
+        else {
+          window.alert(MESSAGE_WHEN_ALL_LEVELS_COMPLETE);
+          setLevel(NO_LEVELS_LEFT);
         }
       });
 
@@ -53,12 +59,12 @@ const KryptosPlay = () => {
       return res.json();
     }).then(data => {
       if (data.answer === 'Correct') {
-        window.alert("Correct answer");
+        window.alert(MESSAGE_WHEN_CORRECT_ANSWER);
         setTimeout(() => {
           window.location.reload();
         }, 1000);
       } else {
-        window.alert("Wrong answer");
+        window.alert(MESSAGE_WHEN_WRONG_ANSWER);
       }
     })
   };
@@ -66,7 +72,7 @@ const KryptosPlay = () => {
   return (
     <div>
       <KryptosInfoBar level={level} rank={rank} />
-      <KryptosQuestion imgUrl={imgUrl} onSubmit={ans => onSubmit(ans)} />
+      <KryptosQuestion imgUrl={imgUrl} sourceHint={sourceHint} onSubmit={ans => onSubmit(ans)} />
       <KryptosHintModal hintText={hintText} />
     </div>
   );
