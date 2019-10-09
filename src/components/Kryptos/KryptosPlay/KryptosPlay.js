@@ -4,6 +4,7 @@ import KryptosInfoBar from '../KryptosInfoBar/KryptosInfoBar';
 import KryptosQuestion from '../KryptosQuestion/KryptosQuestion';
 import KryptosHintModal from '../KryptosHintModal/KryptosHintModal';
 import { ApiRoot } from "../../../config/api";
+import { NO_LEVELS_LEFT } from '../../common/Constants.';
 
 const KryptosPlay = () => {
   const [level, setLevel] = useState(1);
@@ -21,14 +22,15 @@ const KryptosPlay = () => {
         return res.json();
       })
       .then(data => {
-        if (data.completed === undefined) {
+        if (!data.completed) {
           setImgUrl(`${ApiRoot}${data.level_file}`);
           setLevel(data.level);
           const hints = data.hints.map(e => { return e.hint; });
           setHintText(hints);
         }
-        else if (data.completed === true) {
+        else {
           window.alert("You have completed all levels");
+          setLevel(NO_LEVELS_LEFT);
         }
       });
 
