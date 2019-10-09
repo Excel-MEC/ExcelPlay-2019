@@ -43,7 +43,6 @@ const Home = () => {
                 name="DALALBULL"
                 rank={dalalbullRank}
                 logo={dalal}
-                imageSize="dalalPic"
                 type="ranked"
                 href="/Dalalbull"
               />
@@ -53,7 +52,6 @@ const Home = () => {
                 name="KRYPTOS"
                 rank={kryptosRank}
                 logo={kryp}
-                imageSize="krypPic"
                 type="ranked"
                 href="Kryptos"
               />
@@ -63,15 +61,13 @@ const Home = () => {
               <Games
                 name="#INCLUDE"
                 logo={hash}
-                imageSize="hashPic"
                 type="notRanked"
               />
             </div>
             <div className="col-lg-6 center-block text-center cell">
               <Games
-                name="CIRCUMSTANCE"
+                name="CIRCUIMSTANCE"
                 logo={circ}
-                imageSize="echoPic"
                 type="notRanked"
               />
             </div>
