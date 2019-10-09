@@ -1,9 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import Trade, { tradeProps } from '../Trade/Trade';
 import './Buy.scss';
-import { submitBuyOrShortSell, getPortfolio, getDashboard, getIsGoodTime } from '../../apicalls/apicalls';
+import {
+  submitBuyOrShortSell,
+  getPortfolio,
+  getDashboard,
+  getIsGoodTime,
+} from '../../apicalls/apicalls';
 
-const Buy = ({ symbol, current_price, total_transactions, cash_bal, setPortfolioDetails, setDashboardDetails }) => {
+const Buy = ({
+  symbol,
+  current_price,
+  total_transactions,
+  cash_bal,
+  setPortfolioDetails,
+  setDashboardDetails,
+}) => {
   let props = tradeProps('BUY');
   const [base, setBase] = useState(0.0);
   const [brokerage, setBrokerage] = useState(0.0);
@@ -12,8 +24,8 @@ const Buy = ({ symbol, current_price, total_transactions, cash_bal, setPortfolio
   useEffect(() => {
     getIsGoodTime().then(res => {
       setIsGoodTime(res.response);
-    })
-  }, [])
+    });
+  }, []);
   props = {
     ...props,
     setBase,
@@ -23,21 +35,25 @@ const Buy = ({ symbol, current_price, total_transactions, cash_bal, setPortfolio
     total_transactions,
   };
   const updateValues = () => {
-    props.setBase(0.00);
-    props.setBrokerage(0.00);
-    props.setTotal(0.00);
-  }
-  const updateAfterTrade = (res) => {
+    props.setBase(0.0);
+    props.setBrokerage(0.0);
+    props.setTotal(0.0);
+  };
+  const updateAfterTrade = res => {
     props.setQuantity(0);
     updateValues();
-    getPortfolio().then(portDetails => {
-      setPortfolioDetails(portDetails)
-      getDashboard().then(dashDetails => {
-        setDashboardDetails(dashDetails);
-        window.alert(res.msg);
-      }).catch(err => window.alert(err));
-    }).catch(err => window.alert(err));
-  }
+    getPortfolio()
+      .then(portDetails => {
+        setPortfolioDetails(portDetails);
+        getDashboard()
+          .then(dashDetails => {
+            setDashboardDetails(dashDetails);
+            window.alert(res.msg);
+          })
+          .catch(err => window.alert(err));
+      })
+      .catch(err => window.alert(err));
+  };
   return (
     <div className="buy">
       {isGoodTime ? (
@@ -47,46 +63,76 @@ const Buy = ({ symbol, current_price, total_transactions, cash_bal, setPortfolio
               <div>Buy {symbol}</div>
               <br />
               <Trade {...props} />
-              <div className="col-lg-6">
-                <button
-                  type="button"
-                  className="btn btn-success btn-lg btn-block my-2"
-                  onClick={e => {
-                    e.preventDefault();
-                    if (!(props.quantity === 0))
-                      if (props.pendingDisabled) {
-                        submitBuyOrShortSell(props.quantity, symbol, null, true).then(res => {
-                          updateAfterTrade(res);
-                        }).catch(err => window.alert(err));
-                      } else {
-                        submitBuyOrShortSell(props.quantity, symbol, props.price, true).then(res => {
-                          updateAfterTrade(res);
-                        }).catch(err => window.alert(err));
-                      }
-                  }}
-                >
-                  BUY
-                </button>
-              </div>
-              <div className="col-lg-6">
-                <button
-                  type="button"
-                  className="btn btn-success btn-lg btn-block my-2"
-                  onClick={e => {
-                    e.preventDefault();
-                    if (props.pendingDisabled) {
-                      submitBuyOrShortSell(props.quantity, symbol, null, false).then(res => {
-                        updateAfterTrade(res);
-                      }).catch(err => window.alert(err));
-                    } else {
-                      submitBuyOrShortSell(props.quantity, symbol, props.price, false).then(res => {
-                        updateAfterTrade(res);
-                      }).catch(err => window.alert(err));
-                    }
-                  }}
-                >
-                  Short Sell
+              <div className="row">
+                <div className="col-lg-6">
+                  <button
+                    type="button"
+                    className="btn btn-success btn-lg btn-block my-2"
+                    onClick={e => {
+                      e.preventDefault();
+                      if (!(props.quantity === 0))
+                        if (props.pendingDisabled) {
+                          submitBuyOrShortSell(
+                            props.quantity,
+                            symbol,
+                            null,
+                            true,
+                          )
+                            .then(res => {
+                              updateAfterTrade(res);
+                            })
+                            .catch(err => window.alert(err));
+                        } else {
+                          submitBuyOrShortSell(
+                            props.quantity,
+                            symbol,
+                            props.price,
+                            true,
+                          )
+                            .then(res => {
+                              updateAfterTrade(res);
+                            })
+                            .catch(err => window.alert(err));
+                        }
+                    }}
+                  >
+                    BUY
                   </button>
+                </div>
+                <div className="col-lg-6">
+                  <button
+                    type="button"
+                    className="btn btn-success btn-lg btn-block my-2"
+                    onClick={e => {
+                      e.preventDefault();
+                      if (props.pendingDisabled) {
+                        submitBuyOrShortSell(
+                          props.quantity,
+                          symbol,
+                          null,
+                          false,
+                        )
+                          .then(res => {
+                            updateAfterTrade(res);
+                          })
+                          .catch(err => window.alert(err));
+                      } else {
+                        submitBuyOrShortSell(
+                          props.quantity,
+                          symbol,
+                          props.price,
+                          false,
+                        )
+                          .then(res => {
+                            updateAfterTrade(res);
+                          })
+                          .catch(err => window.alert(err));
+                      }
+                    }}
+                  >
+                    Short Sell
+                  </button>
+                </div>
               </div>
             </div>
             <div className="col-lg-6 details">
@@ -114,8 +160,8 @@ const Buy = ({ symbol, current_price, total_transactions, cash_bal, setPortfolio
           </div>
         </div>
       ) : (
-          <h1>Market Closed</h1>
-        )}
+        <h1>Market Closed</h1>
+      )}
     </div>
   );
 };

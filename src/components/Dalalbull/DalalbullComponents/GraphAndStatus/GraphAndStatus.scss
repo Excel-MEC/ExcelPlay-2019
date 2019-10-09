@@ -4,7 +4,9 @@
   z-index: -1;
   padding-top: 1em;
   background: $bg-alt;
-  height: 87vh;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
   .user-data {
     .row {
       .col-lg-6 {

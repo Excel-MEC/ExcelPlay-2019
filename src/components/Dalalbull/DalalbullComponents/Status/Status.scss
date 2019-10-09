@@ -1,12 +1,32 @@
 @import '../../../../global';
 
-.graph-userdata {
+.userdata {
   h1 {
     color: $secondary-alt;
   }
   .propic {
     width: 30%;
     border-radius: 50%;
+  }
+  padding-top: 1em;
+  background: $bg-alt;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  .user-data {
+    .row {
+      .col-lg-6 {
+        text-align: center;
+        h1 {
+          color: $secondary-alt;
+          margin-bottom: 0px;
+        }
+        h3 {
+          color: $secondary-alt;
+          margin-top: 6px;
+        }
+      }
+    }
   }
   @media screen and (max-width: $media-width) {
     h1 {

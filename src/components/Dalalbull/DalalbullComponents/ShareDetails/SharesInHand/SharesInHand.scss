@@ -1,7 +1,7 @@
 @import '../../../../../global';
 
 .sharesInHand {
-  font-size: 1.5em;
+  font-size: 2em;
   thead,
   tbody {
     font-size: 0.6em;
@@ -11,7 +11,7 @@
     }
   }
   @media screen and (max-width: $media-width) {
-    font-size: 2em;
+    font-size: 1.5em;
     thead,
     tbody {
       font-size: .8em;

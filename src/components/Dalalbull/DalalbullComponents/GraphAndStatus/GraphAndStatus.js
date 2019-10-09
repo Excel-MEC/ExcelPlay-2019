@@ -76,9 +76,11 @@ const GraphAndStatus = props => {
   data.datasets[0].data = new_data;
   return (
     <div className="graph-userdata">
-      <h1 align="center">{props.name}</h1>
-      <div className="graph">
-        <Line data={data} width={100} height={50} options={options} />
+      <div className="inner-flex">
+        <h1 align="center">{props.name}</h1>
+        <div className="graph">
+          <Line data={data} width={100} height={50} options={options} />
+        </div>
       </div>
     </div>
   );

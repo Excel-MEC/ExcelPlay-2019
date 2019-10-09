@@ -14,12 +14,15 @@
   }
   .row {
     margin: 0 !important;
+    h1 {
+      font-size: 2.5em;
+    }
     .company-name {
       max-width: 10vw;
     }
     .data {
       margin-top: 0.67em;
-      font-size: 17px;
+      font-size: 1em;
       .current-price {
         font-family: $font-secondary;
         padding: 7px 15px;
