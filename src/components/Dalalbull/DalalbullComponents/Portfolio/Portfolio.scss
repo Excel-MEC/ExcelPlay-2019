@@ -1,6 +1,18 @@
 @import "../../../../global";
 
 .sharesInHand {
+  max-height: 75vh;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: dimgrey;
+    border-radius: 5px;
+  }
   thead, tbody{
     .btn{
       color: white;

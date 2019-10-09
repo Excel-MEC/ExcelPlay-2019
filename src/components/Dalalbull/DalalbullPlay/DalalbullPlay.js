@@ -11,7 +11,8 @@ import {
   getDashboard,
   getPortfolioSock,
   getTickerSock,
-  getGraphData, getGraphSock,
+  getGraphData,
+  getGraphSock,
 } from '../DalalbullComponents/apicalls/apicalls';
 
 const DalalbullPlay = props => {
@@ -59,7 +60,6 @@ const DalalbullPlay = props => {
       setDashboardDetails(res);
     });
   }, []);
-
   return (
     <div className="dalalbull-play">
       <Ticker />
@@ -90,7 +90,7 @@ const DalalbullPlay = props => {
             </Modal>
           </div>
           <div className="col-lg-4">
-            <GraphAndStatus {...portfolioDetails} graphData={graphData} />
+            <GraphAndStatus {...shareDetails} graphData={graphData} />
           </div>
         </div>
       </div>

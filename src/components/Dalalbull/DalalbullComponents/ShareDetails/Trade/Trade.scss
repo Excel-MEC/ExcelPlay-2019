@@ -1,21 +1,21 @@
-@import "../../../../../global";
+@import '../../../../../global';
 
-.buy{
+.buy {
   margin: 1em;
-  button:hover{
-    opacity: .9;
+  button:hover {
+    opacity: 0.9;
   }
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
   }
-  .button{
+  .button {
     z-index: 2;
   }
   .increment-button {
-    border: .2em white solid;
+    border: 0.2em white solid;
     border-radius: 50%;
     color: black;
     background: white;
@@ -35,23 +35,28 @@
     flex-direction: row;
     vertical-align: middle;
   }
-  .quantity-wrapper{
+  .quantity-wrapper {
     font-size: 2em;
   }
 
-  .pending{
-    .small{
-      font-size: .6em;
+  .pending {
+    .small {
+      font-size: 0.6em;
     }
-    .true{
-      opacity:.3;
+    .true {
+      opacity: 0.3;
     }
   }
 
-  .details table{
-    font-size:.7em;
-    th{
+  .details table {
+    font-size: 0.7em;
+    th {
       color: $secondary;
+    }
+  }
+  @media screen and (max-width: $media-width) {
+    input {
+      font-size: 2em;
     }
   }
 }

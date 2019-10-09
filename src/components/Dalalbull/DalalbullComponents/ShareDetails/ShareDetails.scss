@@ -2,7 +2,7 @@
 
 .share-details {
   background-color: $bg;
-  padding-top: 3em;
+  padding-top: 1em;
   .h2 {
     color: $primary;
   }
@@ -18,6 +18,22 @@
     }
     span.nav-link.active:hover {
       color: black;
+    }
+  }
+  @media screen and (max-width: $media-width) {
+    padding-top: 1em;
+    font-size: 0.7em;
+    h1 {
+      font-size: 3em;
+    }
+    h2 {
+      font-size: 3.2em;
+    }
+    .nav {
+      .nav-link {
+        font-size: 1.3em;
+        padding: .7em;
+      }
     }
   }
 }

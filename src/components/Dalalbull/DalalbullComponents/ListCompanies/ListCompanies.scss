@@ -1,7 +1,7 @@
 @import '../../../../global';
 
 .companies-stock-data {
-  padding-top: 2em;
+  padding-top: 1em;
   * {
     &:not(i) {
       font-family: $font-secondary;
@@ -20,7 +20,7 @@
   .companies-list {
     color: white;
     margin-top: 7px;
-    max-height: 75vh;
+    max-height: 80vh;
     overflow-y: auto;
     &::-webkit-scrollbar {
       background-color: transparent;
