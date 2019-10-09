@@ -1,5 +1,5 @@
 import * as http from '../../../../config/http';
-import { ApiRoot } from '../../../../config/api';
+import { ApiRoot, WSRoot } from '../../../../config/api';
 
 export const handshake = () => {
   return http.get(`${ApiRoot}dalalbull/api/handshake/`);
@@ -7,6 +7,10 @@ export const handshake = () => {
 
 export const getCompanies = () => {
   return http.get(`${ApiRoot}dalalbull/api/ticker/`);
+};
+
+export const getIsGoodTime = () => {
+  return http.get(`${ApiRoot}dalalbull/api/is_share_market_open/`).then(res => res);
 };
 
 export const getPortfolio = () => {
@@ -56,6 +60,14 @@ export const getPotfolioHistory = () => {
   return http.get(`${ApiRoot}dalalbull/api/dashboard/`);
 };
 
+
+export const getPortfolioSock = () => {
+  return new WebSocket(`${WSRoot}dalalbullws/channel/portfolio/`);
+}
+
+export const getTickerSock = () => {
+  return new WebSocket(`${WSRoot}dalalbullws/channel/ticker/`);
+}
 export const getGraphData = company => {
   const body = new FormData();
   body.append('company', company);

@@ -55,9 +55,10 @@ const Trade = props => {
             placeholder="Quantity"
             value={props.quantity}
             onChange={e => {
-              const qty = parseInt(e.target.value, 10);
+              let qty = parseInt(e.target.value, 10);
+              qty = isNaN(qty) ? 0.00 : qty;
+              updateValues(qty);
               props.setQuantity(qty)
-              isNaN(qty) ? updateValues(0) : updateValues(qty);
             }}
           />
         </div>

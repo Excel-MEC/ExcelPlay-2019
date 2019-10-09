@@ -9,8 +9,8 @@ import SharesInHand from './SharesInHand/SharesInHand';
 
 export const tablist = {
   stock: 'Stock',
-  buy: 'Buy',
-  sell: 'Sell/Short Sell',
+  buy: 'Buy/Short Sell',
+  sell: 'Sell/Short Cover',
   sharesInHand: 'Shares in hand',
 };
 
