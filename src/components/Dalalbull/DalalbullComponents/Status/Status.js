@@ -27,7 +27,6 @@ const Status = props => {
             <h3>Net worth</h3>
           </div>
         </div>
-        <br/>
         <div className=" row">
           <div className=" col-lg-6">
             <h1>{props.cash_bal}</h1>
