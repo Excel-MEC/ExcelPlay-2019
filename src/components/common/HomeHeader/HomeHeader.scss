@@ -5,11 +5,9 @@
   background-color: black;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin-bottom: 10%;
-  button {
-    color: $secondary-alt;
-  }
+
   .excel-logo {
     height: 10em;
   }
@@ -43,7 +41,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
   }
 
   .propic {
@@ -55,12 +52,20 @@
 
   .btn {
     background-color: $primary;
+    color: $secondary-alt;
   }
 
   @media screen and (max-width: $media-width) {
     height: 10vh;
     width: 100%;
     margin-bottom: 10%;
+    .btn {
+      padding: 0.5em;
+      font-size: 14px;
+    }
+    .excel-logo {
+      height: 4em;
+    }
     .logo-container-bg {
       width: 50vw;
       height: 10vh;
@@ -74,11 +79,7 @@
       }
     }
     .propic {
-      width: 75px;
-      height: 75px;
-    }
-    .userDetails {
-      margin-top: 3em;
+      display: none;
     }
   }
 }
