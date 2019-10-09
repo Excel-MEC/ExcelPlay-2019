@@ -9,4 +9,9 @@
   // background-color: yellow;
   color: $primary-alt;
   font-family: $font-homePage;
+
+  @media screen and (max-width: $media-width) {
+    font-size: 1em;
+    margin-bottom: 1em;
+  }
 }

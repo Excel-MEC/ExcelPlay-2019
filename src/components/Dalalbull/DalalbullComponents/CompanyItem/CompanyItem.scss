@@ -14,7 +14,7 @@
   }
   .row {
     margin: 0 !important;
-    .company-name{
+    .company-name {
       max-width: 10vw;
     }
     .data {
@@ -33,6 +33,20 @@
         display: inline-block;
         margin-top: 1em;
         margin-right: 4px;
+      }
+    }
+  }
+  @media screen and (max-width: $media-width) {
+    .row {
+      h1 {
+        font-size: 4em;
+      }
+      .company-name {
+        font-size: 1.4em;
+        max-width: 50vw;
+      }
+      .data {
+        font-size: 1.4em;
       }
     }
   }

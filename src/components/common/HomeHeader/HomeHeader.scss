@@ -7,57 +7,73 @@
   display: flex;
   justify-content: center;
   margin-bottom: 10%;
-}
-.logo-container-bg {
-  display: flex;
-  width: 60vw;
-  height: 20vh;
-  background-color: $primary;
-  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
-}
-.logo-container {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $primary-alt;
-  width: 50vw;
-  height: 25vh;
-  clip-path: polygon(0 0, 100% 0, 85% 120%, 15% 120%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 85% 120%, 15% 120%);
-}
-.logo {
-  max-width: 60%;
-  max-height: 80%;
-}
+  .logo-container-bg {
+    display: flex;
+    width: 60vw;
+    height: 20vh;
+    background-color: $primary;
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  }
+  .logo-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-alt;
+    width: 50vw;
+    height: 25vh;
+    clip-path: polygon(0 0, 100% 0, 85% 120%, 15% 120%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 85% 120%, 15% 120%);
+  }
+  .logo {
+    max-width: 60%;
+    max-height: 80%;
+  }
 
-.userDetails {
-  font-size: 1.3em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
+  .userDetails {
+    font-size: 1.3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
 
-.propic {
-  width: 75px;
-  height: 75px;
-  border-radius: 100%;
-  margin: 1em;
-}
-
-.btn {
-  background-color: $primary;
-}
-
-@media screen and (max-width: 768px) {
   .propic {
     width: 75px;
     height: 75px;
+    border-radius: 100%;
+    margin: 1em;
   }
-  .userDetails {
-    margin-top: 3em;
+
+  .btn {
+    background-color: $primary;
+  }
+
+
+  @media screen and (max-width: $media-width) {
+    height: 10vh;
+    width: 100%;
+    margin-bottom: 10%;
+    .logo-container-bg {
+      width: 50vw;
+      height: 10vh;
+    }
+    .logo-container {
+      width: 40vw;
+      height: 15vh;
+      .logo {
+        max-width: 60%;
+        max-height: 80%;
+      }
+    }
+    .propic {
+      width: 75px;
+      height: 75px;
+    }
+    .userDetails {
+      margin-top: 3em;
+    }
   }
 }

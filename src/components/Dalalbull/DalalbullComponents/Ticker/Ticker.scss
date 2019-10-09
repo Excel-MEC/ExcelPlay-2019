@@ -1,4 +1,4 @@
-@import "../../../../global";
+@import '../../../../global';
 
 @keyframes marquee {
   0% {
@@ -46,7 +46,7 @@
           padding: 2px 7px;
           display: inline-block;
           border-radius: 5px;
-          font-family: "Roboto";
+          font-family: 'Roboto';
           color: white;
         }
         .percentage-change.positive-change {
@@ -62,5 +62,8 @@
         animation-play-state: paused;
       }
     }
+  }
+  @media screen and (max-width: $media-width) {
+    font-size: 0.6em;
   }
 }

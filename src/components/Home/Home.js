@@ -12,8 +12,8 @@ import circ from '../../assets/circuimstance_500.png';
 const Home = () => {
   const [kryptosRank, setKryptosRank] = useState(0);
   const [dalalbullRank, setDalalbullRank] = useState(0);
-  const [userName, setUserName] = useState("");
-  const [userPic, setUserPic] = useState("");
+  const [userName, setUserName] = useState('');
+  const [userPic, setUserPic] = useState('');
 
   useEffect(() => {
     fetch(`${ApiRoot}/auth/leaderboard/rank`, {
@@ -23,14 +23,12 @@ const Home = () => {
         return res.json();
       })
       .then(data => {
-        if (data.kryptos !== null)
-          setKryptosRank(data.kryptos.rank);
-        if (data.dalalbull !== null)
-          setDalalbullRank(data.dalalbull.rank);
+        if (data.kryptos) setKryptosRank(data.kryptos.rank);
+        if (data.dalalbull) setDalalbullRank(data.dalalbull.rank);
         setUserName(data.name);
         setUserPic(data.pic);
       });
-  }, [])
+  }, []);
 
   return (
     <div className="row">

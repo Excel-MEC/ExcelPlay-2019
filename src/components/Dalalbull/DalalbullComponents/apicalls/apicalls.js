@@ -63,11 +63,17 @@ export const getPotfolioHistory = () => {
 
 export const getPortfolioSock = () => {
   return new WebSocket(`${WSRoot}dalalbullws/channel/portfolio/`);
-}
+};
 
 export const getTickerSock = () => {
   return new WebSocket(`${WSRoot}dalalbullws/channel/ticker/`);
-}
+};
+
+export const getGraphSock = () => {
+  return new WebSocket(`${WSRoot}dalalbullws/channel/graph/`);
+};
+
+
 export const getGraphData = company => {
   const body = new FormData();
   body.append('company', company);
