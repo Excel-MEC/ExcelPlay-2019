@@ -6,10 +6,15 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
+  // align-items: center;
   margin-bottom: 10%;
 
   .excel-logo {
     height: 10em;
+  }
+  .excel-logo-container {
+    display: flex;
+    align-items: center;
   }
   .logo-container-bg {
     display: flex;
@@ -37,6 +42,7 @@
 
   .userDetails {
     font-size: 1.3em;
+    min-width: 12em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,12 +65,16 @@
     height: 10vh;
     width: 100%;
     margin-bottom: 10%;
+    .userDetails {
+      font-size: 1.3em;
+      min-width: 3.5em;
+    }
     .btn {
       padding: 0.5em;
       font-size: 14px;
     }
     .excel-logo {
-      height: 4em;
+      height: 3em;
     }
     .logo-container-bg {
       width: 50vw;
