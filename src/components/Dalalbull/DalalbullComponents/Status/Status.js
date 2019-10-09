@@ -10,7 +10,7 @@ const Status = props => {
   return (
     <div className="userdata">
       <div align="center">
-        <img src={userDetail.pic} alt="" className='propic' align="center"/>
+        <img src={userDetail.pic} alt="" className="propic" align="center" />
       </div>
       <h1 className="h1" align="center">
         {userDetail.name}

@@ -17,7 +17,7 @@ const SharesInHand = ({ stockholdings, symbol, setActiveTab }) => {
           </tr>
         </thead>
         <tbody>
-          {stockholdings!==[] ? (
+          {stockholdings !== [] ? (
             stockholdings.map((holding, i) => {
               if (holding.company === symbol)
                 return (
@@ -42,7 +42,7 @@ const SharesInHand = ({ stockholdings, symbol, setActiveTab }) => {
                           setActiveTab(tablist.sell);
                         }}
                       >
-                        {holding.type === "BUY" ? "Sell" : "Short Cover"}
+                        {holding.type === 'BUY' ? 'Sell' : 'Short Cover'}
                       </button>
                     </td>
                   </tr>
@@ -51,9 +51,7 @@ const SharesInHand = ({ stockholdings, symbol, setActiveTab }) => {
             })
           ) : (
             <tr>
-              <th colSpan="5">
-                No Shares
-              </th>
+              <th colSpan="5">No Shares</th>
             </tr>
           )}
         </tbody>

@@ -10,7 +10,9 @@ export const getCompanies = () => {
 };
 
 export const getIsGoodTime = () => {
-  return http.get(`${ApiRoot}dalalbull/api/is_share_market_open/`).then(res => res);
+  return http
+    .get(`${ApiRoot}dalalbull/api/is_share_market_open/`)
+    .then(res => res);
 };
 
 export const getPortfolio = () => {
@@ -60,7 +62,6 @@ export const getPotfolioHistory = () => {
   return http.get(`${ApiRoot}dalalbull/api/dashboard/`);
 };
 
-
 export const getPortfolioSock = () => {
   return new WebSocket(`${WSRoot}dalalbullws/channel/portfolio/`);
 };
@@ -72,7 +73,6 @@ export const getTickerSock = () => {
 export const getGraphSock = () => {
   return new WebSocket(`${WSRoot}dalalbullws/channel/graph/`);
 };
-
 
 export const getGraphData = company => {
   const body = new FormData();

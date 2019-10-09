@@ -29,7 +29,7 @@ const TabContent = ({ activeTab, props, setActiveTab }) => {
   }
 };
 
-const ShareDetails = (props) => {
+const ShareDetails = props => {
   const [activeTab, setActiveTab] = useState(tablist.stock);
   const isActive = tab => (activeTab === tablist[tab] ? 'active' : '');
 
@@ -52,7 +52,11 @@ const ShareDetails = (props) => {
         })}
       </ul>
       <br />
-      <TabContent activeTab={activeTab} props={props} setActiveTab={setActiveTab} />
+      <TabContent
+        activeTab={activeTab}
+        props={props}
+        setActiveTab={setActiveTab}
+      />
     </div>
   );
 };

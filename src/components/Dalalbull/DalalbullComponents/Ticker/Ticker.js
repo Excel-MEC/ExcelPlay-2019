@@ -1,4 +1,4 @@
-import React, { useState, useEffect }from 'react';
+import React, { useState, useEffect } from 'react';
 import './Ticker.scss';
 import { getCompanies } from '../apicalls/apicalls';
 import PercentageChange from '../PercentageChange/PercentageChange';
@@ -21,7 +21,9 @@ const allTickers = () => {
     });
   }, []);
 
-  return companies.map(company=>(<TickerItem {...company} key={company['symbol']}/>));
+  return companies.map(company => (
+    <TickerItem {...company} key={company['symbol']} />
+  ));
 };
 
 const Ticker = () => {

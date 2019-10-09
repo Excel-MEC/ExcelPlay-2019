@@ -1,5 +1,5 @@
 import * as auth0 from 'auth0-js';
-import cookieService from "universal-cookie";
+import cookieService from 'universal-cookie';
 
 import { ApiRoot } from './api';
 

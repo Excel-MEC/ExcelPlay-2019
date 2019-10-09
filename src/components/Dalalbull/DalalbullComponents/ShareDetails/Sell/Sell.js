@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import Trade, { tradeProps } from '../Trade/Trade';
 import './Sell.scss';
-import { submitSellOrShortCover, submitBuyOrShortSell, getPortfolio, getDashboard, getIsGoodTime } from '../../apicalls/apicalls';
+import {
+  submitSellOrShortCover,
+  submitBuyOrShortSell,
+  getPortfolio,
+  getDashboard,
+  getIsGoodTime,
+} from '../../apicalls/apicalls';
 
-const Sell = ({ symbol, current_price, total_transactions, cash_bal, setPortfolioDetails, setDashboardDetails }) => {
+const Sell = ({
+  symbol,
+  current_price,
+  total_transactions,
+  cash_bal,
+  setPortfolioDetails,
+  setDashboardDetails,
+}) => {
   let props = tradeProps('SELL');
   const [base, setBase] = useState(0.0);
   const [brokerage, setBrokerage] = useState(0.0);
@@ -12,8 +25,8 @@ const Sell = ({ symbol, current_price, total_transactions, cash_bal, setPortfoli
   useEffect(() => {
     getIsGoodTime().then(res => {
       setIsGoodTime(res.response);
-    })
-  }, [])
+    });
+  }, []);
   props = {
     ...props,
     setBase,
@@ -23,21 +36,25 @@ const Sell = ({ symbol, current_price, total_transactions, cash_bal, setPortfoli
     total_transactions,
   };
   const updateValues = () => {
-    props.setBase(0.00);
-    props.setBrokerage(0.00);
-    props.setTotal(0.00);
-  }
-  const updateAfterTrade = (res) => {
+    props.setBase(0.0);
+    props.setBrokerage(0.0);
+    props.setTotal(0.0);
+  };
+  const updateAfterTrade = res => {
     props.setQuantity(0);
     updateValues();
-    getPortfolio().then(portDetails => {
-      setPortfolioDetails(portDetails)
-      getDashboard().then(dashDetails => {
-        setDashboardDetails(dashDetails);
-        window.alert(res.msg);
-      }).catch(err => window.alert(err));
-    }).catch(err => window.alert(err));
-  }
+    getPortfolio()
+      .then(portDetails => {
+        setPortfolioDetails(portDetails);
+        getDashboard()
+          .then(dashDetails => {
+            setDashboardDetails(dashDetails);
+            window.alert(res.msg);
+          })
+          .catch(err => window.alert(err));
+      })
+      .catch(err => window.alert(err));
+  };
   return (
     <div className="buy">
       {isGoodTime ? (
@@ -56,13 +73,27 @@ const Sell = ({ symbol, current_price, total_transactions, cash_bal, setPortfoli
                       e.preventDefault();
                       if (!(props.quantity === 0))
                         if (props.pendingDisabled) {
-                          submitSellOrShortCover(props.quantity, symbol, null, true).then(res => {
-                            updateAfterTrade(res);
-                          }).catch(err => window.alert(err));
+                          submitSellOrShortCover(
+                            props.quantity,
+                            symbol,
+                            null,
+                            true,
+                          )
+                            .then(res => {
+                              updateAfterTrade(res);
+                            })
+                            .catch(err => window.alert(err));
                         } else {
-                          submitSellOrShortCover(props.quantity, symbol, props.price, true).then(res => {
-                            updateAfterTrade(res);
-                          }).catch(err => window.alert(err));
+                          submitSellOrShortCover(
+                            props.quantity,
+                            symbol,
+                            props.price,
+                            true,
+                          )
+                            .then(res => {
+                              updateAfterTrade(res);
+                            })
+                            .catch(err => window.alert(err));
                         }
                     }}
                   >
@@ -76,13 +107,27 @@ const Sell = ({ symbol, current_price, total_transactions, cash_bal, setPortfoli
                     onClick={e => {
                       e.preventDefault();
                       if (props.pendingDisabled) {
-                        submitSellOrShortCover(props.quantity, symbol, null, false).then(res => {
-                          updateAfterTrade(res);
-                        }).catch(err => window.alert(err));
+                        submitSellOrShortCover(
+                          props.quantity,
+                          symbol,
+                          null,
+                          false,
+                        )
+                          .then(res => {
+                            updateAfterTrade(res);
+                          })
+                          .catch(err => window.alert(err));
                       } else {
-                        submitSellOrShortCover(props.quantity, symbol, props.price, false).then(res => {
-                          updateAfterTrade(res);
-                        }).catch(err => window.alert(err));
+                        submitSellOrShortCover(
+                          props.quantity,
+                          symbol,
+                          props.price,
+                          false,
+                        )
+                          .then(res => {
+                            updateAfterTrade(res);
+                          })
+                          .catch(err => window.alert(err));
                       }
                     }}
                   >
@@ -116,8 +161,8 @@ const Sell = ({ symbol, current_price, total_transactions, cash_bal, setPortfoli
           </div>
         </div>
       ) : (
-          <h1>Market Closed</h1>
-        )}
+        <h1>Market Closed</h1>
+      )}
     </div>
   );
 };
