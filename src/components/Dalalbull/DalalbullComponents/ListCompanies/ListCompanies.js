@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getCompanies } from '../apicalls/apicalls';
+import { getCompanies, getTickerSock } from '../apicalls/apicalls';
 import Company from '../CompanyItem/CompanyItem';
 import './ListCompanies.scss';
 
@@ -16,7 +16,19 @@ const ListCompanies = () => {
       setCompanies(res['tickerData']);
     });
   }, []);
-
+  useEffect(() => {
+    console.log('test');
+    const tickSock = getTickerSock();
+    tickSock.addEventListener('message', e => {
+      const data = JSON.parse(e.data);
+      if (data.hasOwnProperty('tickerData')) {
+        setCompanies(data.tickerData);
+      }
+    });
+    return () => {
+      tickSock.close();
+    };
+  }, []);
   function sortCompaniesByMatch(comps) {
     comps.sort((x, y) => {
       return y.match - x.match;

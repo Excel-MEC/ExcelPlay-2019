@@ -11,7 +11,7 @@ import {
   getDashboard,
   getPortfolioSock,
   getTickerSock,
-  getGraphData,
+  getGraphData, getGraphSock,
 } from '../DalalbullComponents/apicalls/apicalls';
 
 const DalalbullPlay = props => {
@@ -27,11 +27,23 @@ const DalalbullPlay = props => {
       getGraphData(res.symbol).then(res => setGraphData(res.graph_data));
     });
   }, [props.match.params]);
+  // TODO : Don't delete comments
+  // useEffect(() => {
+  //   const graphSock = getGraphSock();
+  //   graphSock.addEventListener('message', e => {
+  //     const data = JSON.parse(e.data);
+  //     console.log(data);
+  //   });
+  //   return () => {
+  //     graphSock.close();
+  //   }
+  // }, [props.match.params]);
   useEffect(() => {
     getPortfolio().then(res => {
       setPortfolioDetails(res);
     });
   }, []);
+  // TODO : Don't delete comments
   // useEffect(() => {
   //   const portSock = getPortfolioSock();
   //   portSock.addEventListener('message', e => {
@@ -40,20 +52,8 @@ const DalalbullPlay = props => {
   //   return () => {
   //     portSock.close();
   //   };
-  // }, [])
-  useEffect(() => {
-    console.log('test');
-    const tickSock = getTickerSock();
-    tickSock.addEventListener('message', e => {
-      const data = JSON.parse(e.data);
-      if (data.hasOwnProperty('tickerData')) {
-        setShareDetails(data.tickerData);
-      }
-    });
-    return () => {
-      tickSock.close();
-    };
-  }, []);
+  // }, []);
+
   useEffect(() => {
     getDashboard().then(res => {
       setDashboardDetails(res);
