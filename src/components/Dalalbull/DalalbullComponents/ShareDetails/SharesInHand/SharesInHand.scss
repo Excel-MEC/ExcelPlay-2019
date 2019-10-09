@@ -1,12 +1,26 @@
-@import "../../../../../global";
+@import '../../../../../global';
 
 .sharesInHand {
   font-size: 1.5em;
-  thead, tbody{
-    font-size: .6em;
-    .btn{
+  thead,
+  tbody {
+    font-size: 0.6em;
+    .btn {
       color: white;
       background: $primary-alt;
+    }
+  }
+  @media screen and (max-width: $media-width) {
+    font-size: 1.6em;
+    thead,
+    tbody {
+      font-size: 0.4em;
+      .btn {
+        font-size: 0.8em;
+        padding: 0.1;
+        color: white;
+        background: $primary-alt;
+      }
     }
   }
 }
