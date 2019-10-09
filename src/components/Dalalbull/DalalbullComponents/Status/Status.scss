@@ -4,8 +4,13 @@
   h1 {
     color: $secondary-alt;
   }
-  .propic{
+  .propic {
     width: 30%;
     border-radius: 50%;
+  }
+  @media screen and (max-width: $media-width) {
+    h1 {
+      font-size: 1.5em;
+    }
   }
 }

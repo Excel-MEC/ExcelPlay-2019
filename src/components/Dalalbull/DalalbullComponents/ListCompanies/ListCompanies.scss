@@ -1,4 +1,4 @@
-@import "../../../../global";
+@import '../../../../global';
 
 .companies-stock-data {
   padding-top: 2em;
@@ -8,7 +8,7 @@
     }
   }
   .search-wrapper {
-    input[type=search] {
+    input[type='search'] {
       width: 100%;
       padding: 8px 10px;
       border: none;
@@ -37,10 +37,10 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
-
+  @media screen and (max-width: $media-width) {
+    font-size: 0.5em;
     .companies-list {
-      max-height: 80vw;
+      max-height: 60vh;
     }
   }
 }

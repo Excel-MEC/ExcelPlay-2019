@@ -42,6 +42,7 @@ const DalalbullPlay = props => {
   //   };
   // }, [])
   useEffect(() => {
+    console.log('test');
     const tickSock = getTickerSock();
     tickSock.addEventListener('message', e => {
       const data = JSON.parse(e.data);
@@ -52,7 +53,7 @@ const DalalbullPlay = props => {
     return () => {
       tickSock.close();
     };
-  }, [])
+  }, []);
   useEffect(() => {
     getDashboard().then(res => {
       setDashboardDetails(res);
@@ -75,14 +76,6 @@ const DalalbullPlay = props => {
               setPortfolioDetails={setPortfolioDetails}
               setDashboardDetails={setDashboardDetails}
             />
-          </div>
-          <div className="mobile-share-details">
-            <Modal
-              visibility={modalVisibility}
-              setVisibility={setModalVisibility}
-            >
-              <ShareDetails {...shareDetails} />
-            </Modal>
           </div>
           <div className="mobile-share-details">
             <Modal

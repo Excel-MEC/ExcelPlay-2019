@@ -1,11 +1,16 @@
 @import '../../../global';
 
 .login {
-  button {
-    width: 10vw;
-    height: 3em;
-    font-size: 2em;
-    margin: 10vh 45vw;
-    background-color: $primary;
+  width: 100%;
+  .login-btn{
+    width: 100vw;
+    button {
+      align-self: center;
+      width: auto;
+      height: auto;
+      margin-top: 20vh;
+      font-size: 2em;
+      background-color: $primary;
+    }
   }
 }

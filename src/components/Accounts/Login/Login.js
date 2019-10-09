@@ -6,7 +6,7 @@ import './Login.scss';
 import HomeHeader from '../../common/HomeHeader/HomeHeader';
 
 const LoginButton = () => (
-  <div>
+  <div className="login-btn" align="center">
     <HomeHeader />
     <button type="button" className="btn" onClick={login}>
       Login
