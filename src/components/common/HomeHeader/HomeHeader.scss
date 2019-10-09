@@ -7,6 +7,12 @@
   display: flex;
   justify-content: center;
   margin-bottom: 10%;
+  button {
+    color: $secondary-alt;
+  }
+  .excel-logo {
+    height: 10em;
+  }
   .logo-container-bg {
     display: flex;
     width: 60vw;
@@ -50,7 +56,6 @@
   .btn {
     background-color: $primary;
   }
-
 
   @media screen and (max-width: $media-width) {
     height: 10vh;
