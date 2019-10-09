@@ -86,6 +86,8 @@ const DalalbullPlay = props => {
                 {...shareDetails}
                 {...portfolioDetails}
                 {...dashboard}
+                setPortfolioDetails={setPortfolioDetails}
+                setDashboardDetails={setDashboardDetails}
               />
             </Modal>
           </div>
