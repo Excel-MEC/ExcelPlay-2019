@@ -9,9 +9,8 @@ import { NO_LEVELS_LEFT } from '../../common/Constants.';
 const KryptosPlay = () => {
   const [level, setLevel] = useState(1);
   const [rank, setRank] = useState(0);
-  const [imgUrl, setImgUrl] = useState(
-    '',
-  );
+  const [imgUrl, setImgUrl] = useState('');
+  const [sourceHint, setSourceHint] = useState('');
   const [hintText, setHintText] = useState([]);
 
   useEffect(() => {
@@ -23,8 +22,11 @@ const KryptosPlay = () => {
       })
       .then(data => {
         if (!data.completed) {
-          setImgUrl(`${ApiRoot}${data.level_file}`);
+          if (data.filetype !== "NI") {
+            setImgUrl(`${ApiRoot}${data.level_file}`);
+          }
           setLevel(data.level);
+          setSourceHint(data.source_hint);
           const hints = data.hints.map(e => { return e.hint; });
           setHintText(hints);
         }
@@ -68,7 +70,7 @@ const KryptosPlay = () => {
   return (
     <div>
       <KryptosInfoBar level={level} rank={rank} />
-      <KryptosQuestion imgUrl={imgUrl} onSubmit={ans => onSubmit(ans)} />
+      <KryptosQuestion imgUrl={imgUrl} sourceHint={sourceHint} onSubmit={ans => onSubmit(ans)} />
       <KryptosHintModal hintText={hintText} />
     </div>
   );
