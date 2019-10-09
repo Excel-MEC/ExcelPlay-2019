@@ -4,14 +4,14 @@ import KryptosInfoBar from '../KryptosInfoBar/KryptosInfoBar';
 import KryptosQuestion from '../KryptosQuestion/KryptosQuestion';
 import KryptosHintModal from '../KryptosHintModal/KryptosHintModal';
 import { ApiRoot } from "../../../config/api";
-import { NO_LEVELS_LEFT, MESSAGE_WHEN_ALL_LEVELS_COMPLETE, MESSAGE_WHEN_CORRECT_ANSWER, MESSAGE_WHEN_WRONG_ANSWER } from '../../common/Constants';
+import { NO_LEVELS_LEFT, MESSAGE_WHEN_ALL_LEVELS_COMPLETE, MESSAGE_WHEN_CORRECT_ANSWER, MESSAGE_WHEN_WRONG_ANSWER, NO_HINTS } from '../../common/Constants';
 
 const KryptosPlay = () => {
   const [level, setLevel] = useState(1);
   const [rank, setRank] = useState(0);
   const [imgUrl, setImgUrl] = useState('');
   const [sourceHint, setSourceHint] = useState('');
-  const [hintText, setHintText] = useState([]);
+  const [hintText, setHintText] = useState([NO_HINTS]);
 
   useEffect(() => {
     fetch(`${ApiRoot}/kryptos/api/ask`, {
@@ -27,8 +27,10 @@ const KryptosPlay = () => {
           }
           setLevel(data.level);
           setSourceHint(data.source_hint);
-          const hints = data.hints.map(e => { return e.hint; });
-          setHintText(hints);
+          if (data.hints.length) {
+            const hints = data.hints.map(e => { return e.hint; });
+            setHintText(hints);
+          }
         }
         else {
           window.alert(MESSAGE_WHEN_ALL_LEVELS_COMPLETE);
