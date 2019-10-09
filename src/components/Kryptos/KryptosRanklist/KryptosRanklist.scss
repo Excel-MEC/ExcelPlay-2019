@@ -1,8 +1,8 @@
 @import '../../../global';
 
 .table {
-  font-size: 30px;
-  color: #ffffff;
+  font-size: $font-size-web;
+  color: $secondary-alt;
 }
 
 table .propic {
@@ -10,4 +10,10 @@ table .propic {
   height: 45px;
   border-radius: 100%;
   margin-right: 1em;
+}
+
+@media screen and (max-width: $media-width) {
+  .table {
+    font-size: $font-size-mobile;
+  }
 }
