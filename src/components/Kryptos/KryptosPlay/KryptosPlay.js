@@ -45,7 +45,7 @@ const KryptosPlay = () => {
         return res.json();
       })
       .then(data => {
-        if (data.kryptos != null)
+        if (data.kryptos)
           setRank(data.kryptos.rank);
         else
           setRank(1);
