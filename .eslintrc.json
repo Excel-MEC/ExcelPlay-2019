@@ -11,7 +11,8 @@
     "react/prop-types": 0,
     "no-underscore-dangle": 0,
     "react/prefer-stateless-function": 0,
-    "react/destructuring-assignment": 0,
+    "react/destru  // TODO : Don't delete comments
+cturing-assignment": 0,
     "import/imports-first": ["error", "absolute-first"],
     "import/newline-after-import": "error",
     "jsx-a11y/click-events-have-key-events": "off",
@@ -26,7 +27,8 @@
     "FormData": true,
     "FileReader": true,
     "Blob": true,
-    "navigator": true
+    "navigator": true,
+    "fetch": true
   },
   "parser": "babel-eslint"
 }

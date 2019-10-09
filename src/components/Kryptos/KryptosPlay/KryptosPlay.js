@@ -1,4 +1,3 @@
-/* global fetch:false */
 import React, { useState, useEffect } from 'react';
 import '../../../App.scss';
 import KryptosInfoBar from '../KryptosInfoBar/KryptosInfoBar';
