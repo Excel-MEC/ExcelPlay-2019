@@ -3,11 +3,18 @@ import './KryptosQuestion.scss';
 
 const KryptosQuestion = props => {
   const [text, setText] = useState('');
-  const { imgUrl, onSubmit } = props;
+  const { imgUrl, sourceHint, onSubmit } = props;
 
   return (
     <div className="questionWrapper">
-      <img src={imgUrl} alt="failed to load" className="img img-fluid" />
+      {
+        (imgUrl) ?
+          <img src={imgUrl} alt="failed to load" className="img img-fluid" />
+          : null
+      }
+      <div className="sourceHint">
+        {sourceHint}
+      </div>
       <div className="answerWrapper">
         <input
           className="answer"
