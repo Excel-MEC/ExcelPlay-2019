@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './KryptosRanklist.scss';
-import { ApiRoot } from '../../../config/api';
+import { fetchKryptosLeaderboard } from '../KryptosApi/ApiCalls';
 
 const KryptosRanklist = () => {
   const [ranklist, setRanklist] = useState([]);
 
   useEffect(() => {
-    fetch(`${ApiRoot}/auth/leaderboard/kranklist`, {
-      mode: 'cors',
-    })
-      .then(res => {
-        return res.json();
-      })
+    fetchKryptosLeaderboard()
       .then(data => {
         setRanklist(data.ranklist);
       });
@@ -22,7 +17,7 @@ const KryptosRanklist = () => {
       {ranklist.map(curr => (
         <tr>
           <td>
-            <img src={curr.pic} alt="" class="propic" />
+            <img src={curr.pic} alt="" className="propic" />
           </td>
           <td>{curr.name}</td>
           <td>{curr.rank}</td>

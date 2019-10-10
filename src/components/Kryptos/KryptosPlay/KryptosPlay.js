@@ -3,7 +3,6 @@ import '../../../App.scss';
 import KryptosInfoBar from '../KryptosInfoBar/KryptosInfoBar';
 import KryptosQuestion from '../KryptosQuestion/KryptosQuestion';
 import KryptosHintModal from '../KryptosHintModal/KryptosHintModal';
-import { ApiRoot } from '../../../config/api';
 import {
   NO_LEVELS_LEFT,
   MESSAGE_WHEN_ALL_LEVELS_COMPLETE,
@@ -11,6 +10,7 @@ import {
   MESSAGE_WHEN_WRONG_ANSWER,
   NO_HINTS,
 } from '../../common/Constants';
+import { fetchQuestion, fetchRank, submitKryptosAnswer, getStaticAsset } from '../KryptosApi/ApiCalls';
 
 const KryptosPlay = () => {
   const [level, setLevel] = useState(1);
@@ -20,16 +20,11 @@ const KryptosPlay = () => {
   const [hintText, setHintText] = useState([NO_HINTS]);
 
   useEffect(() => {
-    fetch(`${ApiRoot}/kryptos/api/ask`, {
-      mode: 'cors',
-    })
-      .then(res => {
-        return res.json();
-      })
+    fetchQuestion()
       .then(data => {
         if (!data.completed) {
           if (data.filetype !== 'NI') {
-            setImgUrl(`${ApiRoot}${data.level_file}`);
+            setImgUrl(getStaticAsset(data.level_file));
           }
           setLevel(data.level);
           setSourceHint(data.source_hint);
@@ -45,12 +40,7 @@ const KryptosPlay = () => {
         }
       });
 
-    fetch(`${ApiRoot}/auth/leaderboard/rank`, {
-      mode: 'cors',
-    })
-      .then(res => {
-        return res.json();
-      })
+    fetchRank()
       .then(data => {
         if (data.kryptos) setRank(data.kryptos.rank);
         else setRank(1);
@@ -58,12 +48,7 @@ const KryptosPlay = () => {
   }, []);
 
   const onSubmit = ans => {
-    fetch(`${ApiRoot}/kryptos/api/answer?answer=${ans}`, {
-      mode: 'cors',
-    })
-      .then(res => {
-        return res.json();
-      })
+    submitKryptosAnswer(ans)
       .then(data => {
         if (data.answer === 'Correct') {
           window.alert(MESSAGE_WHEN_CORRECT_ANSWER);
