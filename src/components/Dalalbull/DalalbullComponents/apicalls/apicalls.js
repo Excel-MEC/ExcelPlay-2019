@@ -87,3 +87,17 @@ export const getRanklist = () => {
 export const getUserDetail = () => {
   return http.get(`${ApiRoot}/auth/leaderboard/rank`);
 };
+
+export const getFullHistory = () => {
+  return http.get(`${ApiRoot}/dalalbull/api/history/`);
+};
+
+export const getPendingHistory = () => {
+  return http.get(`${ApiRoot}/dalalbull/api/pending/`);
+};
+
+export const cancelPending = id => {
+  const body = new FormData();
+  body.append('p_id', id);
+  return http.post(`${ApiRoot}dalalbull/api/cancel_pending/`, body);
+};

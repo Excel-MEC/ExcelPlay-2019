@@ -20,7 +20,6 @@ const ListCompanies = () => {
     });
   }, []);
   useEffect(() => {
-    console.log('test');
     const tickSock = getTickerSock();
     tickSock.addEventListener('message', e => {
       const data = JSON.parse(e.data);

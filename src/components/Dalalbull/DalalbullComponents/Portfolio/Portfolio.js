@@ -1,52 +1,46 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { getPotfolioHistory } from '../apicalls/apicalls';
+import React, { useState } from 'react';
+import SharesInHand from '../SharesInHand/SharesInHand';
+import History from '../History/History';
+import Pending from '../Pending/Pending';
 import './Portfolio.scss';
 
-const HistoryItem = ({ company, current, number, purchase, type }) => (
-  <tr>
-    <td>{company}</td>
-    <td>{type}</td>
-    <td>{number}</td>
-    <td>{purchase}</td>
-    <td>{current}</td>
-    <td>
-      <Link to={`/Dalalbull/${company}`}>
-        <button type="button" className="btn btn-success bg-success">
-          view
-        </button>
-      </Link>
-    </td>
-  </tr>
-);
+export const tablist = {
+  sharesInHand: 'Shares in hand',
+  history: 'History',
+  pending: 'Pending',
+};
+
+const TabContent = ({ activeTab }) => {
+  switch (activeTab) {
+    case tablist.sharesInHand:
+      return <SharesInHand />;
+    case tablist.history:
+      return <History />;
+    case tablist.pending:
+      return <Pending />;
+  }
+};
 
 const Portfolio = () => {
-  const [history, setHistory] = useState([]);
-
-  useEffect(() => {
-    getPotfolioHistory().then(res => setHistory(res.stockholdings));
-  }, []);
-
+  const [activeTab, setActiveTab] = useState(tablist.sharesInHand);
+  const isActive = tab => (activeTab === tablist[tab] ? 'active' : '');
   return (
     <div className="sharesInHand">
-      <div className="head">Shares In Hand</div>
-      <table className="table table-responsive-lg">
-        <thead>
-          <tr>
-            <th scope="col">Shares of</th>
-            <th scope="col">Type</th>
-            <th scope="col">Shares in Hand</th>
-            <th scope="col">Purchase Price</th>
-            <th scope="col">Current Price</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {history.map((item, i) => (
-            <HistoryItem {...item} key={i} />
-          ))}
-        </tbody>
-      </table>
+      <ul className="nav nav-tabs">
+        {Object.keys(tablist).map((tab, index) => {
+          return (
+            <li className="nav-item" key={index}>
+              <span
+                className={`nav-link ${isActive(tab)}`}
+                onClick={() => setActiveTab(tablist[tab])}
+              >
+                {tablist[tab]}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+      <TabContent activeTab={activeTab} />
     </div>
   );
 };
