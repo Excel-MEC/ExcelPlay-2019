@@ -10,6 +10,17 @@
       background: $primary-alt;
     }
   }
+  th,
+  td {
+    font-size: 0.8em;
+  }
+
+  .nav {
+    .nav-link {
+      font-size: 0.7em;
+      padding: 0.7em;
+    }
+  }
   background-color: $bg;
   padding-top: 1em;
   overflow-x: hidden;
@@ -40,15 +51,17 @@
       color: black;
     }
   }
-  button {
-    font-size: 0.6em;
-  }
   @media screen and (max-width: $media-width) {
     padding-top: 1em;
     font-size: 0.7em;
 
     table {
       font-size: 0.8em;
+    }
+
+    th,
+    td {
+      font-size: 1em;
     }
     h1 {
       font-size: 3em;

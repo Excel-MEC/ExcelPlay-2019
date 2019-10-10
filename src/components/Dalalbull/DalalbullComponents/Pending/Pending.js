@@ -5,7 +5,15 @@ const fetchPendingHistory = setPending => {
   getPendingHistory().then(res => setPending(res.pending));
 };
 
-const HistoryItem = ({ type, value, quantity, symbol, current_price, id, setPending }) => (
+const HistoryItem = ({
+  type,
+  value,
+  quantity,
+  symbol,
+  current_price,
+  id,
+  setPending,
+}) => (
   <tr>
     <td>{symbol}</td>
     <td>{type}</td>
@@ -19,8 +27,8 @@ const HistoryItem = ({ type, value, quantity, symbol, current_price, id, setPend
           const sure = window.confirm(
             'Are you sure you want to cancel this transaction?',
           );
-          if (sure){
-            cancelPending(id).then(res=>fetchPendingHistory(setPending))
+          if (sure) {
+            cancelPending(id).then(res => fetchPendingHistory(setPending));
           }
         }}
       >
