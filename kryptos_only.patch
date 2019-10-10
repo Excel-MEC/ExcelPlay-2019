@@ -19,23 +19,36 @@ index d7b8435..ebc2af5 100755
        </Suspense>
      </div>
 diff --git a/src/components/Home/Home.js b/src/components/Home/Home.js
-index 9700778..aaf40f8 100644
+index 0f25aa7..71b7080 100644
 --- a/src/components/Home/Home.js
 +++ b/src/components/Home/Home.js
-@@ -23,7 +23,7 @@ const Home = () => {
-       })
-       .then(data => {
-         if (data.kryptos) setKryptosRank(data.kryptos.rank);
--        if (data.dalalbull) setDalalbullRank(data.dalalbull.rank);
-+        // if (data.dalalbull) setDalalbullRank(data.dalalbull.rank);
-         setUserPic(data.pic);
-       });
-   }, []);
-@@ -42,7 +42,6 @@ const Home = () => {
+@@ -41,9 +41,8 @@ const Home = () => {
+                 name="DALALBULL"
                  rank={dalalbullRank}
                  logo={dalal}
-                 type="ranked"
+-                type="ranked"
 -                href="/Dalalbull"
+-                status="PLAY NOW"
++                type="notRanked"
++                status="COMING SOON"
                />
              </div>
              <div className="col-lg-6 center-block text-center cell">
+@@ -62,7 +61,7 @@ const Home = () => {
+                 name="#INCLUDE"
+                 logo={hash}
+                 type="notRanked"
+-                status="PLAY NOW"
++                status="COMING SOON"
+               />
+             </div>
+             <div className="col-lg-6 center-block text-center cell">
+@@ -70,7 +69,7 @@ const Home = () => {
+                 name="CIRCUIMSTANCE"
+                 logo={circ}
+                 type="notRanked"
+-                status="PLAY NOW"
++                status="COMING SOON"
+               />
+             </div>
+           </div>
