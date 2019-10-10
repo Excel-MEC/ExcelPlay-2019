@@ -1,0 +1,35 @@
+@import '../../../global';
+
+.ranklist {
+  height: 90vh;
+  overflow-y: scroll;
+  padding: 0 1em 0 1em;
+  width: 100%;
+  font-size: 1.3em;
+  &::-webkit-scrollbar {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: dimgrey;
+    border-radius: 5px;
+  }
+}
+
+ol {
+  color: white;
+}
+
+.table {
+  font-size: 1.4em;
+  color: #ffffff;
+}
+
+table .propic {
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  margin-right: 1em;
+}

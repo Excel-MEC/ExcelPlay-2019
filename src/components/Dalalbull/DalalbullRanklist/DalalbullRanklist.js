@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getRanklist } from '../DalalbullComponents/apicalls/apicalls';
-import './DalalbullRaklist.scss';
+import './DalalbullRanklist.scss';
 
 const Rank = ({ name, pic, rank, level }) => {
   return (
@@ -21,7 +21,7 @@ const DalalbullRanklist = () => {
     getRanklist().then(res => setRanklist(res.ranklist));
   }, []);
   return (
-    <div className="content">
+    <div className="content ranklist">
       <h2>Ranklist</h2>
       <table className="table">
         <thead>
