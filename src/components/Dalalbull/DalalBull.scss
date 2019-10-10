@@ -8,5 +8,6 @@
   }
   @media screen and (max-width: $media-width) {
     font-size: 0.7em;
+    overflow-x: hidden;
   }
 }

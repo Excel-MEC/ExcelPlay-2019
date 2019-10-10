@@ -19,4 +19,9 @@
       background: $primary-alt;
     }
   }
+  @media screen and (max-width: $media-width) {
+    table{
+      font-size: .8em;
+    }
+  }
 }
