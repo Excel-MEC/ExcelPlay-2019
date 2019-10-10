@@ -138,10 +138,10 @@ const Buy = ({
             <div className="col-lg-6 details">
               <table className="table table-borderless">
                 <tbody>
-                <tr>
-                  <th>Stock Price</th>
-                  <td>{props.current_price}</td>
-                </tr>
+                  <tr>
+                    <th>Stock Price</th>
+                    <td>{props.current_price}</td>
+                  </tr>
                   <tr>
                     <th>BASE VALUE</th>
                     <td>{base}</td>

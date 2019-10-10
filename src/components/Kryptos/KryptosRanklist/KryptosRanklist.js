@@ -6,10 +6,9 @@ const KryptosRanklist = () => {
   const [ranklist, setRanklist] = useState([]);
 
   useEffect(() => {
-    fetchKryptosLeaderboard()
-      .then(data => {
-        setRanklist(data.ranklist);
-      });
+    fetchKryptosLeaderboard().then(data => {
+      setRanklist(data.ranklist);
+    });
   }, []);
 
   const RankListRows = ({ ranklist }) => (

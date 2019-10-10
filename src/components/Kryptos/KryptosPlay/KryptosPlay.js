@@ -10,7 +10,12 @@ import {
   MESSAGE_WHEN_WRONG_ANSWER,
   NO_HINTS,
 } from '../../common/Constants';
-import { fetchQuestion, fetchRank, submitKryptosAnswer, getStaticAsset } from '../KryptosApi/ApiCalls';
+import {
+  fetchQuestion,
+  fetchRank,
+  submitKryptosAnswer,
+  getStaticAsset,
+} from '../KryptosApi/ApiCalls';
 
 const KryptosPlay = () => {
   const [level, setLevel] = useState(1);
@@ -20,45 +25,42 @@ const KryptosPlay = () => {
   const [hintText, setHintText] = useState([NO_HINTS]);
 
   useEffect(() => {
-    fetchQuestion()
-      .then(data => {
-        if (!data.completed) {
-          if (data.filetype !== 'NI') {
-            setImgUrl(getStaticAsset(data.level_file));
-          }
-          setLevel(data.level);
-          setSourceHint(data.source_hint);
-          if (data.hints.length) {
-            const hints = data.hints.map(e => {
-              return e.hint;
-            });
-            setHintText(hints);
-          }
-        } else {
-          window.alert(MESSAGE_WHEN_ALL_LEVELS_COMPLETE);
-          setLevel(NO_LEVELS_LEFT);
+    fetchQuestion().then(data => {
+      if (!data.completed) {
+        if (data.filetype !== 'NI') {
+          setImgUrl(getStaticAsset(data.level_file));
         }
-      });
+        setLevel(data.level);
+        setSourceHint(data.source_hint);
+        if (data.hints.length) {
+          const hints = data.hints.map(e => {
+            return e.hint;
+          });
+          setHintText(hints);
+        }
+      } else {
+        window.alert(MESSAGE_WHEN_ALL_LEVELS_COMPLETE);
+        setLevel(NO_LEVELS_LEFT);
+      }
+    });
 
-    fetchRank()
-      .then(data => {
-        if (data.kryptos) setRank(data.kryptos.rank);
-        else setRank(1);
-      });
+    fetchRank().then(data => {
+      if (data.kryptos) setRank(data.kryptos.rank);
+      else setRank(1);
+    });
   }, []);
 
   const onSubmit = ans => {
-    submitKryptosAnswer(ans)
-      .then(data => {
-        if (data.answer === 'Correct') {
-          window.alert(MESSAGE_WHEN_CORRECT_ANSWER);
-          setTimeout(() => {
-            window.location.reload();
-          }, 1000);
-        } else {
-          window.alert(MESSAGE_WHEN_WRONG_ANSWER);
-        }
-      });
+    submitKryptosAnswer(ans).then(data => {
+      if (data.answer === 'Correct') {
+        window.alert(MESSAGE_WHEN_CORRECT_ANSWER);
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      } else {
+        window.alert(MESSAGE_WHEN_WRONG_ANSWER);
+      }
+    });
   };
 
   return (

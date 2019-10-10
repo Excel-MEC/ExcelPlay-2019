@@ -28,9 +28,9 @@ const HomeHeader = props => {
             Logout
           </button>
         </div>
-      ) :
+      ) : (
         <div className="userDetails" />
-      }
+      )}
     </div>
   );
 };
