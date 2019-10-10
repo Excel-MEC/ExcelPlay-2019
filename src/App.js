@@ -5,7 +5,6 @@ import Spinner from './components/common/Spinner/Spinner';
 import Logout from './components/Accounts/Logout/Logout';
 import './App.scss';
 
-const DalalBull = lazy(() => import('./components/Dalalbull/DalalBull'));
 const Kryptos = lazy(() => import('./components/Kryptos/Kryptos'));
 const Login = lazy(() => import('./components/Accounts/Login/Login'));
 
@@ -16,7 +15,6 @@ const App = () => (
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/logout" component={Logout} />
-        <Route path="/dalalbull" component={DalalBull} />
         <Route path="/kryptos" component={Kryptos} />
       </Suspense>
     </div>
