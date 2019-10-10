@@ -12,7 +12,6 @@ import circ from '../../assets/circuimstance_500.png';
 const Home = () => {
   const [kryptosRank, setKryptosRank] = useState(0);
   const [dalalbullRank, setDalalbullRank] = useState(0);
-  const [userName, setUserName] = useState('');
   const [userPic, setUserPic] = useState('');
 
   useEffect(() => {
@@ -25,7 +24,6 @@ const Home = () => {
       .then(data => {
         if (data.kryptos) setKryptosRank(data.kryptos.rank);
         if (data.dalalbull) setDalalbullRank(data.dalalbull.rank);
-        setUserName(data.name);
         setUserPic(data.pic);
       });
   }, []);
@@ -33,7 +31,7 @@ const Home = () => {
   return (
     <div className="row">
       <div className="col-lg-12">
-        <HomeHeader userPic={userPic} userName={userName} />
+        <HomeHeader userPic={userPic} />
       </div>
       <div className="container col-lg-12">
         <div className="events">
@@ -58,18 +56,10 @@ const Home = () => {
             </div>
             <div className="w-100" />
             <div className="col-lg-6 center-block text-center cell">
-              <Games
-                name="#INCLUDE"
-                logo={hash}
-                type="notRanked"
-              />
+              <Games name="#INCLUDE" logo={hash} type="notRanked" />
             </div>
             <div className="col-lg-6 center-block text-center cell">
-              <Games
-                name="CIRCUIMSTANCE"
-                logo={circ}
-                type="notRanked"
-              />
+              <Games name="CIRCUIMSTANCE" logo={circ} type="notRanked" />
             </div>
           </div>
         </div>

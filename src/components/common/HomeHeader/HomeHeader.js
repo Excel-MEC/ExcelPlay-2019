@@ -4,10 +4,13 @@ import logo from '../../../assets/logo.png';
 import excelLogo from '../../../assets/excel19_logo.png';
 
 const HomeHeader = props => {
-  const { userName, userPic } = props;
+  const { userPic } = props;
 
   return (
     <div className="big-header-bg">
+      <div className="excel-logo-container">
+        <img className="excel-logo" src={excelLogo} alt="excel logo" />
+      </div>
       <div className="logo-container-bg" />
       <div className="logo-container">
         <img src={logo} alt="logo" className="logo" />

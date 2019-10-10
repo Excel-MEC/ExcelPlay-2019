@@ -8,6 +8,7 @@
     "chart.js": "^2.7.3",
     "eslint": "5.6.0",
     "font-awesome": "^4.7.0",
+    "fuse.js": "^3.4.5",
     "jquery": "^3.3.1",
     "node-sass": "^4.11.0",
     "popper.js": "^1.14.7",

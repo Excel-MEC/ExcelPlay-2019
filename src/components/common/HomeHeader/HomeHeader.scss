@@ -5,8 +5,17 @@
   background-color: black;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  // align-items: center;
   margin-bottom: 10%;
+
+  .excel-logo {
+    height: 10em;
+  }
+  .excel-logo-container {
+    display: flex;
+    align-items: center;
+  }
   .logo-container-bg {
     display: flex;
     width: 60vw;
@@ -33,11 +42,11 @@
 
   .userDetails {
     font-size: 1.3em;
+    min-width: 12em;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
   }
 
   .propic {
@@ -49,13 +58,24 @@
 
   .btn {
     background-color: $primary;
+    color: $secondary-alt;
   }
-
 
   @media screen and (max-width: $media-width) {
     height: 10vh;
     width: 100%;
     margin-bottom: 10%;
+    .userDetails {
+      font-size: 1.3em;
+      min-width: 3.5em;
+    }
+    .btn {
+      padding: 0.5em;
+      font-size: 14px;
+    }
+    .excel-logo {
+      height: 3em;
+    }
     .logo-container-bg {
       width: 50vw;
       height: 10vh;
@@ -69,11 +89,7 @@
       }
     }
     .propic {
-      width: 75px;
-      height: 75px;
-    }
-    .userDetails {
-      margin-top: 3em;
+      display: none;
     }
   }
 }

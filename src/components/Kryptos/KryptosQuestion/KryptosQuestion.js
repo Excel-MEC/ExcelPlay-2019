@@ -8,14 +8,14 @@ const KryptosQuestion = props => {
 
   return (
     <div className="questionWrapper">
-      {
-        (imgUrl) ?
-          <img src={imgUrl} alt={IMAGE_FAILED_TO_LOAD} className="img img-fluid" />
-          : null
-      }
-      <div className="sourceHint">
-        {sourceHint}
-      </div>
+      {imgUrl ? (
+        <img
+          src={imgUrl}
+          alt={IMAGE_FAILED_TO_LOAD}
+          className="img img-fluid"
+        />
+      ) : null}
+      <div className="sourceHint">{sourceHint}</div>
       <div className="answerWrapper">
         <input
           className="answer"
