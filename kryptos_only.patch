@@ -1,3 +1,62 @@
+diff --git a/kryptos_only.patch b/kryptos_only.patch
+index edd0417..e69de29 100644
+--- a/kryptos_only.patch
++++ b/kryptos_only.patch
+@@ -1,54 +0,0 @@
+-diff --git a/src/App.js b/src/App.js
+-index d7b8435..ebc2af5 100755
+---- a/src/App.js
+-+++ b/src/App.js
+-@@ -5,7 +5,6 @@ import Spinner from './components/common/Spinner/Spinner';
+- import Logout from './components/Accounts/Logout/Logout';
+- import './App.scss';
+- 
+--const DalalBull = lazy(() => import('./components/Dalalbull/DalalBull'));
+- const Kryptos = lazy(() => import('./components/Kryptos/Kryptos'));
+- const Login = lazy(() => import('./components/Accounts/Login/Login'));
+- 
+-@@ -16,7 +15,6 @@ const App = () => (
+-         <Route exact path="/" component={Home} />
+-         <Route path="/login" component={Login} />
+-         <Route path="/logout" component={Logout} />
+--        <Route path="/dalalbull" component={DalalBull} />
+-         <Route path="/kryptos" component={Kryptos} />
+-       </Suspense>
+-     </div>
+-diff --git a/src/components/Home/Home.js b/src/components/Home/Home.js
+-index 0f25aa7..71b7080 100644
+---- a/src/components/Home/Home.js
+-+++ b/src/components/Home/Home.js
+-@@ -41,9 +41,8 @@ const Home = () => {
+-                 name="DALALBULL"
+-                 rank={dalalbullRank}
+-                 logo={dalal}
+--                type="ranked"
+--                href="/Dalalbull"
+--                status="PLAY NOW"
+-+                type="notRanked"
+-+                status="COMING SOON"
+-               />
+-             </div>
+-             <div className="col-lg-6 center-block text-center cell">
+-@@ -62,7 +61,7 @@ const Home = () => {
+-                 name="#INCLUDE"
+-                 logo={hash}
+-                 type="notRanked"
+--                status="PLAY NOW"
+-+                status="COMING SOON"
+-               />
+-             </div>
+-             <div className="col-lg-6 center-block text-center cell">
+-@@ -70,7 +69,7 @@ const Home = () => {
+-                 name="CIRCUIMSTANCE"
+-                 logo={circ}
+-                 type="notRanked"
+--                status="PLAY NOW"
+-+                status="COMING SOON"
+-               />
+-             </div>
+-           </div>
 diff --git a/src/App.js b/src/App.js
 index d7b8435..ebc2af5 100755
 --- a/src/App.js
@@ -19,10 +78,10 @@ index d7b8435..ebc2af5 100755
        </Suspense>
      </div>
 diff --git a/src/components/Home/Home.js b/src/components/Home/Home.js
-index 0f25aa7..71b7080 100644
+index 900fa70..6f0ea46 100644
 --- a/src/components/Home/Home.js
 +++ b/src/components/Home/Home.js
-@@ -41,9 +41,8 @@ const Home = () => {
+@@ -42,9 +42,8 @@ const Home = () => {
                  name="DALALBULL"
                  rank={dalalbullRank}
                  logo={dalal}
@@ -34,7 +93,7 @@ index 0f25aa7..71b7080 100644
                />
              </div>
              <div className="col-lg-6 center-block text-center cell">
-@@ -62,7 +61,7 @@ const Home = () => {
+@@ -63,7 +62,7 @@ const Home = () => {
                  name="#INCLUDE"
                  logo={hash}
                  type="notRanked"
@@ -43,11 +102,13 @@ index 0f25aa7..71b7080 100644
                />
              </div>
              <div className="col-lg-6 center-block text-center cell">
-@@ -70,7 +69,7 @@ const Home = () => {
+@@ -71,8 +70,8 @@ const Home = () => {
                  name="CIRCUIMSTANCE"
+                 rank={circuimstanceRank}
                  logo={circ}
-                 type="notRanked"
+-                type="ranked"
 -                status="PLAY NOW"
++                type="notRanked"
 +                status="COMING SOON"
                />
              </div>
