@@ -12,6 +12,7 @@ import circ from '../../assets/circuimstance_500.png';
 const Home = () => {
   const [kryptosRank, setKryptosRank] = useState(0);
   const [dalalbullRank, setDalalbullRank] = useState(0);
+  const [circuimstanceRank, setCircuimstanRank] = useState(0);
   const [userPic, setUserPic] = useState('');
 
   useEffect(() => {
@@ -68,8 +69,9 @@ const Home = () => {
             <div className="col-lg-6 center-block text-center cell">
               <Games
                 name="CIRCUIMSTANCE"
+                rank={circuimstanceRank}
                 logo={circ}
-                type="notRanked"
+                type="ranked"
                 status="PLAY NOW"
               />
             </div>
