@@ -99,7 +99,7 @@ const Trade = props => {
                 name="quantity"
                 id="quantity-input"
                 className="quantity-input text-center"
-                placeholder="Quantity"
+                placeholder="Price"
                 disabled={props.pendingDisabled}
                 value={props.price}
                 onChange={e => props.setPrice(parseInt(e.target.value, 10))}

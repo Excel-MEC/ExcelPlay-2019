@@ -32,8 +32,8 @@ const DalalbullRanklist = () => {
           </tr>
         </thead>
         <tbody>
-          {ranklist.map(rank => (
-            <Rank {...rank} />
+          {ranklist.map((rank, i) => (
+            <Rank {...rank} key={i} />
           ))}
         </tbody>
       </table>
