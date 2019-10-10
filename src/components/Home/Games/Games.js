@@ -13,7 +13,7 @@ const Games = props => {
         </div>
       );
     }
-    return <div className="PlayNow">PLAY NOW</div>;
+    return <div className="PlayNow">{props.status}</div>;
   };
   return (
     <div className="games">
