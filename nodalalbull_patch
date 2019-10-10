@@ -1,0 +1,41 @@
+diff --git a/src/App.js b/src/App.js
+index d7b8435..ebc2af5 100755
+--- a/src/App.js
++++ b/src/App.js
+@@ -5,7 +5,6 @@ import Spinner from './components/common/Spinner/Spinner';
+ import Logout from './components/Accounts/Logout/Logout';
+ import './App.scss';
+ 
+-const DalalBull = lazy(() => import('./components/Dalalbull/DalalBull'));
+ const Kryptos = lazy(() => import('./components/Kryptos/Kryptos'));
+ const Login = lazy(() => import('./components/Accounts/Login/Login'));
+ 
+@@ -16,7 +15,6 @@ const App = () => (
+         <Route exact path="/" component={Home} />
+         <Route path="/login" component={Login} />
+         <Route path="/logout" component={Logout} />
+-        <Route path="/dalalbull" component={DalalBull} />
+         <Route path="/kryptos" component={Kryptos} />
+       </Suspense>
+     </div>
+diff --git a/src/components/Home/Home.js b/src/components/Home/Home.js
+index 9700778..aaf40f8 100644
+--- a/src/components/Home/Home.js
++++ b/src/components/Home/Home.js
+@@ -23,7 +23,7 @@ const Home = () => {
+       })
+       .then(data => {
+         if (data.kryptos) setKryptosRank(data.kryptos.rank);
+-        if (data.dalalbull) setDalalbullRank(data.dalalbull.rank);
++        // if (data.dalalbull) setDalalbullRank(data.dalalbull.rank);
+         setUserPic(data.pic);
+       });
+   }, []);
+@@ -42,7 +42,6 @@ const Home = () => {
+                 rank={dalalbullRank}
+                 logo={dalal}
+                 type="ranked"
+-                href="/Dalalbull"
+               />
+             </div>
+             <div className="col-lg-6 center-block text-center cell">
