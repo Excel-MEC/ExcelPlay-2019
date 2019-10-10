@@ -140,6 +140,10 @@ const Sell = ({
               <table className="table table-borderless">
                 <tbody>
                   <tr>
+                    <th>Stock Price</th>
+                    <td>{props.current_price}</td>
+                  </tr>
+                  <tr>
                     <th>BASE VALUE</th>
                     <td>{base}</td>
                   </tr>
