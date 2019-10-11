@@ -1,8 +1,17 @@
 import React from 'react';
 
 const Spinner = () => (
-  <div className="spinner-border" role="status">
-    <span className="sr-only">Loading...</span>
+  <div style={{ postion: 'relative' }} className="loader">
+    <h1
+      style={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+      }}
+    >
+      Loading...
+    </h1>
   </div>
 );
 

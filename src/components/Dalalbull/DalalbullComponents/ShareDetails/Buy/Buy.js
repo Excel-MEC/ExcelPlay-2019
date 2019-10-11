@@ -20,7 +20,7 @@ const Buy = ({
   const [base, setBase] = useState(0.0);
   const [brokerage, setBrokerage] = useState(0.0);
   const [total, setTotal] = useState(0.0);
-  const [isGoodTime, setIsGoodTime] = useState(false);
+  const [isGoodTime, setIsGoodTime] = useState(true);
   useEffect(() => {
     getIsGoodTime().then(res => {
       setIsGoodTime(res.response);
