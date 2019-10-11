@@ -17,43 +17,39 @@ const SharesInHand = ({ stockholdings, symbol, setActiveTab }) => {
           </tr>
         </thead>
         <tbody>
-          {stockholdings !== [] ? (
-            stockholdings.map((holding, i) => {
-              if (holding.company === symbol)
-                return (
-                  <tr key={i}>
-                    <td>{holding.type}</td>
-                    <td>{holding.number}</td>
-                    <td>{(holding.current * holding.number).toFixed(2)}</td>
-                    <td>
-                      {(
-                        ((holding.current * holding.number -
-                          holding.purchase * holding.number) *
-                          100) /
-                        (holding.purchase * holding.number)
-                      ).toFixed(2)}
-                    </td>
-                    <td>
-                      <button
-                        type="button"
-                        className="btn"
-                        onClick={e => {
-                          e.preventDefault();
-                          setActiveTab(tablist.sell);
-                        }}
-                      >
-                        {holding.type === 'BUY' ? 'Sell' : 'Short Cover'}
-                      </button>
-                    </td>
-                  </tr>
-                );
-              return null;
-            })
-          ) : (
-            <tr>
-              <th colSpan="5">No Shares</th>
-            </tr>
-          )}
+          {stockholdings !== []
+            ? stockholdings.map((holding, i) => {
+                if (holding.company === symbol)
+                  return (
+                    <tr key={i}>
+                      <td>{holding.type}</td>
+                      <td>{holding.number}</td>
+                      <td>{(holding.current * holding.number).toFixed(2)}</td>
+                      <td>
+                        {(
+                          ((holding.current * holding.number -
+                            holding.purchase * holding.number) *
+                            100) /
+                          (holding.purchase * holding.number)
+                        ).toFixed(2)}
+                      </td>
+                      <td>
+                        <button
+                          type="button"
+                          className="btn"
+                          onClick={e => {
+                            e.preventDefault();
+                            setActiveTab(tablist.sell);
+                          }}
+                        >
+                          {holding.type === 'BUY' ? 'Sell' : 'Short Cover'}
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                return null;
+              })
+            : null}
         </tbody>
       </table>
     </div>
