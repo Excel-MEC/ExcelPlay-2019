@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Ticker.scss';
-import { getCompanies } from '../apicalls/apicalls';
+import { getCompanies, getTickerSock } from '../apicalls/apicalls';
 import PercentageChange from '../PercentageChange/PercentageChange';
 
 const TickerItem = ({ name, current_price, change_per }) => {
@@ -20,7 +20,19 @@ const allTickers = () => {
       setCompanies(res['tickerData']);
     });
   }, []);
-
+  useEffect(() => {
+    const tickSock = getTickerSock();
+    tickSock.addEventListener('message', e => {
+      const data = JSON.parse(e.data);
+      if (!data.hasOwnProperty('msg')) {
+        const tickerData = JSON.parse(data.data).tickerData;
+        setCompanies(tickerData);
+      }
+    });
+    return () => {
+      tickSock.close();
+    };
+  }, []);
   return companies.map(company => (
     <TickerItem {...company} key={company['symbol']} />
   ));

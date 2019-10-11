@@ -5,8 +5,9 @@ import './ListCompanies.scss';
 import Fuse from 'fuse.js';
 
 const allCompany = companies => {
-  return companies.map(company =>
-    <Company {...company} key={company['symbol']} />);
+  return companies.map(company => (
+    <Company {...company} key={company['symbol']} />
+  ));
 };
 
 const ListCompanies = () => {
@@ -23,8 +24,10 @@ const ListCompanies = () => {
     const tickSock = getTickerSock();
     tickSock.addEventListener('message', e => {
       const data = JSON.parse(e.data);
-      if (data.hasOwnProperty('tickerData')) {
-        setCompanies(data.tickerData);
+      if (!data.hasOwnProperty('msg')) {
+        const tickerData = JSON.parse(data.data).tickerData;
+        setCompanies(tickerData);
+        setResult(tickerData);
       }
     });
     return () => {
@@ -39,10 +42,7 @@ const ListCompanies = () => {
       distance: 100,
       maxPatternLength: 32,
       minMatchCharLength: 1,
-      keys: [
-        "name",
-        "symbol"
-      ]
+      keys: ['name', 'symbol'],
     };
     const fuse = new Fuse(companies, options);
     setResult(fuse.search(searchTerm));
@@ -56,13 +56,13 @@ const ListCompanies = () => {
           name="search"
           value={searchTerm}
           onChange={e => {
-            if (e.target.value === "") {
+            if (e.target.value === '') {
               setResult(companies);
             }
             setSearchTerm(e.target.value);
           }}
           onKeyDown={e => {
-            if (e.key === "Enter") {
+            if (e.key === 'Enter') {
               search();
             }
           }}
