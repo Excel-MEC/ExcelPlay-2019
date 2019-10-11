@@ -40,6 +40,13 @@ const SharesInHand = () => {
         {history.map((item, i) => (
           <HistoryItem {...item} key={i} />
         ))}
+        {history.length === 0 ? (
+          <tr>
+            <td colSpan="6" align="center">
+              Currently you don't have any shares
+            </td>
+          </tr>
+        ) : null}
       </tbody>
     </table>
   );
