@@ -1,5 +1,15 @@
 @import './global';
 
+.loader {
+  position: absolute;
+  z-index: +3;
+  height: 100vh;
+  width: 100vw;
+  background: $bg;
+  h1 {
+    color: $primary-alt;
+  }
+}
 .main-background {
   height: 100vh;
   width: 100vw;

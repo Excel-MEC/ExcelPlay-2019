@@ -9,10 +9,7 @@ import {
   getCompanyDetails,
   getPortfolio,
   getDashboard,
-  getPortfolioSock,
-  getTickerSock,
   getGraphData,
-  getGraphSock,
 } from '../DalalbullComponents/apicalls/apicalls';
 
 const DalalbullPlay = props => {
