@@ -33,6 +33,13 @@ const History = () => {
         {fullHistory.map((item, i) => (
           <HistoryItem {...item} key={i} />
         ))}
+        {fullHistory.length === 0 ? (
+          <tr>
+            <td colSpan="6" align="center">
+              You haven't done any transactions yet
+            </td>
+          </tr>
+        ) : null}
       </tbody>
     </table>
   );

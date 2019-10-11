@@ -59,6 +59,14 @@ const Pending = () => {
         {pending.map((item, i) => (
           <HistoryItem {...item} setPending={setPending} key={i} />
         ))}
+
+        {pending.length === 0 ? (
+          <tr>
+            <td colSpan="6" align="center">
+              Currently you don't have any pending transactions
+            </td>
+          </tr>
+        ) : null}
       </tbody>
     </table>
   );
