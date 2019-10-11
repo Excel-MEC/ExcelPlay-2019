@@ -6,7 +6,7 @@ const withLogin = Component => {
     localStorage.getItem('access_token') &&
     localStorage.getItem('expires_at')
   ) {
-    if (localStorage.getItem('expires_at') < new Date()) {
+    if (localStorage.getItem('expires_at') < new Date().getTime()) {
       alert('Login Expired');
     } else {
       return Component;
