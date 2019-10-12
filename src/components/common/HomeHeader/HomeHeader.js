@@ -9,7 +9,7 @@ const HomeHeader = props => {
   return (
     <div className="big-header-bg">
       <div className="excel-logo-container">
-        <img className="excel-logo" src={excelLogo} alt="excel logo" />
+        <a href="http://excelmec.org/#/"><img className="excel-logo" src={excelLogo} alt="excel logo" /></a>
       </div>
       <div className="logo-container-bg" />
       <div className="logo-container">
@@ -29,8 +29,8 @@ const HomeHeader = props => {
           </button>
         </div>
       ) : (
-        <div className="userDetails" />
-      )}
+          <div className="userDetails" />
+        )}
     </div>
   );
 };
