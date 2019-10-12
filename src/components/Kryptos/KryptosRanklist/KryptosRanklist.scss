@@ -12,6 +12,11 @@ table .propic {
   margin-right: 1em;
 }
 
+td {
+  word-wrap: break-word;
+  max-width: 150px;
+}
+
 @media screen and (max-width: $media-width) {
   .table {
     font-size: $font-size-mobile;
