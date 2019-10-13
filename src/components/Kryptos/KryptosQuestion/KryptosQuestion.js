@@ -20,7 +20,8 @@ const KryptosQuestion = props => {
         <input
           className="answer"
           placeholder="YOUR ANSWER..."
-          onChange={txt => setText(txt.target.value)}
+          style={{ textTransform: "lowercase" }}
+          onChange={txt => setText(txt.target.value.toLowerCase())}
         />
         <button
           type="button"
