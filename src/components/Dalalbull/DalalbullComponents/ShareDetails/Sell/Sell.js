@@ -165,7 +165,7 @@ const Sell = ({
           </div>
         </div>
       ) : (
-        <h1>Market Closed</h1>
+        <h1>Market Closed <br/>(Trading Hours: 7:00 PM - 1:30 AM IST)</h1>
       )}
     </div>
   );
