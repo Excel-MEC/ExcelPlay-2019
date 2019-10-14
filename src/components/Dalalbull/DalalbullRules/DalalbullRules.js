@@ -55,7 +55,7 @@ const DalalbullRules = () => {
             </li>
             <li>
               Cash In Hand: The maximum amount with which you can trade at any
-              point of time. Initially each player is provided with $10,000 of
+              point of time. Initially each player is provided with $50,000 of
               virtual money to start the game.
             </li>
             <li>
@@ -65,7 +65,7 @@ const DalalbullRules = () => {
               50%.
             </li>
             <li>
-              Net Worth: The total of cash balance and worth of all the stocks
+              Net Worth: The total of cash balance, margin and worth of all the stocks
               in procession and this decides your rank.
             </li>
             <li>
@@ -87,7 +87,7 @@ const DalalbullRules = () => {
             be bought or sold if you are not happy with the current price. In
             DALAL BULL, all the pending transactions that has not yet executed
             will be cancelled automatically when the market closes (i.e. at 1:30
-            AM). So set the limit which may reach the target before 15.30. You
+            AM). So set the limit which may reach the target before 1.30 AM. You
             will have to pay brokerage only for the executed transactions.
           </li>
           <li>
@@ -97,12 +97,15 @@ const DalalbullRules = () => {
           </li>
         </ul>
         <li>
-          A live leader board will be maintained so that the participant can
+          A live leaderboard will be maintained so that the participant can
           check his/her ranking.
         </li>
         <li>
           The admins have the ability to disqualify any players for fraudulent
           behavior.
+        </li>
+        <li>
+          The last day of trading will be Nov 1st 2019(Friday).
         </li>
       </ol>
     </div>
