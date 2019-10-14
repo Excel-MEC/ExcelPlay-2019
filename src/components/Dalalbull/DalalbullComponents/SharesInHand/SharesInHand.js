@@ -7,8 +7,13 @@ const HistoryItem = ({ company, current, number, purchase, type }) => (
     <td>{company}</td>
     <td>{type}</td>
     <td>{number}</td>
-    <td>{purchase}</td>
-    <td>{current}</td>
+    <td>{(current * number).toFixed(2)}</td>
+    <td>
+      {(
+        ((current * number - purchase * number) * 100) /
+        (purchase * number)
+      ).toFixed(2)}
+    </td>
     <td>
       <Link to={`/Dalalbull/${company}`}>
         <button type="button" className="btn btn-success bg-success">
@@ -31,8 +36,8 @@ const SharesInHand = () => {
           <th scope="col">Shares of</th>
           <th scope="col">Type</th>
           <th scope="col">Shares in Hand</th>
-          <th scope="col">Purchase Price</th>
           <th scope="col">Current Price</th>
+          <th scope="col">Gain</th>
           <th scope="col">Action</th>
         </tr>
       </thead>

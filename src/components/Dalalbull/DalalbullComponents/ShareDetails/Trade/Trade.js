@@ -20,9 +20,9 @@ const Trade = props => {
   const updateValues = quantity => {
     const bv = props.current_price * quantity;
     props.setBase(bv.toFixed(2));
-    let brokerage_perc = 0.5;
+    let brokerage_perc = .5;
     if (props.total_transactions > 100 && props.total_transactions < 1000)
-      brokerage_perc = 0.5;
+      brokerage_perc = 1;
     else if (props.total_transactions >= 1000) brokerage_perc = 1.5;
     const brk = (brokerage_perc / 100) * (props.current_price * quantity);
     props.setBrokerage(brk.toFixed(2));
