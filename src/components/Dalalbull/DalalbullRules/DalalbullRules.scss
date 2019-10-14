@@ -1,23 +1,23 @@
-@import "../../../global";
+@import '../../../global';
 
 .rules {
-	height: 90vh;
-	overflow-y: scroll;
-	padding: 0 1em 0 1em;
-	width: 100%;
-	font-size: 1.5em;
-	&::-webkit-scrollbar {
-		background-color: transparent;
-	}
-	&::-webkit-scrollbar-track {
-		background-color: transparent;
-	}
-	&::-webkit-scrollbar-thumb {
-		background-color: dimgrey;
-		border-radius: 5px;
-	}
-	ol {
-		color: white;
-	}
+  height: 90vh;
+  overflow-y: scroll;
+  padding: 0 1em 0 1em;
+  width: 100%;
+  font-size: 1.6em;
+  line-height: 1.8em;
+  &::-webkit-scrollbar {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: dimgrey;
+    border-radius: 5px;
+  }
+  ol {
+    color: white;
+  }
 }
-
