@@ -42,9 +42,8 @@ const Home = () => {
                 name="DALALBULL"
                 rank={dalalbullRank}
                 logo={dalal}
-                type="ranked"
-                href="/Dalalbull"
-                status="PLAY NOW"
+                type="notRanked"
+                status="COMING SOON"
               />
             </div>
             <div className="col-lg-6 center-block text-center cell">
@@ -63,7 +62,7 @@ const Home = () => {
                 name="#INCLUDE"
                 logo={hash}
                 type="notRanked"
-                status="PLAY NOW"
+                status="COMING SOON"
               />
             </div>
             <div className="col-lg-6 center-block text-center cell">
@@ -71,8 +70,8 @@ const Home = () => {
                 name="CIRCUIMSTANCE"
                 rank={circuimstanceRank}
                 logo={circ}
-                type="ranked"
-                status="PLAY NOW"
+                type="notRanked"
+                status="COMING SOON"
               />
             </div>
           </div>
