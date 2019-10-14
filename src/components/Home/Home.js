@@ -42,8 +42,9 @@ const Home = () => {
                 name="DALALBULL"
                 rank={dalalbullRank}
                 logo={dalal}
-                type="notRanked"
-                status="COMING SOON"
+                type="ranked"
+                href="Dalalbull"
+                status="PLAY NOW"
               />
             </div>
             <div className="col-lg-6 center-block text-center cell">
