@@ -72,9 +72,9 @@ const DalalbullRules = () => {
               No. of Transaction: The total number of transactions carried out
               by the broker on your behalf. Brokerage charged depends on the
               number of transactions carried out. Brokerage: Here at DalalBull
-              for first 100 transactions will be charged 0.5% of transactions
-              value as brokerage, next 900 transactions will attract 1%
-              brokerage and beyond which 1.5% will be the brokerage.
+              for first 100 transactions will be charged 0.1% of transactions
+              value as brokerage, next 900 transactions will attract 0.15%
+              brokerage and beyond which 0.3% will be the brokerage.
             </li>
           </ul>
         </li>
