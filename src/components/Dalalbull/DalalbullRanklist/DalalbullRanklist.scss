@@ -16,6 +16,9 @@
     background-color: dimgrey;
     border-radius: 5px;
   }
+  @media screen and (max-width: $media-width) {
+    font-size: 1em;
+  }
 }
 
 ol {
