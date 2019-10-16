@@ -35,11 +35,11 @@ export const handleAuthentication = (hash, history) => {
 
 const setSession = async (authResult, redirect) => {
   // Set the time that the access token will expire at
-  const expiresAt =
-    parseInt(authResult.expiresIn) * 1000 + new Date().getTime();
+  const newdate = new Date();
+  newdate.setDate(newdate.getDate() + 30);
   localStorage.setItem('access_token', authResult.accessToken);
   localStorage.setItem('id_token', authResult.idToken);
-  localStorage.setItem('expires_at', expiresAt);
+  localStorage.setItem('expires_at', JSON.stringify(newdate));
   const body = new FormData();
   body.append('access_token', authResult.accessToken);
   const res = await http.post(ApiRoot + 'auth/v1/signin', body);
