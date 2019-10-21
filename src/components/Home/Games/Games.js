@@ -2,8 +2,10 @@ import React from 'react';
 import './Games.scss';
 
 const Games = props => {
+  const { type, status, href, logo, name } = props;
+
   const rank = () => {
-    if (props.type === 'ranked') {
+    if (type === 'ranked') {
       return (
         <div className="rankDiv">
           <div className="rank">
@@ -13,18 +15,18 @@ const Games = props => {
         </div>
       );
     }
-    return <div className="PlayNow">{props.status}</div>;
+    return <div className="PlayNow">{status}</div>;
   };
   return (
     <div className="games">
-      <a href={props.href}>
+      <a href={href}>
         <div className="gameCell">
           <div>
-            <img src={props.logo} alt="dalabull" className="pic" />
+            <img src={logo} alt="dalabull" className="pic" />
           </div>
 
           <div className="Rankdetail">
-            <div>{props.name}</div>
+            <div>{name}</div>
             {rank()}
           </div>
         </div>
