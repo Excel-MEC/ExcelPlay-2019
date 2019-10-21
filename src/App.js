@@ -7,6 +7,7 @@ import './App.scss';
 
 const Dalalbull = lazy(() => import('./components/Dalalbull/DalalBull'));
 const Kryptos = lazy(() => import('./components/Kryptos/Kryptos'));
+const Circuimstance = lazy(() => import('./components/Circuimstance/Circuimstance'));
 const Login = lazy(() => import('./components/Accounts/Login/Login'));
 
 
@@ -17,8 +18,9 @@ const App = () => (
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/logout" component={Logout} />
-        <Route path="/Dalalbull" component={Dalalbull}/>
+        <Route path="/Dalalbull" component={Dalalbull} />
         <Route path="/kryptos" component={Kryptos} />
+        <Route path="/circuimstance" component={Circuimstance} />
       </div>
     </Router>
   </Suspense>
