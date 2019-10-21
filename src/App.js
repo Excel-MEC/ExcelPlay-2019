@@ -6,6 +6,7 @@ import Logout from './components/Accounts/Logout/Logout';
 import './App.scss';
 
 const Kryptos = lazy(() => import('./components/Kryptos/Kryptos'));
+const Circuimstance = lazy(() => import('./components/Circuimstance/Circuimstance'));
 const Login = lazy(() => import('./components/Accounts/Login/Login'));
 
 const App = () => (
@@ -16,6 +17,7 @@ const App = () => (
         <Route path="/login" component={Login} />
         <Route path="/logout" component={Logout} />
         <Route path="/kryptos" component={Kryptos} />
+        <Route path="/circuimstance" component={Circuimstance} />
       </Suspense>
     </div>
   </Router>

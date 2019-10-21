@@ -70,8 +70,9 @@ const Home = () => {
                 name="CIRCUIMSTANCE"
                 rank={circuimstanceRank}
                 logo={circ}
-                type="notRanked"
-                status="COMING SOON"
+                href="Circuimstance"
+                type="ranked"
+                status="PLAY NOW"
               />
             </div>
           </div>
