@@ -12,7 +12,7 @@ import circ from '../../assets/circuimstance_500.png';
 const Home = () => {
   const [kryptosRank, setKryptosRank] = useState(0);
   const [dalalbullRank, setDalalbullRank] = useState(0);
-  const [circuimstanceRank, setCircuimstanRank] = useState(0);
+  const [circuimstanceRank, setCircuimstanceRank] = useState(0);
   const [userPic, setUserPic] = useState('');
 
   useEffect(() => {
@@ -25,6 +25,7 @@ const Home = () => {
       .then(data => {
         if (data.kryptos) setKryptosRank(data.kryptos.rank);
         if (data.dalalbull) setDalalbullRank(data.dalalbull.rank);
+        if (data.circuimstance) setCircuimstanceRank(data.circuimstance.rank);
         setUserPic(data.pic);
       });
   }, []);
