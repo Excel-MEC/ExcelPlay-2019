@@ -2,7 +2,7 @@ import React from 'react';
 import './Games.scss';
 
 const Games = props => {
-  const { type, status, href, logo, name } = props;
+  const { type, status1, status2, href, logo, name } = props;
 
   const rank = () => {
     if (type === 'ranked') {
@@ -15,7 +15,12 @@ const Games = props => {
         </div>
       );
     }
-    return <div className="PlayNow">{status}</div>;
+    return (
+      <>
+        <div className="PlayNow">{status1}</div>
+        <div className="PlayNow">{status2}</div>
+      </>
+    );
   };
   return (
     <div className="games">
