@@ -20,7 +20,7 @@ const Trade = props => {
   const updateValues = quantity => {
     const bv = props.current_price * quantity;
     props.setBase(bv.toFixed(2));
-    let brokerage_perc = .1;
+    let brokerage_perc = 0.1;
     if (props.total_transactions > 100 && props.total_transactions < 1000)
       brokerage_perc = 0.15;
     else if (props.total_transactions >= 1000) brokerage_perc = 0.3;
@@ -103,6 +103,7 @@ const Trade = props => {
                 disabled={props.pendingDisabled}
                 value={props.price}
                 onChange={e => props.setPrice(parseInt(e.target.value, 10))}
+                step="any"
               />
             </div>
           </div>
