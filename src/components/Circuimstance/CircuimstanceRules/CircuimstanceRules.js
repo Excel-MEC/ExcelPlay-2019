@@ -6,6 +6,7 @@ const CircuimstanceRules = () => {
     <div className="rules">
       <h2>Rules</h2>
       <ol>
+        <li><a href="https://www.facebook.com/CIRCUImsTance/">Go to www.facebook.com/CIRCUImsTance/ for hints.</a></li>
         <li>Admin's decisions are final and should not be questioned.</li>
         <li>
           Malpractices or any sort of practices which grant advantages over
