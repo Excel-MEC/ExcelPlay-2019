@@ -1,4 +1,4 @@
-export const NO_LEVELS_LEFT = '30';
+export const NO_LEVELS_LEFT = '25';
 // export const NO_LEVELS_LEFT = "∞";
 export const MESSAGE_WHEN_ALL_LEVELS_COMPLETE = 'You have completed all levels';
 export const MESSAGE_WHEN_CORRECT_ANSWER = 'Correct answer';
