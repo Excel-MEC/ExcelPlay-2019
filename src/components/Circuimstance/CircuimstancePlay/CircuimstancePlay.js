@@ -15,6 +15,7 @@ import {
   submitCircuimstanceAnswer,
   getStaticAsset,
 } from '../CircuimstanceApi/ApiCalls';
+import CircuimstanceHintModal from '../CircuimstanceHintModal/CircuimstanceHintModal';
 
 const CircuimstancePlay = () => {
   const [level, setLevel] = useState(1);
@@ -70,6 +71,7 @@ const CircuimstancePlay = () => {
         sourceHint={sourceHint}
         onSubmit={ans => onSubmit(ans)}
       />
+      <CircuimstanceHintModal hintText={hintText} />
     </div>
   );
 };

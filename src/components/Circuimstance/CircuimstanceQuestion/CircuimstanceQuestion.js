@@ -31,6 +31,14 @@ const CircuimstanceQuestion = props => {
           SUBMIT
         </button>
       </div>
+      <button
+        type="button"
+        className="btn btn-hint btn-primary"
+        data-toggle="modal"
+        data-target="#hint-modal"
+      >
+        VIEW HINTS
+      </button>
     </div>
   );
 };
