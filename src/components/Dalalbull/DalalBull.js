@@ -18,19 +18,8 @@ const Dalalbull = props => {
     <div className="dalalbull">
       <DalalbullHeader />
       <Switch>
-        <Route exact path={`${match.url}/`} component={DalalbullPortfolio} />
         <Route exact path={`${match.url}/rules`} component={DalalbullRules} />
-        <Route
-          exact
-          path={`${match.url}/Portfolio`}
-          component={DalalbullPortfolio}
-        />
-        <Route
-          exact
-          path={`${match.url}/ranklist`}
-          component={DalalbullRanklist}
-        />
-        <Route exact path={`${match.url}/:cid`} component={DalalbullPlay} />
+        <Route exact path={`${match.url}/*`} component={DalalbullRanklist} />
       </Switch>
     </div>
   );
